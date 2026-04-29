@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
-import { Sora } from 'next/font/google';
+import { Sora, Geist } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/theme-provider';
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const sora = Sora({ subsets: ['latin'], display: 'swap' });
 const metaDescription =
@@ -87,7 +90,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${sora.className} h-full antialiased`}
+      className={cn("h-full", "antialiased", sora.className, "font-sans", geist.variable)}
     >
       <body className="flex min-h-full flex-col">
         <ThemeProvider>{children}</ThemeProvider>
