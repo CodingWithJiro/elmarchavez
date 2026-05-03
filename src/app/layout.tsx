@@ -3,6 +3,7 @@ import { Sora, Geist } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/providers/theme-provider';
 import { cn } from '@/lib/utils';
+import SkipLink from '@/components/accessibility/skip-link';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -99,6 +100,7 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col">
+        <SkipLink />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
