@@ -7,8 +7,8 @@ const Hero = () => {
       <Image
         src="/img/profile-picture_600x600.jpg"
         alt="Elmar Chavez - Full Stack Developer"
-        width="600"
-        height="600"
+        width={600}
+        height={600}
         loading="eager"
       />
 
