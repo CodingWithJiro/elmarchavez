@@ -99,7 +99,7 @@ export default function RootLayout({
         geist.variable,
       )}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="min-h-full">
         <SkipLink />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
