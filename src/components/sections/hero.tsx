@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import ThemeToggle from '../theme/theme-toggle';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiFrontendmentor, SiDevdotto, SiCodewars } from 'react-icons/si';
 
 const Hero = () => {
   return (
@@ -21,8 +23,12 @@ const Hero = () => {
 
           <ul className="flex flex-row gap-4">
             <li>
-              <a href="https://github.com/CodingWithJiro" target="_blank">
-                GitHub
+              <a
+                href="https://github.com/CodingWithJiro"
+                target="_blank"
+                aria-label="Visit my GitHub profile"
+              >
+                <FaGithub className="size-5" aria-hidden="true" />
               </a>
             </li>
 
@@ -30,8 +36,9 @@ const Hero = () => {
               <a
                 href="https://www.linkedin.com/in/elmar-chavez/"
                 target="_blank"
+                aria-label="Connect with me in LinkedIn"
               >
-                LinkedIn
+                <FaLinkedin className="size-5" aria-hidden="true" />
               </a>
             </li>
 
@@ -39,8 +46,29 @@ const Hero = () => {
               <a
                 href="https://www.frontendmentor.io/profile/CodingWithJiro"
                 target="_blank"
+                aria-label="See my work in Frontend Mentor"
               >
-                Frontend Mentor
+                <SiFrontendmentor className="size-5" aria-hidden="true" />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.codewars.com/users/CodingWithJiro"
+                target="_blank"
+                aria-label="Let's solve code challenges in CodeWars"
+              >
+                <SiCodewars className="size-5" aria-hidden="true" />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://dev.to/codingwithjiro"
+                target="_blank"
+                aria-label="Follow me in dev.to"
+              >
+                <SiDevdotto className="size-5" aria-hidden="true" />
               </a>
             </li>
           </ul>
