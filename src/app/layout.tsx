@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Sora, Geist } from 'next/font/google';
 import './globals.css';
-import ThemeProvider from '@/components/theme-provider';
-import { cn } from "@/lib/utils";
+import ThemeProvider from '@/components/providers/theme-provider';
+import { cn } from '@/lib/utils';
+import SkipLink from '@/components/accessibility/skip-link';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const sora = Sora({ subsets: ['latin'], display: 'swap' });
 const metaDescription =
@@ -90,9 +91,16 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("h-full", "antialiased", sora.className, "font-sans", geist.variable)}
+      className={cn(
+        'h-full',
+        'antialiased',
+        sora.className,
+        'font-sans',
+        geist.variable,
+      )}
     >
-      <body className="flex min-h-full flex-col">
+      <body className="min-h-full transition-colors duration-150 ease-in-out">
+        <SkipLink />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

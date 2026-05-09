@@ -119,12 +119,12 @@ npm test -- --coverage
 
 Coverage Summary:
 
-| _Coverage Type_ | _Result_ |
+<!-- | _Coverage Type_ | _Result_ |
 | --------------- | -------- |
 | Statements      | 96.29%   |
 | Branches        | 86.45%   |
 | Functions       | 98.43%   |
-| Lines           | 96.53%   |
+| Lines           | 96.53%   | -->
 
 ---
 
