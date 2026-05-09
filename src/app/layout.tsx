@@ -99,7 +99,7 @@ export default function RootLayout({
         geist.variable,
       )}
     >
-      <body className="min-h-full">
+      <body className="min-h-full transition-colors duration-150 ease-in-out">
         <SkipLink />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
