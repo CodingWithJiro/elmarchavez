@@ -26,7 +26,7 @@ const Hero = () => {
           <ul className="flex flex-row gap-3.5 md:gap-4">
             <li>
               <a
-                className="text-muted-foreground hover:text-accent transition-colors duration-150 ease-in-out"
+                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
                 href="https://github.com/CodingWithJiro"
                 target="_blank"
                 aria-label="Visit my GitHub profile"
@@ -37,7 +37,7 @@ const Hero = () => {
 
             <li>
               <a
-                className="text-muted-foreground hover:text-accent transition-colors duration-150 ease-in-out"
+                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
                 href="https://www.linkedin.com/in/elmar-chavez/"
                 target="_blank"
                 aria-label="Connect with me in LinkedIn"
@@ -48,7 +48,7 @@ const Hero = () => {
 
             <li>
               <a
-                className="text-muted-foreground hover:text-accent transition-colors duration-150 ease-in-out"
+                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
                 href="https://www.frontendmentor.io/profile/CodingWithJiro"
                 target="_blank"
                 aria-label="See my work in Frontend Mentor"
@@ -62,7 +62,7 @@ const Hero = () => {
 
             <li>
               <a
-                className="text-muted-foreground hover:text-accent transition-colors duration-150 ease-in-out"
+                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
                 href="https://www.codewars.com/users/CodingWithJiro"
                 target="_blank"
                 aria-label="Let's solve code challenges in CodeWars"
@@ -73,7 +73,7 @@ const Hero = () => {
 
             <li>
               <a
-                className="text-muted-foreground hover:text-accent transition-colors duration-150 ease-in-out"
+                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
                 href="https://dev.to/codingwithjiro"
                 target="_blank"
                 aria-label="Follow me in dev.to"
