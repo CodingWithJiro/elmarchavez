@@ -1,11 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Sora, Geist } from 'next/font/google';
+import { Sora } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/providers/theme-provider';
 import { cn } from '@/lib/utils';
 import SkipLink from '@/components/accessibility/skip-link';
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 const sora = Sora({ subsets: ['latin'], display: 'swap' });
 const metaDescription =
   'Full stack software engineer specializing in React and TypeScript. Building modern web applications, mobile apps, and contributing to tech communities.';
@@ -93,13 +92,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        'h-full',
-        'antialiased',
-        sora.className,
-        'font-sans',
-        geist.variable,
-      )}
+      className={cn('h-full', 'antialiased', sora.className, 'font-sans')}
     >
       <body className="min-h-full transition-colors duration-150 ease-in-out">
         <SkipLink />
