@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Sora, Geist } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/providers/theme-provider';
@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import SkipLink from '@/components/accessibility/skip-link';
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
-
 const sora = Sora({ subsets: ['latin'], display: 'swap' });
 const metaDescription =
   'Full stack software engineer specializing in React and TypeScript. Building modern web applications, mobile apps, and contributing to tech communities.';
@@ -76,9 +75,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+};
+
+export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fcfcfc' },
-    { media: '(prefers-color-scheme: dark)', color: '#171717' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#08121f' },
   ],
 };
 
