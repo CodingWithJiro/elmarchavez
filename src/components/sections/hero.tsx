@@ -5,7 +5,7 @@ import { SiFrontendmentor, SiDevdotto, SiCodewars } from 'react-icons/si';
 
 const Hero = () => {
   return (
-    <header className="flex flex-row items-center gap-2 md:gap-4">
+    <header className="mb-6 flex flex-row items-center gap-2 md:gap-4">
       <Image
         src="/img/profile-picture_600x600.jpg"
         alt="Elmar Chavez - Full Stack Developer"
