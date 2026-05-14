@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <section className="border-border/40 bg-card flex flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+    <section className="border-border/40 bg-card flex flex-col justify-center gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out md:max-w-[clamp(26.25rem,-11.25rem+78.125vw,32.5rem)]">
       <h2 className="text-lg font-bold">About</h2>
 
       <p className="text-sm/normal">
