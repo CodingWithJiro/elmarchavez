@@ -1,11 +1,9 @@
-import type { Metadata } from 'next';
-import { Sora, Geist } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Sora } from 'next/font/google';
 import './globals.css';
 import ThemeProvider from '@/components/providers/theme-provider';
 import { cn } from '@/lib/utils';
 import SkipLink from '@/components/accessibility/skip-link';
-
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const sora = Sora({ subsets: ['latin'], display: 'swap' });
 const metaDescription =
@@ -76,9 +74,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+};
+
+export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fcfcfc' },
-    { media: '(prefers-color-scheme: dark)', color: '#171717' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#08121f' },
   ],
 };
 
@@ -91,13 +92,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn(
-        'h-full',
-        'antialiased',
-        sora.className,
-        'font-sans',
-        geist.variable,
-      )}
+      className={cn('h-full', 'antialiased', sora.className, 'font-sans')}
     >
       <body className="min-h-full transition-colors duration-150 ease-in-out">
         <SkipLink />
