@@ -57,22 +57,31 @@ const projectList: Project[] = [
 
 const Projects = () => {
   return (
-    <section>
-      <h2>Projects</h2>
+    <section className="border-border/40 bg-card flex flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+      <h2 className="text-lg font-bold">Projects</h2>
 
-      <ul>
+      <ul className="grid grid-cols-1 gap-y-8 sm:grid-cols-2">
         {projectList.map(({ id, title, description, imgUrl, siteUrl }) => {
           return (
-            <li key={id}>
-              <Image src={imgUrl} alt="" width={1440} height={960} />
+            <li
+              className="flex flex-col items-center justify-center text-center"
+              key={id}
+            >
+              <Image
+                className="border-ring/20 mb-2 max-w-60 rounded-lg border"
+                src={imgUrl}
+                alt=""
+                width={1440}
+                height={960}
+              />
 
-              <h3>
+              <h3 className="mb-1 text-base font-semibold">
                 <a href={siteUrl} target="_blank">
                   {title}
                 </a>
               </h3>
 
-              <p>{description}</p>
+              <p className="text-[0.85rem]">{description}</p>
             </li>
           );
         })}

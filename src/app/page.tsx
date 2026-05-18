@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
       <Hero />
-      <div className="flex flex-col gap-4 md:flex-row">
+      <div className="mb-4 flex flex-col gap-4 md:flex-row">
         <About />
         <TechStack />
       </div>
