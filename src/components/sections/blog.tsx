@@ -5,6 +5,7 @@ type BlogType = {
   publishDate: string;
   readTime: string;
   tags: string[];
+  blogUrl: string;
 };
 
 const blogList: BlogType[] = [
@@ -17,6 +18,8 @@ const blogList: BlogType[] = [
     publishDate: 'May 2026',
     readTime: '19 min read',
     tags: ['#llm', '#ollama', '#gemma4'],
+    blogUrl:
+      'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
   },
 ];
 
