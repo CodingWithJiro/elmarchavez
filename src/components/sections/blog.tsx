@@ -27,6 +27,46 @@ const Blog = () => {
   return (
     <section>
       <h2>Blog</h2>
+
+      <ul>
+        {blogList.map(
+          ({
+            id,
+            title,
+            description,
+            publishDate,
+            readTime,
+            tags,
+            blogUrl,
+          }) => {
+            return (
+              <li key={id}>
+                <article>
+                  <h3>{title}</h3>
+
+                  <ul>
+                    {tags.map((tag) => {
+                      return <li key={tag}>{tag}</li>;
+                    })}
+                  </ul>
+
+                  <p>{description}</p>
+
+                  <div>
+                    <p>
+                      {publishDate} • {readTime}
+                    </p>
+
+                    <a href={blogUrl} target="_blank">
+                      Read More →
+                    </a>
+                  </div>
+                </article>
+              </li>
+            );
+          },
+        )}
+      </ul>
     </section>
   );
 };
