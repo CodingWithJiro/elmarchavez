@@ -62,7 +62,7 @@ const projectList: Project[] = [
 
 const Projects = () => {
   return (
-    <section className="border-border/40 bg-card flex flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+    <section className="border-border/40 bg-card mb-4 flex flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
       <h2 className="text-lg font-bold">Projects</h2>
 
       <ul className="grid grid-cols-1 gap-y-3 min-[488px]:grid-cols-2 md:grid-cols-3">
@@ -102,7 +102,7 @@ const Projects = () => {
                   </a>
                 </h3>
 
-                <p className="px-4 pb-4 text-[0.75rem]">{description}</p>
+                <p className="px-4 pb-2 text-[0.75rem]">{description}</p>
               </li>
             );
           },
