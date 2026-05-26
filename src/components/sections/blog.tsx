@@ -25,8 +25,8 @@ const blogList: BlogType[] = [
 
 const Blog = () => {
   return (
-    <section>
-      <h2>Blog</h2>
+    <section className="border-border/40 bg-card rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+      <h2 className="mb-3 text-lg font-bold">Blog</h2>
 
       <ul>
         {blogList.map(
@@ -42,25 +42,29 @@ const Blog = () => {
             return (
               <li key={id}>
                 <article>
-                  <h3>{title}</h3>
+                  <p className="mb-1 text-[0.65rem] font-extralight">
+                    {publishDate} • {readTime}
+                  </p>
 
-                  <ul>
+                  <ul className="mb-2 flex gap-2 text-[0.65rem] font-extralight">
                     {tags.map((tag) => {
                       return <li key={tag}>{tag}</li>;
                     })}
                   </ul>
 
-                  <p>{description}</p>
+                  <h3 className="mb-2 text-[0.875rem] font-semibold">
+                    {title}
+                  </h3>
 
-                  <div>
-                    <p>
-                      {publishDate} • {readTime}
-                    </p>
+                  <p className="mb-2 text-[0.75rem]">{description}</p>
 
-                    <a href={blogUrl} target="_blank">
-                      Read More →
-                    </a>
-                  </div>
+                  <a
+                    className="text-right text-[0.75rem] font-medium"
+                    href={blogUrl}
+                    target="_blank"
+                  >
+                    Read More →
+                  </a>
                 </article>
               </li>
             );
