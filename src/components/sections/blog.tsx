@@ -42,29 +42,33 @@ const Blog = () => {
             return (
               <li key={id}>
                 <article>
-                  <p className="mb-1 text-[0.65rem] font-extralight">
-                    {publishDate} • {readTime}
-                  </p>
-
-                  <ul className="mb-2 flex gap-2 text-[0.65rem] font-extralight">
-                    {tags.map((tag) => {
-                      return <li key={tag}>{tag}</li>;
-                    })}
-                  </ul>
-
                   <h3 className="mb-2 text-[0.875rem] font-semibold">
                     {title}
                   </h3>
 
-                  <p className="mb-2 text-[0.75rem]">{description}</p>
+                  <p className="mb-1 text-[0.65rem] font-light">
+                    {publishDate} • {readTime}
+                  </p>
 
-                  <a
-                    className="text-right text-[0.75rem] font-medium"
-                    href={blogUrl}
-                    target="_blank"
-                  >
-                    Read More →
-                  </a>
+                  <p className="mb-2 text-[0.75rem] font-normal">
+                    {description}
+                  </p>
+
+                  <div className="flex items-center justify-between pr-4">
+                    <ul className="flex gap-2 text-[0.65rem] font-light">
+                      {tags.map((tag) => {
+                        return <li key={tag}>{tag}</li>;
+                      })}
+                    </ul>
+
+                    <a
+                      className="rounded-sm text-right text-[0.75rem] font-normal underline-offset-4 outline-offset-4 hover:underline"
+                      href={blogUrl}
+                      target="_blank"
+                    >
+                      Read More →
+                    </a>
+                  </div>
                 </article>
               </li>
             );
