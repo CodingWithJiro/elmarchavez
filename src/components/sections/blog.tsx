@@ -21,6 +21,18 @@ const blogList: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
   },
+  {
+    id: 2,
+    title:
+      'Should you use Gemma 4 for your Development? A Multiversal Analysis to Determine if Gemma 4 is Right for You!',
+    description:
+      "AI tools are becoming increasingly common in modern development workflows. In this article, we share our experience using Google's Gemma 4 through local setup with Ollama, hallucination testing, output evaluation, and AI-agent experimentation.",
+    publishDate: 'May 2026',
+    readTime: '19 min read',
+    tags: ['#llm', '#ollama', '#gemma4'],
+    blogUrl:
+      'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
+  },
 ];
 
 const Blog = () => {
@@ -28,7 +40,7 @@ const Blog = () => {
     <section className="border-border/40 bg-card rounded-lg border p-4 transition-colors duration-150 ease-in-out">
       <h2 className="mb-3 text-lg font-bold">Blog</h2>
 
-      <ul>
+      <ul className="flex flex-col gap-4">
         {blogList.map(
           ({
             id,
@@ -40,7 +52,10 @@ const Blog = () => {
             blogUrl,
           }) => {
             return (
-              <li key={id}>
+              <li
+                className="border-border/60 border-b pb-4 last:border-b-0"
+                key={id}
+              >
                 <article>
                   <h3 className="mb-2 text-[0.875rem] font-semibold">
                     {title}
