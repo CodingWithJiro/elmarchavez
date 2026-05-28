@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 type BlogType = {
   id: number;
   title: string;
@@ -6,6 +8,7 @@ type BlogType = {
   readTime: string;
   tags: string[];
   blogUrl: string;
+  imgUrl: string;
 };
 
 const blogList: BlogType[] = [
@@ -20,6 +23,7 @@ const blogList: BlogType[] = [
     tags: ['#llm', '#ollama', '#gemma4'],
     blogUrl:
       'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
+    imgUrl: '/img/blog-1.webp',
   },
   {
     id: 2,
@@ -32,6 +36,7 @@ const blogList: BlogType[] = [
     tags: ['#llm', '#ollama', '#gemma4'],
     blogUrl:
       'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
+    imgUrl: '/img/blog-1.webp',
   },
 ];
 
@@ -50,10 +55,11 @@ const Blog = () => {
             readTime,
             tags,
             blogUrl,
+            imgUrl,
           }) => {
             return (
               <li
-                className="border-border/60 border-b pb-4 last:border-b-0"
+                className="border-border/60 border-b pb-4 last:border-b-0 md:flex md:flex-row md:items-center md:justify-between md:gap-4"
                 key={id}
               >
                 <article>
@@ -85,6 +91,10 @@ const Blog = () => {
                     </a>
                   </div>
                 </article>
+
+                <div className="hidden max-w-200 md:block">
+                  <Image src={imgUrl} alt="" width={800} height={400} />
+                </div>
               </li>
             );
           },
