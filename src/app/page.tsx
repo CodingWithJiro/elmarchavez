@@ -1,4 +1,5 @@
 import About from '@/components/sections/about';
+import Blog from '@/components/sections/blog';
 import Hero from '@/components/sections/hero';
 import Projects from '@/components/sections/projects';
 import TechStack from '@/components/sections/tech-stack';
@@ -12,6 +13,7 @@ export default function Home() {
         <TechStack />
       </div>
       <Projects />
+      <Blog />
     </div>
   );
 }

@@ -9,7 +9,7 @@ const Hero = () => {
       <Image
         src="/img/profile-picture_600x600.jpg"
         alt="Elmar Chavez - Full Stack Developer"
-        className="h-25 w-25 rounded-lg md:h-40 md:w-40"
+        className="border-ring/20 h-25 w-25 rounded-lg border md:h-40 md:w-40"
         width={600}
         height={600}
         loading="eager"
