@@ -14,10 +14,10 @@ export default function Home() {
         <TechStack />
       </div>
       <Projects />
-      <Blog />
       <div>
         <Experience />
       </div>
+      <Blog />
     </div>
   );
 }
