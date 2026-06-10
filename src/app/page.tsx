@@ -13,10 +13,10 @@ export default function Home() {
         <About />
         <TechStack />
       </div>
-      <Projects />
       <div>
         <Experience />
       </div>
+      <Projects />
       <Blog />
     </div>
   );
