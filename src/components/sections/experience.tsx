@@ -36,17 +36,20 @@ const workExperiences: WorkExperience[] = [
 
 const Experience = () => {
   return (
-    <section>
-      <h2>Experience</h2>
+    <section className="border-border/40 bg-card mb-4 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+      <h2 className="mb-3 text-lg font-bold">Experience</h2>
 
-      <ul>
+      <ul className="flex flex-col gap-4">
         {workExperiences.map(
           ({ id, startDate, endDate, position, companyName, location }) => {
             return (
-              <li key={id}>
-                <p>{position}</p>
-                <p>{`${companyName} · ${location}`}</p>
-                <p>{`${startDate} - ${endDate}`}</p>
+              <li
+                className="before:border-border before:bg-background first:before:bg-foreground after:bg-border/50 hover:before:bg-foreground relative pl-6 before:absolute before:top-1 before:left-0 before:h-3 before:w-3 before:rounded-full before:border-2 before:transition-colors before:duration-150 before:ease-in-out after:absolute after:top-4 after:-bottom-4 after:left-1.5 after:w-px last:after:hidden"
+                key={id}
+              >
+                <p className="mb-1 text-base font-semibold">{position}</p>
+                <p className="text-[0.75rem]">{`${companyName} · ${location}`}</p>
+                <p className="text-muted-foreground text-[0.75rem]">{`${startDate} - ${endDate}`}</p>
               </li>
             );
           },
