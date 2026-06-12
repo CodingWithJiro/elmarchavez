@@ -27,7 +27,7 @@ const workExperiences: WorkExperience[] = [
   {
     id: 1,
     startDate: 'March 2025',
-    endDate: 'June 2025',
+    endDate: 'June 2026',
     position: 'Full Stack Developer',
     companyName: 'Freelance',
     location: 'Philippines',
@@ -36,7 +36,7 @@ const workExperiences: WorkExperience[] = [
 
 const Experience = () => {
   return (
-    <section className="border-border/40 bg-card mb-4 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+    <section className="border-border/40 bg-card mb-4 rounded-lg border p-4 transition-colors duration-150 ease-in-out max-w-[20rem]">
       <h2 className="mb-3 text-lg font-bold">Experience</h2>
 
       <ul className="flex flex-col gap-4">
