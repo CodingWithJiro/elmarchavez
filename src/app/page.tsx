@@ -13,10 +13,10 @@ export default function Home() {
         <About />
         <TechStack />
       </div>
-      <div>
+      <div className="gap 4 mb-4 flex flex-col gap-4 md:flex-row">
         <Experience />
+        <Projects />
       </div>
-      <Projects />
       <Blog />
     </div>
   );
