@@ -106,7 +106,7 @@ const Experience = () => {
                   className="before:border-border before:bg-background first:before:bg-foreground after:bg-border/50 hover:before:bg-foreground relative pl-6 before:absolute before:top-1 before:left-0 before:h-3 before:w-3 before:rounded-full before:border-2 before:transition-colors before:duration-150 before:ease-in-out after:absolute after:top-4 after:-bottom-4 after:left-1.5 after:w-px after:transition-colors after:duration-150 after:ease-in-out last:after:hidden"
                   key={id}
                 >
-                  <p className="focus-within:underline-red-500 decoration-muted-foreground relative mb-1 inline-block text-[0.85rem] font-semibold decoration-1 underline-offset-4 focus-within:underline">
+                  <p className="decoration-muted-foreground relative mb-1 inline-block text-[0.85rem] font-semibold decoration-1 underline-offset-4 focus-within:underline">
                     {title}
                     <a
                       className="text-muted-foreground hover:text-foreground focus-visible:text-foreground"
