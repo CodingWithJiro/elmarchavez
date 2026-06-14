@@ -113,11 +113,11 @@ const Experience = () => {
                     </a>
                   </p>
                   <p className="text-[0.75rem]">
+                    {institution}
+                    {' · '}
                     <span className="text-muted-foreground text-[0.70rem]">
                       {`Issued ${dateReceived}`}
                     </span>
-                    {' · '}
-                    {institution}
                   </p>
                 </li>
               );
