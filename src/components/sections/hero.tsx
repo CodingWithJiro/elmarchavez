@@ -2,6 +2,47 @@ import Image from 'next/image';
 import ThemeToggle from '../theme/theme-toggle';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiFrontendmentor, SiDevdotto, SiCodewars } from 'react-icons/si';
+import { IconType } from 'react-icons';
+
+type Link = {
+  id: number;
+  url: string;
+  label: string;
+  Icon: IconType;
+};
+
+const links: Link[] = [
+  {
+    id: 1,
+    url: 'https://github.com/CodingWithJiro',
+    label: 'Visit my GitHub profile',
+    Icon: FaGithub,
+  },
+  {
+    id: 2,
+    url: 'https://www.linkedin.com/in/elmar-chavez/',
+    label: 'Connect with me in LinkedIn',
+    Icon: FaLinkedin,
+  },
+  {
+    id: 3,
+    url: 'https://www.frontendmentor.io/profile/CodingWithJiro',
+    label: 'See my work in Frontend Mentor',
+    Icon: SiFrontendmentor,
+  },
+  {
+    id: 4,
+    url: 'https://www.codewars.com/users/CodingWithJiro',
+    label: "Let's solve code challenges in CodeWars",
+    Icon: SiCodewars,
+  },
+  {
+    id: 5,
+    url: 'https://dev.to/codingwithjiro',
+    label: 'Follow me in dev.to',
+    Icon: SiDevdotto,
+  },
+];
 
 const Hero = () => {
   return (
@@ -24,63 +65,20 @@ const Hero = () => {
           </p>
 
           <ul className="flex flex-row gap-3.5 md:gap-4">
-            <li>
-              <a
-                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
-                href="https://github.com/CodingWithJiro"
-                target="_blank"
-                aria-label="Visit my GitHub profile"
-              >
-                <FaGithub className="size-4.5 md:size-5" aria-hidden="true" />
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
-                href="https://www.linkedin.com/in/elmar-chavez/"
-                target="_blank"
-                aria-label="Connect with me in LinkedIn"
-              >
-                <FaLinkedin className="size-4.5 md:size-5" aria-hidden="true" />
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
-                href="https://www.frontendmentor.io/profile/CodingWithJiro"
-                target="_blank"
-                aria-label="See my work in Frontend Mentor"
-              >
-                <SiFrontendmentor
-                  className="size-4.5 md:size-5"
-                  aria-hidden="true"
-                />
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
-                href="https://www.codewars.com/users/CodingWithJiro"
-                target="_blank"
-                aria-label="Let's solve code challenges in CodeWars"
-              >
-                <SiCodewars className="size-4.5 md:size-5" aria-hidden="true" />
-              </a>
-            </li>
-
-            <li>
-              <a
-                className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
-                href="https://dev.to/codingwithjiro"
-                target="_blank"
-                aria-label="Follow me in dev.to"
-              >
-                <SiDevdotto className="size-4.5 md:size-5" aria-hidden="true" />
-              </a>
-            </li>
+            {links.map(({ id, url, label, Icon }) => {
+              return (
+                <li key={id}>
+                  <a
+                    className="text-muted-foreground hover:text-accent focus-visible:outline-muted-foreground focus-visible:text-foreground inline-flex items-center justify-center rounded-sm outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2"
+                    href={url}
+                    target="_blank"
+                    aria-label={label}
+                  >
+                    <Icon className="size-4.5 md:size-5" aria-hidden="true" />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
