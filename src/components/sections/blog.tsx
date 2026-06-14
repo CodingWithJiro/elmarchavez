@@ -83,7 +83,7 @@ const Blog = () => {
                     </ul>
 
                     <a
-                      className="rounded-sm text-right text-[0.75rem] font-normal underline-offset-4 outline-offset-4 hover:underline"
+                      className="focus-visible:outline-muted-foreground rounded-sm text-right text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline"
                       href={blogUrl}
                       target="_blank"
                     >
