@@ -15,6 +15,19 @@ const blogList: BlogType[] = [
   {
     id: 1,
     title:
+      'Two Devs and a Copilot Created ClassifierAI: A Prototype Chrome Extension that Automatically Detects AI-Generated Content on DEV!',
+    description:
+      'We revived an unfinished project and turned it into ClassifierAI, a prototype Chrome extension that detects AI-generated content on DEV using machine learning.',
+    publishDate: 'June 2026',
+    readTime: '15 min read',
+    tags: ['#opensource', '#machinelearning', '#copilot'],
+    blogUrl:
+      'https://dev.to/devengers/two-devs-and-a-copilot-created-classifierai-a-prototype-chrome-extension-that-automatically-4fge',
+    imgUrl: '/img/blog-2.webp',
+  },
+  {
+    id: 2,
+    title:
       'Should you use Gemma 4 for your Development? A Multiversal Analysis to Determine if Gemma 4 is Right for You!',
     description:
       "AI tools are becoming increasingly common in modern development workflows. In this article, we share our experience using Google's Gemma 4 through local setup with Ollama, hallucination testing, output evaluation, and AI-agent experimentation.",
@@ -70,7 +83,7 @@ const Blog = () => {
                     </ul>
 
                     <a
-                      className="rounded-sm text-right text-[0.75rem] font-normal underline-offset-4 outline-offset-4 hover:underline"
+                      className="focus-visible:outline-muted-foreground rounded-sm text-right text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline"
                       href={blogUrl}
                       target="_blank"
                     >
@@ -79,7 +92,7 @@ const Blog = () => {
                   </div>
                 </article>
 
-                <div className="hidden max-w-200 md:block">
+                <div className="hidden w-67.5 shrink-0 md:block">
                   <Image src={imgUrl} alt="" width={800} height={400} />
                 </div>
               </li>
