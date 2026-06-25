@@ -1,13 +1,5 @@
 import Image from 'next/image';
-
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  imgUrl: string;
-  imgUrlDark: string;
-  siteUrl: string;
-};
+import type { Project } from '@/types/project';
 
 const projectList: Project[] = [
   {
