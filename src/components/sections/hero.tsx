@@ -2,16 +2,9 @@ import Image from 'next/image';
 import ThemeToggle from '../theme/theme-toggle';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiFrontendmentor, SiDevdotto, SiCodewars } from 'react-icons/si';
-import { IconType } from 'react-icons';
+import type { SocialLink } from '@/types/social-link';
 
-type Link = {
-  id: number;
-  url: string;
-  label: string;
-  Icon: IconType;
-};
-
-const links: Link[] = [
+const socialLinks: SocialLink[] = [
   {
     id: 1,
     url: 'https://github.com/CodingWithJiro',
@@ -65,7 +58,7 @@ const Hero = () => {
           </p>
 
           <ul className="flex flex-row gap-3.5 md:gap-4">
-            {links.map(({ id, url, label, Icon }) => {
+            {socialLinks.map(({ id, url, label, Icon }) => {
               return (
                 <li key={id}>
                   <a

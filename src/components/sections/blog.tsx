@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { blogList } from '@/data/blogList';
+import { blogList } from '@/data/blog-list';
 
 const Blog = () => {
   return (

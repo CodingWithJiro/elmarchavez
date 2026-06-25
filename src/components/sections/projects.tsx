@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { projectList } from '@/data/projectList';
+import { projectList } from '@/data/project-list';
 
 const Projects = () => {
   return (
