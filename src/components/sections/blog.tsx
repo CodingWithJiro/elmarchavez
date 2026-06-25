@@ -1,15 +1,5 @@
 import Image from 'next/image';
-
-type BlogType = {
-  id: number;
-  title: string;
-  description: string;
-  publishDate: string;
-  readTime: string;
-  tags: string[];
-  blogUrl: string;
-  imgUrl: string;
-};
+import { BlogType } from '@/types/blog';
 
 const blogList: BlogType[] = [
   {
