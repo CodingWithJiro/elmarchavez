@@ -1,21 +1,5 @@
 import { FiExternalLink } from 'react-icons/fi';
-
-type WorkExperience = {
-  id: number;
-  startDate: string;
-  endDate: string;
-  position: string;
-  companyName: string;
-  location: string;
-};
-
-type Certificate = {
-  id: number;
-  title: string;
-  institution: string;
-  dateReceived: string;
-  urlLink: string;
-};
+import type { WorkExperience, Certificate } from '@/types/experience';
 
 const workExperiences: WorkExperience[] = [
   {
