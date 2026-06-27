@@ -21,4 +21,9 @@ describe('Social Links data', () => {
     const hasProperLabels = labels.every((label) => label.trim().length > 0);
     expect(hasProperLabels).toBe(true);
   });
+  test('every social link has a valid icon component', () => {
+    const icons = socialLinks.map(({ Icon }) => Icon);
+    const hasValidIcons = icons.every((icon) => typeof icon === 'function');
+    expect(hasValidIcons).toBe(true);
+  });
 });
