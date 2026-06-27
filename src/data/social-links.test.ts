@@ -16,4 +16,9 @@ describe('Social Links data', () => {
     const uniqueIds = new Set(ids);
     expect(socialLinks.length).toBe(uniqueIds.size);
   });
+  test('every label is non-empty', () => {
+    const labels = socialLinks.map(({ label }) => label);
+    const hasProperLabels = labels.every((label) => label.trim().length > 0);
+    expect(hasProperLabels).toBe(true);
+  });
 });
