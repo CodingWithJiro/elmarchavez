@@ -11,4 +11,12 @@ describe('Project List data', () => {
     });
     expect(isValid).toBe(true);
   });
+  test('every project has a non-empty image path', () => {
+    const imgUrls = projectList.map(({ imgUrl }) => imgUrl);
+    const imgUrlsDark = projectList.map(({ imgUrlDark }) => imgUrlDark);
+    const allImgUrls = [...imgUrls, ...imgUrlsDark];
+    const isNotEmpty = allImgUrls.every((imgUrl) => imgUrl.trim().length > 0);
+
+    expect(isNotEmpty).toBe(true);
+  });
 });
