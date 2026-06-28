@@ -23,4 +23,11 @@ describe('Project List data', () => {
     const isNotEmpty = titles.every((title) => title.trim().length > 0);
     expect(isNotEmpty).toBe(true);
   });
+  test('every project has a non-empty description', () => {
+    const descriptions = projectList.map(({ description }) => description);
+    const isNotEmpty = descriptions.every(
+      (description) => description.trim().length > 0,
+    );
+    expect(isNotEmpty).toBe(true);
+  });
 });
