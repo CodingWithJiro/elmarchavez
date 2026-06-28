@@ -2,7 +2,19 @@ import { BlogType } from '@/types/blog';
 
 export const blogList: BlogType[] = [
   {
-    id: 1,
+    id: 3,
+    title: 'Why Every Software Engineer Should Read "The Psychology of Money"',
+    description:
+      'Inspired by "The Psychology of Money", I explored why financial literacy is one of the most underrated career skills software engineers need in the tech industry.',
+    publishDate: 'June 2026',
+    readTime: '3 min read',
+    tags: ['#career', '#productivity', '#finances'],
+    blogUrl:
+      'https://dev.to/devengers/why-every-software-engineer-should-read-the-psychology-of-money-2b6e',
+    imgUrl: '/img/blog-3.jpg',
+  },
+  {
+    id: 2,
     title:
       'Two Devs and a Copilot Created ClassifierAI: A Prototype Chrome Extension that Automatically Detects AI-Generated Content on DEV!',
     description:
@@ -15,7 +27,7 @@ export const blogList: BlogType[] = [
     imgUrl: '/img/blog-2.webp',
   },
   {
-    id: 2,
+    id: 1,
     title:
       'Should you use Gemma 4 for your Development? A Multiversal Analysis to Determine if Gemma 4 is Right for You!',
     description:
