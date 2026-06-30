@@ -23,4 +23,9 @@ describe('Blog list data', () => {
     const hasThreeTags = tagList.every((tags) => tags.length >= 3);
     expect(hasThreeTags).toBe(true);
   });
+  test('every blog has non-empty tag names', () => {
+    const tagList = blogList.map(({ tags }) => tags);
+    const hasNonEmptyTags = tagList.every((tags) => isNotEmpty(tags));
+    expect(hasNonEmptyTags).toBe(true);
+  });
 });
