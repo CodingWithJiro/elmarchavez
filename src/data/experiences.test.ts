@@ -27,4 +27,14 @@ describe('Work Experiences and Certificates data', () => {
     );
     expect(isNotEmpty).toBe(true);
   });
+  test('every certificate uses a valid HTTPS URL', () => {
+    const isValid = certificates.every(({ urlLink }) => {
+      try {
+        return new URL(urlLink).protocol === 'https:';
+      } catch {
+        return false;
+      }
+    });
+    expect(isValid).toBe(true);
+  });
 });
