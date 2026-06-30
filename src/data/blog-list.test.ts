@@ -1,5 +1,5 @@
 import { blogList } from './blog-list';
-import { isNotEmpty } from '@/tests/utils';
+import { isNotEmpty, isValidUrl } from '@/tests/utils';
 
 describe('Blog list data', () => {
   test('every blog has a non-empty title', () => {
@@ -9,5 +9,9 @@ describe('Blog list data', () => {
   test('every blog has a non-empty description', () => {
     const descriptions = blogList.map(({ description }) => description);
     expect(isNotEmpty(descriptions)).toBe(true);
+  });
+  test('every blog uses a valid HTTPS URL', () => {
+    const urls = blogList.map(({ blogUrl }) => blogUrl);
+    expect(isValidUrl(urls)).toBe(true);
   });
 });
