@@ -20,4 +20,11 @@ describe('Work Experiences and Certificates data', () => {
     const isNotEmpty = titles.every((title) => title.trim().length > 0);
     expect(isNotEmpty).toBe(true);
   });
+  test('every certificate has a non-empty institution', () => {
+    const institutions = certificates.map(({ institution }) => institution);
+    const isNotEmpty = institutions.every(
+      (institution) => institution.trim().length > 0,
+    );
+    expect(isNotEmpty).toBe(true);
+  });
 });
