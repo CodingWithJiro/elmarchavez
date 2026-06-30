@@ -18,4 +18,9 @@ describe('Blog list data', () => {
     const imgUrls = blogList.map(({ imgUrl }) => imgUrl);
     expect(isNotEmpty(imgUrls)).toBe(true);
   });
+  test('every blog has at least three tags', () => {
+    const tagList = blogList.map(({ tags }) => tags);
+    const hasThreeTags = tagList.every((tags) => tags.length >= 3);
+    expect(hasThreeTags).toBe(true);
+  });
 });
