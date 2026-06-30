@@ -8,4 +8,11 @@ describe('Work Experiences and Certificates data', () => {
     );
     expect(isNotEmpty).toBe(true);
   });
+  test('every work experience has a non-empty company name', () => {
+    const companyNames = workExperiences.map(({ companyName }) => companyName);
+    const isNotEmpty = companyNames.every(
+      (companyName) => companyName.trim().length > 0,
+    );
+    expect(isNotEmpty).toBe(true);
+  });
 });
