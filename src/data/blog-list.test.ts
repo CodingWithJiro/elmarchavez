@@ -14,4 +14,8 @@ describe('Blog list data', () => {
     const urls = blogList.map(({ blogUrl }) => blogUrl);
     expect(isValidUrl(urls)).toBe(true);
   });
+  test('every blog has a non-empty image path', () => {
+    const imgUrls = blogList.map(({ imgUrl }) => imgUrl);
+    expect(isNotEmpty(imgUrls)).toBe(true);
+  });
 });
