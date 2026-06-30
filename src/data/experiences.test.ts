@@ -1,8 +1,5 @@
 import { workExperiences, certificates } from './experiences';
-
-const isNotEmpty = (items: string[]) => {
-  return items.every((item) => item.trim().length > 0);
-};
+import { isNotEmpty, isValidUrl } from '@/tests/utils';
 
 describe('Work Experiences and Certificates data', () => {
   test('every work experience has a non-empty position', () => {
@@ -22,13 +19,7 @@ describe('Work Experiences and Certificates data', () => {
     expect(isNotEmpty(institutions)).toBe(true);
   });
   test('every certificate uses a valid HTTPS URL', () => {
-    const isValid = certificates.every(({ urlLink }) => {
-      try {
-        return new URL(urlLink).protocol === 'https:';
-      } catch {
-        return false;
-      }
-    });
-    expect(isValid).toBe(true);
+    const urls = certificates.map(({ urlLink }) => urlLink);
+    expect(isValidUrl(urls)).toBe(true);
   });
 });
