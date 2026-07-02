@@ -20,4 +20,9 @@ describe('Hero section', () => {
     const links = screen.getAllByRole('link', { name: /.+/ });
     expect(links).toHaveLength(socialLinks.length);
   });
+  test('renders developer profile image with accessible name', () => {
+    render(<Hero />);
+    const profileImage = screen.getByRole('img', { name: /elmar chavez/i });
+    expect(profileImage).toBeInTheDocument();
+  });
 });
