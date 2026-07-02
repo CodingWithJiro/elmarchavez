@@ -15,4 +15,9 @@ describe('Hero section', () => {
     const links = screen.getAllByRole('link');
     expect(links).toHaveLength(socialLinks.length);
   });
+  test('every social link has an accessible name', () => {
+    render(<Hero />);
+    const links = screen.getAllByRole('link', { name: /.+/ });
+    expect(links).toHaveLength(socialLinks.length);
+  });
 });
