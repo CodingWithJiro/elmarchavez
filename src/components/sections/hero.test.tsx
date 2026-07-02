@@ -25,4 +25,9 @@ describe('Hero section', () => {
     const profileImage = screen.getByRole('img', { name: /elmar chavez/i });
     expect(profileImage).toBeInTheDocument();
   });
+  test('renders theme toggle button', () => {
+    render(<Hero />);
+    const button = screen.getByRole('button', { name: /toggle theme/i });
+    expect(button).toBeInTheDocument();
+  });
 });
