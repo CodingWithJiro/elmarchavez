@@ -1,11 +1,11 @@
-const FRONTEND: string[] = [
+export const FRONTEND: string[] = [
   'JavaScript',
   'TypeScript',
   'React',
   'Next.js',
   'Tailwind CSS',
 ];
-const BACKEND: string[] = ['Node.js', 'Express', 'PostgreSQL'];
+export const BACKEND: string[] = ['Node.js', 'Express', 'PostgreSQL'];
 
 const TechStack = () => {
   return (
