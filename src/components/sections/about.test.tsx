@@ -7,4 +7,11 @@ describe('About section', () => {
     const title = screen.getByRole('heading', { name: /about/i });
     expect(title).toBeInTheDocument();
   });
+  test('renders developer introduction', () => {
+    render(<About />);
+    const introduction = screen.getByText(
+      /licensed civil engineer turned full stack developer/i,
+    );
+    expect(introduction).toBeInTheDocument();
+  });
 });
