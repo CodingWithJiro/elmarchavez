@@ -12,7 +12,7 @@ const TechStack = () => {
     <section className="border-border/40 bg-card flex flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
       <h2 className="text-lg font-bold">Tech Stack</h2>
 
-      <div>
+      <section>
         <h3 className="mb-1 text-base font-semibold">Frontend</h3>
 
         <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
@@ -27,9 +27,9 @@ const TechStack = () => {
             );
           })}
         </ul>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <h3 className="mb-1 text-base font-semibold">Backend</h3>
 
         <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
@@ -44,7 +44,7 @@ const TechStack = () => {
             );
           })}
         </ul>
-      </div>
+      </section>
     </section>
   );
 };
