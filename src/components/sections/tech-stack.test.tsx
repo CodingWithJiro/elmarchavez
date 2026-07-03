@@ -7,4 +7,9 @@ describe('Tech Stack section', () => {
     const title = screen.getByRole('heading', { name: /tech stack/i });
     expect(title).toBeInTheDocument();
   });
+  test('renders Frontend category heading', () => {
+    render(<TechStack />);
+    const title = screen.getByRole('heading', { name: /frontend/i });
+    expect(title).toBeInTheDocument();
+  });
 });
