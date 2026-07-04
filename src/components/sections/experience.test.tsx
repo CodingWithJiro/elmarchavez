@@ -18,7 +18,15 @@ describe('Experience section', () => {
     const title = screen.getByRole('heading', { name: /experience/i });
     const article = title.closest('article')!;
     const experienceSection = within(article);
-    const experiences = experienceSection.getAllByRole('listitem');
-    expect(experiences).toHaveLength(workExperiences.length);
+    const experiencesRendered = experienceSection.getAllByRole('listitem');
+    expect(experiencesRendered).toHaveLength(workExperiences.length);
+  });
+  test('renders every certificate', () => {
+    render(<Experience />);
+    const title = screen.getByRole('heading', { name: /certificate/i });
+    const article = title.closest('article')!;
+    const certificateSection = within(article);
+    const certificatesRendered = certificateSection.getAllByRole('listitem');
+    expect(certificatesRendered).toHaveLength(certificates.length);
   });
 });
