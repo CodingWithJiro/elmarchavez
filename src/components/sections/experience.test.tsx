@@ -7,4 +7,9 @@ describe('Experience section', () => {
     const title = screen.getByRole('heading', { name: /experience/i });
     expect(title).toBeInTheDocument();
   });
+  test('renders Certificates heading', () => {
+    render(<Experience />);
+    const title = screen.getByRole('heading', { name: /certificates/i });
+    expect(title).toBeInTheDocument();
+  });
 });
