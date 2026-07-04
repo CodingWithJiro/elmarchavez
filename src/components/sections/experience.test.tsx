@@ -29,4 +29,9 @@ describe('Experience section', () => {
     const certificatesRendered = certificateSection.getAllByRole('listitem');
     expect(certificatesRendered).toHaveLength(certificates.length);
   });
+  test('renders clickable certificate links', () => {
+    render(<Experience />);
+    const links = screen.getAllByRole('link', { name: /certificate/i });
+    expect(links).toHaveLength(certificates.length);
+  });
 });
