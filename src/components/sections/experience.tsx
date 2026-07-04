@@ -42,6 +42,7 @@ const Experience = () => {
                       className="text-muted-foreground hover:text-foreground focus-visible:text-foreground"
                       href={urlLink}
                       target="_blank"
+                      aria-label={`Open ${title} certificate`}
                     >
                       <FiExternalLink className="absolute top-px -right-5" />
                     </a>
