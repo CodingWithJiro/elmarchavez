@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
+import { workExperiences, certificates } from '@/data/experiences';
 import Experience from './experience';
 
 describe('Experience section', () => {
@@ -11,5 +12,13 @@ describe('Experience section', () => {
     render(<Experience />);
     const title = screen.getByRole('heading', { name: /certificates/i });
     expect(title).toBeInTheDocument();
+  });
+  test('renders every work experience', () => {
+    render(<Experience />);
+    const title = screen.getByRole('heading', { name: /experience/i });
+    const article = title.closest('article')!;
+    const experienceSection = within(article);
+    const experiences = experienceSection.getAllByRole('listitem');
+    expect(experiences).toHaveLength(workExperiences.length);
   });
 });
