@@ -13,4 +13,9 @@ describe('Projects section', () => {
     const projects = screen.getAllByRole('listitem');
     expect(projects).toHaveLength(projectList.length);
   });
+  test('renders every project link', () => {
+    render(<Projects />);
+    const projectLinks = screen.getAllByRole('link');
+    expect(projectLinks).toHaveLength(projectList.length);
+  });
 });
