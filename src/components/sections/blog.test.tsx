@@ -16,4 +16,9 @@ describe('Blog section', () => {
     const blogArticles = blogUl.children;
     expect(blogArticles).toHaveLength(blogList.length);
   });
+  test('renders every read more link', () => {
+    render(<Blog />);
+    const links = screen.getAllByRole('link');
+    expect(links).toHaveLength(blogList.length);
+  });
 });
