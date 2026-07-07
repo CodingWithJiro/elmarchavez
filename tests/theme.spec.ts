@@ -1,10 +1,24 @@
 import { test, expect } from '@playwright/test';
 
-test('visitor can open theme menu', async ({ page }) => {
-  await page.goto('/');
-  const themeButton = page.getByRole('button', { name: /toggle theme/i });
-  await themeButton.click();
-  await expect(page.getByRole('menuitem', { name: /dark/i })).toBeVisible();
-  await expect(page.getByRole('menuitem', { name: /light/i })).toBeVisible();
-  await expect(page.getByRole('menuitem', { name: /system/i })).toBeVisible();
+test.describe('Theme', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/');
+  });
+  test('visitor can open theme menu', async ({ page }) => {
+    const themeButton = page.getByRole('button', { name: /toggle theme/i });
+    await themeButton.click();
+    await expect(page.getByRole('menuitem', { name: /dark/i })).toBeVisible();
+    await expect(page.getByRole('menuitem', { name: /light/i })).toBeVisible();
+    await expect(page.getByRole('menuitem', { name: /system/i })).toBeVisible();
+  });
+  test('visitor can switch to dark theme', async ({ page }) => {
+    const themeButton = page.getByRole('button', { name: /toggle theme/i });
+    await themeButton.click();
+    const darkOption = page.getByRole('menuitem', { name: /dark/i });
+    await darkOption.click();
+    const root = page.locator('html');
+    await expect(root).toHaveClass(/dark/);
+    await page.reload();
+    await expect(root).toHaveClass(/dark/);
+  });
 });
