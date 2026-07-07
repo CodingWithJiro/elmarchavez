@@ -21,4 +21,14 @@ test.describe('Theme', () => {
     await page.reload();
     await expect(root).toHaveClass(/dark/);
   });
+  test('visitor can switch to light theme', async ({ page }) => {
+    const themeButton = page.getByRole('button', { name: /toggle theme/i });
+    await themeButton.click();
+    const lightOption = page.getByRole('menuitem', { name: /light/i });
+    await lightOption.click();
+    const root = page.locator('html');
+    await expect(root).not.toHaveClass(/dark/);
+    await page.reload();
+    await expect(root).not.toHaveClass(/dark/);
+  });
 });
