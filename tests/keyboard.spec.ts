@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { tabUntilFocused } from './utils/keyboard';
+import { projectList } from '@/data/project-list';
 
 test.describe('Keyboard Accessibility', () => {
   test.beforeEach(async ({ page }) => {
@@ -26,5 +27,22 @@ test.describe('Keyboard Accessibility', () => {
     await expect(page.getByRole('menuitem', { name: /dark/i })).toBeVisible();
     await expect(page.getByRole('menuitem', { name: /light/i })).toBeVisible();
     await expect(page.getByRole('menuitem', { name: /system/i })).toBeVisible();
+  });
+  test('visitor can tab into a project and open it in a new tab', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const project = projectList[0];
+    const link = page.getByRole('link', { name: project.title });
+    await tabUntilFocused(page, link, 'First Project');
+    await expect(link).toBeFocused();
+    const newPagePromise = page.waitForEvent('popup');
+    await page.keyboard.press('Enter');
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(project.siteUrl);
   });
 });
