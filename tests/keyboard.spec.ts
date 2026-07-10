@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { tabUntilFocused } from './utils/keyboard';
 import { projectList } from '@/data/project-list';
 import { blogList } from '@/data/blog-list';
+import { certificates } from '@/data/experiences';
 
 test.describe('Keyboard Accessibility', () => {
   test.beforeEach(async ({ page }) => {
@@ -96,5 +97,22 @@ test.describe('Keyboard Accessibility', () => {
     await page.keyboard.press('Enter');
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(blog.blogUrl);
+  });
+  test('visitor can tab to a certificate link and open in a new tab', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const certificate = certificates[0];
+    const link = page.getByRole('link', { name: certificate.title });
+    await tabUntilFocused(page, link, certificate.title);
+    expect(link).toBeFocused();
+    const newPagePromise = page.waitForEvent('popup');
+    await page.keyboard.press('Enter');
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(certificate.urlLink);
   });
 });
