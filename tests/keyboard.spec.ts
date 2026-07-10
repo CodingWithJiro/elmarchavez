@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { tabUntilFocused } from './utils/keyboard';
 import { projectList } from '@/data/project-list';
+import { blogList } from '@/data/blog-list';
 
 test.describe('Keyboard Accessibility', () => {
   test.beforeEach(async ({ page }) => {
@@ -70,13 +71,30 @@ test.describe('Keyboard Accessibility', () => {
       browserName === 'webkit',
       'WebKit on Windows does not traverse focus order correctly.',
     );
-    const hero = page.locator('footer');
-    const link = hero.getByRole('link', { name: /visit my github profile/i });
+    const footer = page.locator('footer');
+    const link = footer.getByRole('link', { name: /visit my github profile/i });
     await tabUntilFocused(page, link, 'GitHub Link');
     await expect(link).toBeFocused();
     const newPagePromise = page.waitForEvent('popup');
     await page.keyboard.press('Enter');
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL('https://github.com/CodingWithJiro');
+  });
+  test('visitor can tab to blog link and open in a new tab', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const blog = blogList[0];
+    const link = page.getByRole('link', { name: blog.title });
+    await tabUntilFocused(page, link, blog.title);
+    expect(link).toBeFocused();
+    const newPagePromise = page.waitForEvent('popup');
+    await page.keyboard.press('Enter');
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(blog.blogUrl);
   });
 });
