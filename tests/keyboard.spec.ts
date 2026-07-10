@@ -45,4 +45,21 @@ test.describe('Keyboard Accessibility', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(project.siteUrl);
   });
+  test('visitor can tab to a hero social link and open in a new tab', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const hero = page.locator('header');
+    const link = hero.getByRole('link', { name: /visit my github profile/i });
+    await tabUntilFocused(page, link, 'GitHub Link');
+    await expect(link).toBeFocused();
+    const newPagePromise = page.waitForEvent('popup');
+    await page.keyboard.press('Enter');
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL('https://github.com/CodingWithJiro');
+  });
 });
