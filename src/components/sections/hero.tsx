@@ -14,7 +14,7 @@ const Hero = () => {
         loading="eager"
       />
 
-      <div className="flex w-full flex-row justify-between">
+      <section className="flex w-full flex-row justify-between">
         <div>
           <h1 className="mb-1 text-lg font-bold md:text-3xl">Elmar Chavez</h1>
 
@@ -41,7 +41,7 @@ const Hero = () => {
         </div>
 
         <ThemeToggle />
-      </div>
+      </section>
     </header>
   );
 };

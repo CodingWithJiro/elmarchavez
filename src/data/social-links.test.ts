@@ -1,0 +1,23 @@
+import { socialLinks } from './social-links';
+import { isNotEmpty, isValidUrl } from '@/tests/utils';
+
+describe('Social Links data', () => {
+  test('every social link uses a valid HTTPS URL', () => {
+    const urls = socialLinks.map(({ url }) => url);
+    expect(isValidUrl(urls)).toBe(true);
+  });
+  test('every social link has a unique id', () => {
+    const ids = socialLinks.map(({ id }) => id);
+    const uniqueIds = new Set(ids);
+    expect(socialLinks.length).toBe(uniqueIds.size);
+  });
+  test('every label is non-empty', () => {
+    const labels = socialLinks.map(({ label }) => label);
+    expect(isNotEmpty(labels)).toBe(true);
+  });
+  test('every social link has a valid icon component', () => {
+    const icons = socialLinks.map(({ Icon }) => Icon);
+    const hasValidIcons = icons.every((icon) => typeof icon === 'function');
+    expect(hasValidIcons).toBe(true);
+  });
+});
