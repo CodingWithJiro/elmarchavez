@@ -2,20 +2,12 @@ import { WorkExperience, Certificate } from '@/types/experience';
 
 export const workExperiences: WorkExperience[] = [
   {
-    id: 3,
+    id: 2,
     startDate: 'June 2026',
     endDate: 'Present',
     position: 'Full Stack Developer',
     companyName: 'CALEC',
     location: 'New York, USA (Remote)',
-  },
-  {
-    id: 2,
-    startDate: 'June 2026',
-    endDate: 'Present',
-    position: 'Front End Developer',
-    companyName: 'KeelWorks',
-    location: 'Washington, USA (Remote)',
   },
   {
     id: 1,
