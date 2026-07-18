@@ -15,14 +15,11 @@
 ![Experience](https://img.shields.io/badge/experience-year%201-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.elmarchavez&left_text=repo%20views)
 
-## Elmar Chavez (CodingWithJiro) - Full Stack Developer
+## Elmar Chavez | Full Stack Developer
 
 A professional and modern web portfolio to showcase my projects, skills, and growth as a full stack developer.
 
-| _Mobile Preview (375x812)_                                  | _Desktop Preview (1440x960)_                                   |
-| ----------------------------------------------------------- | -------------------------------------------------------------- |
-| ![Mobile](/public/img/site-preview-mobile_375x812.png)      | ![Desktop](/public/img/site-preview-desktop_1440x960.png)      |
-| ![Mobile](/public/img/site-preview-mobile-dark_375x812.png) | ![Desktop](/public/img/site-preview-desktop-dark_1440x960.png) |
+![Mobile](/public/img/preview.png)
 
 ---
 
