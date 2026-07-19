@@ -30,12 +30,12 @@ A professional and modern web portfolio to showcase my projects, skills, and gro
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-- [Scripts](#scripts)
 - [Testing Strategy](#testing-strategy)
 - [Engineering Workflow](#engineering-workflow)
 - [Quality Assurance](#quality-assurance)
 - [Engineering Decisions](#engineering-decisions)
 - [Future Improvements](#future-improvements)
+- [Scripts](#scripts)
 - [Author](#author)
 - [License](#license)
 
@@ -74,19 +74,7 @@ A professional and modern web portfolio to showcase my projects, skills, and gro
 
 ---
 
-## Development Workflow
-
-This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/elmarchavez/network)** with descriptive commits and **[structured pull requests](REPO_PULL_REQUEST_CLOSED_LINK)**, mirroring professional team collaboration practices:
-
-[![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/elmarchavez/network)
-
----
-
-## Performance Report
-
-[![Lighthouse Report Preview](public/img/lighthouse-report.png)](docs/downloads/lighthouse-performance-report.pdf)
-
-A **Google Lighthouse** audit was conducted on the final version of this project. You can view the **[full report here](docs/downloads/lighthouse-performance-report.pdf)**.
+## Project Structure
 
 ---
 
@@ -103,7 +91,7 @@ npm run dev
 
 ---
 
-## Testing and Coverage
+## Testing Strategy
 
 Run tests:
 
@@ -128,9 +116,33 @@ Coverage Summary:
 
 ---
 
-## What I Learned
+## Engineering Workflow
+
+This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/elmarchavez/network)** with descriptive commits and **[structured pull requests](REPO_PULL_REQUEST_CLOSED_LINK)**, mirroring professional team collaboration practices:
+
+[![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/elmarchavez/network)
+
+---
+
+## Quality Assurance
+
+[![Lighthouse Report Preview](public/img/lighthouse-report.png)](docs/downloads/lighthouse-performance-report.pdf)
+
+A **Google Lighthouse** audit was conducted on the final version of this project. You can view the **[full report here](docs/downloads/lighthouse-performance-report.pdf)**.
+
+---
+
+## Engineering Decisions
 
 <!-- INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT -->
+
+---
+
+## Future Improvements
+
+---
+
+## Scripts
 
 ---
 
@@ -147,3 +159,5 @@ Month/Year: **April 2026**
 [![Frontend Mentor](https://img.shields.io/badge/Frontend%20Mentor-3F54A3?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/profile/CodingWithJiro)
 [![daily.dev](https://img.shields.io/badge/daily.dev-171717?style=for-the-badge&logo=daily.dev&logoColor=38BDF8)](https://app.daily.dev/elmarchavez)
 [![dev.to](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=00C7B7)](https://dev.to/codingwithjiro)
+
+## License
