@@ -26,6 +26,18 @@ A professional and modern web portfolio to showcase my projects, skills, and gro
 ## Table of Contents
 
 - [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Scripts](#scripts)
+- [Testing Strategy](#testing-strategy)
+- [Engineering Workflow](#engineering-workflow)
+- [Quality Assurance](#quality-assurance)
+- [Engineering Decisions](#engineering-decisions)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+- [License](#license)
 
 ---
 
@@ -78,7 +90,7 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 ---
 
-## How to Run
+## Getting Started
 
 Open a terminal and type:
 
