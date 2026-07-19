@@ -15,23 +15,23 @@
 ![Experience](https://img.shields.io/badge/experience-year%201-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.elmarchavez&left_text=repo%20views)
 
-## Elmar Chavez | Full Stack Developer
+## Elmar Chavez | Full Stack Developer | [Live Demo](https://elmarchavez.vercel.app)
 
 A professional and modern web portfolio to showcase my projects, skills, and growth as a full stack developer.
 
-![Mobile](/public/img/preview.png)
+![Site Preview](/public/img/preview.png)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
 
 ---
 
 ## Overview
 
 <!-- INSERT PROJECT OVERVIEW (1-2 PARAGRAPHS) -->
-
----
-
-## Live Demo
-
-You can check out the live website **[here](https://elmarchavez.vercel.app)**
 
 ---
 
