@@ -179,26 +179,46 @@ http://localhost:3000
 
 ## Testing Strategy
 
-Run tests:
+The project follows a multi-layered testing strategy to verify functionality, accessibility, and user interactions across different levels of the application.
+
+| Test Type           | Purpose                                                                              | Tools                         |
+| ------------------- | ------------------------------------------------------------------------------------ | ----------------------------- |
+| Unit Tests          | Validate individual components, hooks, and data modules in isolation.                | Vitest, React Testing Library |
+| Integration Tests   | Verify interactions between components and ensure sections render correctly.         | Vitest, React Testing Library |
+| End-to-End Tests    | Simulate real user journeys such as theme switching, navigation, and external links. | Playwright                    |
+| Accessibility Tests | Validate keyboard navigation, focus management, skip links, and accessible names.    | Playwright                    |
+
+### Running Tests
+
+Run the unit and integration test suite:
 
 ```bash
 npm test
 ```
 
-Run tests with coverage:
+Generate a code coverage report:
 
 ```bash
-npm test -- --coverage
+npm run test:coverage
 ```
 
-Coverage Summary:
+Run the end-to-end test suite:
 
-<!-- | _Coverage Type_ | _Result_ |
-| --------------- | -------- |
-| Statements      | 96.29%   |
-| Branches        | 86.45%   |
-| Functions       | 98.43%   |
-| Lines           | 96.53%   | -->
+```bash
+npm run test:e2e
+```
+
+Launch the Playwright interactive UI:
+
+```bash
+npm run test:e2e:ui
+```
+
+Debug Playwright tests:
+
+```bash
+npm run test:e2e:debug
+```
 
 ---
 
