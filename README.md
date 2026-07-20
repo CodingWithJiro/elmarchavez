@@ -106,6 +106,42 @@ Rather than emphasizing on complex animations, I intentionally focused on access
 
 ## Project Structure
 
+```text
+elmarchavez/
+├── .github/
+│   └── workflows/              # GitHub Actions CI workflow
+│
+├── public/                     # Static assets
+│   ├── icons/                  # Favicons and application icons
+│   ├── img/                    # Profile and portfolio images
+│   └── projects/               # Project screenshots
+│
+├── src/
+│   ├── app/                    # Next.js App Router
+│   ├── components/
+│   │   ├── accessibility/      # Accessibility components (Skip Link, etc.)
+│   │   ├── providers/          # Global React providers
+│   │   ├── sections/           # Portfolio page sections
+│   │   ├── theme/              # Theme system components
+│   │   └── ui/                 # Reusable UI components
+│   ├── data/                   # Centralized portfolio content
+│   ├── lib/                    # Shared utility functions
+│   ├── tests/                  # Unit and integration test helpers
+│   └── types/                  # Shared TypeScript types
+│
+├── tests/
+│   └── utils/                  # Playwright testing utilities
+│
+├── package.json                # Project dependencies and scripts
+├── playwright.config.ts        # Playwright configuration
+├── vitest.config.ts            # Vitest configuration
+├── tsconfig.json               # TypeScript configuration
+├── next.config.ts              # Next.js configuration
+├── eslint.config.mjs           # ESLint configuration
+├── LICENSE                     # MIT License
+└── README.md                   # You are here
+```
+
 ---
 
 ## Getting Started
