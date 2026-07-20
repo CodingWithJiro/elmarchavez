@@ -250,6 +250,20 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 ## Scripts
 
+The following scripts are available for local development, testing, and production builds.
+
+| Script                   | Description                                                                |
+| ------------------------ | -------------------------------------------------------------------------- |
+| `npm run dev`            | Starts the Next.js development server with hot reloading.                  |
+| `npm run build`          | Creates an optimized production build.                                     |
+| `npm run start`          | Starts the production server after building the application.               |
+| `npm run lint`           | Runs ESLint to identify code quality issues.                               |
+| `npm test`               | Runs the Vitest unit and integration test suite.                           |
+| `npm run test:coverage`  | Generates a code coverage report using Vitest.                             |
+| `npm run test:e2e`       | Runs the Playwright end-to-end test suite.                                 |
+| `npm run test:e2e:ui`    | Launches the Playwright interactive UI for developing and debugging tests. |
+| `npm run test:e2e:debug` | Executes Playwright tests in debug mode with step-by-step inspection.      |
+
 ---
 
 ## Author
