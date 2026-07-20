@@ -254,7 +254,7 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 ## Author
 
-Created by **Elmar Chavez**
+Created by: **Elmar Chavez** (CodingWithJiro)
 
 Month/Year: **April 2026**
 
