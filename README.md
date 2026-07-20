@@ -51,7 +51,27 @@ Rather than emphasizing on complex animations, I intentionally focused on access
 
 ## Features
 
-<!-- INSERT LIST OF PROJECT FEATURES -->
+### User Features
+
+| Feature             | Description                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Responsive Design   | Optimized layout for mobile, tablet, and desktop devices using a mobile-first approach.                                        |
+| Theme System        | Supports light, dark, and system themes with persistent user preferences using `next-themes`.                                  |
+| Project Showcase    | Displays featured projects with responsive layouts and theme-aware screenshots that automatically adapt to the selected theme. |
+| Experience Timeline | Highlights professional experience, freelance work, and certifications using a semantic timeline-inspired layout.              |
+| Technical Blog      | Showcases technical articles with publish dates, reading times, tags, and article previews.                                    |
+| External Profiles   | Provides quick access to GitHub, LinkedIn, Frontend Mentor, DEV Community, and Codewars.                                       |
+
+### Engineering Highlights
+
+| Feature                    | Description                                                                                                                                    |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accessibility              | Built with semantic HTML, keyboard navigation, skip links, accessible names, and visible focus states for improved accessibility               |
+| Testing Strategy           | Comprehensive unit, integration, and end-to-end testing using Vitest, React Testing Library, and Playwright.                                   |
+| Continuous Integration     | Automated linting, testing, coverage reporting, end-to-end testing, and production build verification using GitHub Actions.                    |
+| Feature-Based Architecture | Organized using reusable components, centralized data modules, shared TypeScript types, and reusable utilities for long-term maintainability.  |
+| Code Quality               | Uses TypeScript, ESLint, Prettier, and consistent project organization to improve readability and maintainability.                             |
+| Performance Optimization   | Leverages Next.js `<Image>` optimization, font optimization, SSR-safe theme handling, and responsive image loading for a fast user experience. |
 
 ---
 
