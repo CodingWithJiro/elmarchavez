@@ -146,13 +146,33 @@ elmarchavez/
 
 ## Getting Started
 
-Open a terminal and type:
+### Prerequisites
+
+- Node.js (v22 or later)
+- npm (comes with Node.js)
+
+### Installation
+
+Clone the repository and install the project dependencies:
 
 ```bash
 git clone https://github.com/CodingWithJiro/elmarchavez.git
 cd elmarchavez
 npm install
+```
+
+### Run the Development Server
+
+Start the Next.js development server:
+
+```bash
 npm run dev
+```
+
+Then open your browser and visit:
+
+```text
+http://localhost:3000
 ```
 
 ---
