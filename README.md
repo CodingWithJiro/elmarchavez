@@ -43,7 +43,9 @@ A professional and modern web portfolio to showcase my projects, skills, and gro
 
 ## Overview
 
-<!-- INSERT PROJECT OVERVIEW (1-2 PARAGRAPHS) -->
+This is my professional web portfolio built with Next.js, TypeScript, and Tailwind CSS to showcase my work and experience as a full stack developer. It reflects the engineering practices I apply when building modern web applications.
+
+Rather than emphasizing on complex animations, I intentionally focused on accessibility, semantic HTML, maintainable architecture, automated testing, and continuous integration. The result is a scalable, well-tested, and maintainable codebase that reflects the engineering practices I value as a software engineer.
 
 ---
 
