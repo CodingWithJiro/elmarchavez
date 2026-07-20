@@ -224,7 +224,7 @@ npm run test:e2e:debug
 
 ## Engineering Workflow
 
-This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/elmarchavez/network)** with descriptive commits and **[structured pull requests](REPO_PULL_REQUEST_CLOSED_LINK)**, mirroring professional team collaboration practices:
+This project adapts professional team collaboration practices using **[feature-based branching workflow](https://github.com/CodingWithJiro/elmarchavez/network)** with descriptive commits and **[structured pull requests](https://github.com/CodingWithJiro/elmarchavez/pulls?q=is%3Apr+is%3Aclosed)**:
 
 [![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/elmarchavez/network)
 
