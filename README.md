@@ -267,3 +267,5 @@ Month/Year: **April 2026**
 [![dev.to](https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=00C7B7)](https://dev.to/codingwithjiro)
 
 ## License
+
+This project is licensed under the MIT License. See the [LICENSE](/LICENSE) file for details.
