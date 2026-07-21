@@ -240,7 +240,18 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 ## Engineering Decisions
 
-<!-- INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT -->
+| Engineering Decision                   | Rationale                                                                                                                                                                     |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Foundation Before Features             | Established the project with TypeScript, Tailwind CSS, testing, linting, formatting, accessibility, and project tooling before implementing UI components.                    |
+| SSR-Safe Theme Architecture            | Adopted `next-themes` with CSS variables to eliminate hydration mismatches while providing a scalable theme system.                                                           |
+| Accessibility-First Development        | Incorporated semantic HTML, keyboard navigation, Skip Links, focus management, and accessible names throughout development instead of treating accessibility as a final step. |
+| Data-Driven Rendering                  | Rendered projects, blog posts, experience, certifications, and social links from centralized typed data rather than hardcoded TSX.                                            |
+| Separation of Content and Presentation | Centralized portfolio data in `src/data` and shared interfaces in `src/types` to improve maintainability and reduce duplication.                                              |
+| Feature-Based Component Organization   | Organized components by responsibility to improve scalability and keep the codebase easier to navigate.                                                                       |
+| Iterative UI Refinement                | Continuously refined layout hierarchy, responsive behavior, spacing, and content organization as the portfolio evolved.                                                       |
+| Layered Testing Strategy               | Combined unit, integration, end-to-end, and accessibility testing to validate both implementation details and real user interactions.                                         |
+| Meaningful Code Coverage               | Measured coverage on application-owned code instead of inflating metrics with third-party wrapper components or generated files.                                              |
+| Continuous Integration                 | Automated linting, testing, production builds, and artifact generation using GitHub Actions to validate every change.                                                         |
 
 ---
 
