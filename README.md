@@ -257,6 +257,15 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 ## Future Improvements
 
+| Improvement               | Description                                                                                                          |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Integrated Blog           | Build a dedicated blog using Next.js instead of linking to external articles.                                        |
+| Visual Regression Testing | Add screenshot-based testing to detect unintended UI changes.                                                        |
+| Accessibility Auditing    | Integrate automated accessibility testing into the existing testing workflow.                                        |
+| Performance Monitoring    | Continue optimizing bundle size and Core Web Vitals as the project grows.                                            |
+| Expanded CI/CD            | Introduce additional GitHub Actions workflows such as dependency updates, security scanning, and automated releases. |
+| Portfolio Growth          | Continue adding projects, articles, certifications, and professional experience.                                     |
+
 ---
 
 ## Scripts
