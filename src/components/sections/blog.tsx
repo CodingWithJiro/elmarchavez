@@ -36,7 +36,7 @@ const Blog = () => {
                     {description}
                   </p>
 
-                  <div className="flex items-center justify-between pr-4">
+                  <div className="flex flex-col gap-4 pr-4 min-[425px]:flex-row min-[425px]:items-center min-[425px]:justify-between">
                     <ul className="flex gap-2 text-[0.65rem] font-light">
                       {tags.map((tag) => {
                         return <li key={tag}>{tag}</li>;
@@ -44,7 +44,7 @@ const Blog = () => {
                     </ul>
 
                     <a
-                      className="focus-visible:outline-muted-foreground rounded-sm text-right text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline"
+                      className="focus-visible:outline-muted-foreground rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
                       href={blogUrl}
                       target="_blank"
                       aria-label={`Read more about ${title}`}

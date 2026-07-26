@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: `${siteUrl}img/site-preview-meta_1200x630.png`,
+        url: `${siteUrl}img/site-preview-meta-dark_1200x630.png`,
         width: 1200,
         height: 630,
         alt: 'Elmar Chavez - Full Stack Developer',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Elmar Chavez - Full Stack Developer',
     description: metaDescription,
-    images: [`${siteUrl}img/site-preview-meta_1200x630.png`],
+    images: [`${siteUrl}img/site-preview-meta-dark_1200x630.png`],
   },
   robots: {
     index: true,
