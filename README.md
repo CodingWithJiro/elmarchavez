@@ -8,7 +8,7 @@
 [![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev)
 [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-[![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/docs/downloads/lighthouse-performance-report.pdf)
+[![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/public/docs/lighthouse-report.pdf)
 
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Test Coverage](https://img.shields.io/badge/test%20coverage-87%25-brightgreen)
@@ -232,9 +232,9 @@ This project adapts professional team collaboration practices using **[feature-b
 
 ## Quality Assurance
 
-[![Lighthouse Report Preview](public/img/lighthouse-report.png)](docs/downloads/lighthouse-performance-report.pdf)
+[![Lighthouse Report Preview](public/img/lighthouse-report.png)](/public/img/lighthouse-report.png)
 
-A **Google Lighthouse** audit was conducted on the final version of this project. You can view the **[full report here](docs/downloads/lighthouse-performance-report.pdf)**.
+A **Google Lighthouse** audit was conducted on the final version of this project. You can view the **[full report here](/public/docs/lighthouse-report.pdf)**.
 
 ---
 
