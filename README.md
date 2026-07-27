@@ -19,7 +19,7 @@
 
 A professional and modern web portfolio to showcase my projects, skills, and growth as a full stack developer.
 
-![Site Preview](/public/img/preview.png)
+![Site Preview](/public/img/preview_1650x928.png)
 
 ---
 
