@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Footer from '@/components/sections/footer';
 
 const metaDescription =
   'Blog posts on full stack development and tech from Elmar Chavez.';
@@ -23,3 +24,12 @@ export const metadata: Metadata = {
     description: metaDescription,
   },
 };
+
+export default function BlogPage() {
+  return (
+    <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
+      <h1>Blog</h1>
+      <Footer />
+    </main>
+  );
+}
