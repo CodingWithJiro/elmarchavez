@@ -3,8 +3,21 @@ import { blogList } from '@/data/blog-list';
 
 const Blog = () => {
   return (
-    <section className="border-border/40 bg-card rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+    <section className="border-border/40 bg-card relative rounded-lg border p-4 transition-colors duration-150 ease-in-out">
       <h2 className="mb-3 text-lg font-bold">Blog</h2>
+
+      <a
+        className="group absolute top-4 right-4 flex items-center gap-1 text-[1rem] font-normal transition-all duration-150 ease-in-out"
+        href="/blog"
+      >
+        <span className="max-w-0 overflow-hidden text-[0.75rem] whitespace-nowrap opacity-0 transition-all duration-150 group-hover:max-w-xs group-hover:opacity-100">
+          View all
+        </span>
+        <span className="group-hover:hidden">↗</span>
+        <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 group-hover:max-w-xs group-hover:opacity-100">
+          →
+        </span>
+      </a>
 
       <ul className="flex flex-col gap-4">
         {blogList.map(
