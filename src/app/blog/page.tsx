@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Footer from '@/components/sections/footer';
+import ThemeToggle from '@/components/theme/theme-toggle';
 
 const metaDescription =
   'Blog posts on full stack development and tech from Elmar Chavez.';
@@ -28,11 +29,15 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
-      <header>
-        <h1 className="mb-1 text-lg font-bold md:text-3xl">Blog</h1>
-        <p className="mb-6 text-sm font-medium md:text-base">
-          Articles, thoughts, and tech stuff.
-        </p>
+      <header className="flex justify-between">
+        <div>
+          <h1 className="mb-1 text-lg font-bold md:text-3xl">Blog</h1>
+          <p className="mb-6 text-sm font-medium md:text-base">
+            Articles, thoughts, and tech stuff.
+          </p>
+        </div>
+
+        <ThemeToggle />
       </header>
 
       <Footer />
