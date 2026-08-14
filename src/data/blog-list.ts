@@ -1,6 +1,6 @@
 import { BlogType } from '@/types/blog';
 
-const BLOGS: BlogType[] = [
+export const BLOGS: BlogType[] = [
   {
     id: 1,
     title:
