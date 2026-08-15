@@ -18,7 +18,7 @@ describe('Blog section', () => {
   });
   test('renders every read more link', () => {
     render(<Blog />);
-    const links = screen.getAllByRole('link');
+    const links = screen.getAllByRole('link', { name: /read more/i });
     expect(links).toHaveLength(blogList.length);
   });
 });
