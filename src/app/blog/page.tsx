@@ -45,7 +45,7 @@ export default function BlogPage() {
         <ThemeToggle />
       </header>
 
-      <ul>
+      <ul className="flex flex-col gap-4">
         {blogsLatestOrder.map(
           ({
             id,
@@ -56,12 +56,23 @@ export default function BlogPage() {
             tags,
             blogUrl,
             imgUrl,
+            imgAlt,
           }) => {
             return (
               <li
                 className="border-border/60 border-b pb-4 last:border-b-0 md:flex md:flex-row md:items-center md:justify-between md:gap-4"
                 key={id}
               >
+                <div className="border-ring/20 focus-within:border-ring has-hover:border-ring hidden w-55 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-150 ease-in-out md:block">
+                  <Image
+                    src={imgUrl}
+                    alt={imgAlt}
+                    width={800}
+                    height={400}
+                    className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+
                 <article>
                   <h2 className="mb-2 text-[0.875rem] font-semibold">
                     {title}
@@ -92,10 +103,6 @@ export default function BlogPage() {
                     </Link>
                   </div>
                 </article>
-
-                <div className="hidden w-67.5 shrink-0 md:block">
-                  <Image src={imgUrl} alt="" width={800} height={400} />
-                </div>
               </li>
             );
           },
