@@ -13,6 +13,8 @@ export const BLOGS: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
     imgUrl: '/img/blog-1.webp',
+    imgAlt:
+      'A collection of anime characters for a multiversal collaboration for an article.',
   },
   {
     id: 2,
@@ -26,6 +28,8 @@ export const BLOGS: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/two-devs-and-a-copilot-created-classifierai-a-prototype-chrome-extension-that-automatically-4fge',
     imgUrl: '/img/blog-2.webp',
+    imgAlt:
+      'A funny backgroups GIF image where Elmar and Francis are dancing with strange creatures.',
   },
   {
     id: 3,
@@ -38,6 +42,7 @@ export const BLOGS: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/why-every-software-engineer-should-read-the-psychology-of-money-2b6e',
     imgUrl: '/img/blog-3.jpg',
+    imgAlt: 'A meme image for stonks.',
   },
   {
     id: 4,
@@ -50,6 +55,7 @@ export const BLOGS: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/how-i-contributed-to-a-laravel-application-without-knowing-laravel-1dkl',
     imgUrl: '/img/blog-4.jpg',
+    imgAlt: 'Keyboard caps laid down on a white table.',
   },
 ];
 
