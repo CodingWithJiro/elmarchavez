@@ -21,6 +21,7 @@ const Blog = () => {
             tags,
             blogUrl,
             imgUrl,
+            imgAlt,
           }) => {
             return (
               <li
@@ -58,8 +59,14 @@ const Blog = () => {
                   </div>
                 </article>
 
-                <div className="hidden w-67.5 shrink-0 md:block">
-                  <Image src={imgUrl} alt="" width={800} height={400} />
+                <div className="border-ring/20 focus-within:border-ring has-hover:border-ring hidden w-55 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-150 ease-in-out md:block">
+                  <Image
+                    src={imgUrl}
+                    alt={imgAlt}
+                    width={800}
+                    height={400}
+                    className="aspect-video w-full object-cover"
+                  />
                 </div>
               </li>
             );
