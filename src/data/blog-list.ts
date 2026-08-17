@@ -1,3 +1,4 @@
+import { getSlug } from '@/lib/utils';
 import { BlogType } from '@/types/blog';
 
 export const BLOGS: BlogType[] = [
@@ -39,8 +40,7 @@ export const BLOGS: BlogType[] = [
     publishDate: 'June 2026',
     readTime: '3 min read',
     tags: ['#career', '#productivity', '#finances'],
-    blogUrl:
-      'https://dev.to/devengers/why-every-software-engineer-should-read-the-psychology-of-money-2b6e',
+    blogUrl: `/blog/${getSlug('Why Every Software Engineer Should Read "The Psychology of Money"')}`,
     imgUrl: '/img/blog-3.jpg',
     imgAlt: 'A meme image for stonks.',
   },
@@ -52,8 +52,7 @@ export const BLOGS: BlogType[] = [
     publishDate: 'August 2026',
     readTime: '4 min read',
     tags: ['#laravel', '#learning', '#webdev'],
-    blogUrl:
-      'https://dev.to/devengers/how-i-contributed-to-a-laravel-application-without-knowing-laravel-1dkl',
+    blogUrl: `/blog/${getSlug('How I Contributed to a Laravel Application Without Knowing Laravel')}`,
     imgUrl: '/img/blog-4.jpg',
     imgAlt: 'Keyboard caps laid down on a white table.',
   },
