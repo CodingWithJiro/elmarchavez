@@ -13,8 +13,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   if (!blog) {
     return (
       <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
-        <header className="mb-8 flex items-center justify-between">
-          <nav className="select-none">
+        <header className="mb-12 flex items-center justify-between">
+          <nav className="select-none" aria-label="Breadcrumb">
             <ol className="flex items-center gap-1">
               <li>
                 <Link
@@ -39,7 +39,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <li className="flex items-center gap-1">
                 <span className="text-muted-foreground">/</span>
 
-                <p className="text-muted-foreground hover:text-foreground max-w-32 truncate text-sm font-medium transition-colors hover:cursor-pointer md:max-w-62">
+                <p
+                  className="text-muted-foreground hover:text-foreground max-w-32 truncate text-sm font-medium transition-colors hover:cursor-pointer md:max-w-62"
+                  aria-current="page"
+                >
                   Blog Not Found
                 </p>
               </li>
