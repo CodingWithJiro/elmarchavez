@@ -33,7 +33,7 @@ const blogsLatestOrder = BLOGS.slice().reverse();
 
 export default function BlogPage() {
   return (
-    <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
+    <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
       <header className="flex justify-between">
         <div>
           <h1 className="mb-1 text-lg font-bold md:text-3xl">Blog</h1>
@@ -96,7 +96,6 @@ export default function BlogPage() {
                     <Link
                       className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
                       href={blogUrl}
-                      target="_blank"
                       aria-label={`Read more about ${title}`}
                     >
                       Read More →
