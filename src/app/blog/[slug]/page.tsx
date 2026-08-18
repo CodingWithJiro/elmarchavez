@@ -1,6 +1,8 @@
 import ThemeToggle from '@/components/theme/theme-toggle';
 import Link from 'next/link';
 import { getBlog } from '@/lib/utils';
+import Breadcrumb from '@/components/sections/breadcrumb';
+import { BreadcrumbItem } from '@/types/breadcrumb-item';
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -9,45 +11,18 @@ type ArticlePageProps = {
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
   const blog = getBlog(slug);
+  const breadcrumbItems: BreadcrumbItem[] = [
+    {
+      label: 'Blog',
+      href: '/blog',
+    },
+  ];
 
   if (!blog) {
     return (
       <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
         <header className="mb-12 flex items-center justify-between">
-          <nav className="select-none" aria-label="Breadcrumb">
-            <ol className="flex items-center gap-1">
-              <li>
-                <Link
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li className="flex items-center gap-1">
-                <span className="text-muted-foreground">/</span>
-
-                <Link
-                  className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                  href="/blog"
-                >
-                  Blog
-                </Link>
-              </li>
-
-              <li className="flex items-center gap-1">
-                <span className="text-muted-foreground">/</span>
-
-                <p
-                  className="text-muted-foreground hover:text-foreground max-w-32 truncate text-sm font-medium transition-colors hover:cursor-pointer md:max-w-62"
-                  aria-current="page"
-                >
-                  Blog Not Found
-                </p>
-              </li>
-            </ol>
-          </nav>
+          <Breadcrumb items={breadcrumbItems} currentLabel="Blog Not Found." />
 
           <ThemeToggle />
         </header>
@@ -62,40 +37,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
       <header className="mb-12 flex justify-between">
-        <nav className="select-none" aria-label="Breadcrumb">
-          <ol className="flex items-center gap-1">
-            <li>
-              <Link
-                className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                href="/"
-              >
-                Home
-              </Link>
-            </li>
-
-            <li className="flex items-center gap-1">
-              <span className="text-muted-foreground">/</span>
-
-              <Link
-                className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-                href="/blog"
-              >
-                Blog
-              </Link>
-            </li>
-
-            <li className="flex items-center gap-1">
-              <span className="text-muted-foreground">/</span>
-
-              <p
-                className="text-muted-foreground hover:text-foreground max-w-32 truncate text-sm font-medium transition-colors hover:cursor-pointer md:max-w-62"
-                aria-current="page"
-              >
-                {title}
-              </p>
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb items={breadcrumbItems} currentLabel={title} />
 
         <ThemeToggle />
       </header>
