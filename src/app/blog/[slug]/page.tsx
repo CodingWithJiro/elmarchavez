@@ -12,7 +12,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   if (!blog) {
     return (
-      <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
+      <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
         <header className="mb-12 flex items-center justify-between">
           <nav className="select-none" aria-label="Breadcrumb">
             <ol className="flex items-center gap-1">
@@ -60,7 +60,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const { title, publishDate, readTime, tags, imgUrl, imgAlt } = blog;
 
   return (
-    <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-4xl">
+    <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
       <header className="mb-12 flex justify-between">
         <nav className="select-none" aria-label="Breadcrumb">
           <ol className="flex items-center gap-1">
