@@ -1,5 +1,4 @@
 import ThemeToggle from '@/components/theme/theme-toggle';
-import Link from 'next/link';
 import { getBlog } from '@/lib/utils';
 import Breadcrumb from '@/components/sections/breadcrumb';
 import { BreadcrumbItem } from '@/types/breadcrumb-item';
