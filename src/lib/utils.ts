@@ -14,7 +14,12 @@ export function getSlug(title: string) {
     .replace(/\s+/g, '-');
 }
 
-export function getBlog(slug: string) {
+export function getBlogMeta(slug: string) {
   const blog = BLOGS.find(({ blogUrl }) => blogUrl.endsWith(getSlug(slug)));
   return blog;
+}
+
+export async function getBlogArticle(id: number) {
+  const article = await import(`@/content/blog/blog-${id}.mdx`);
+  return article.default;
 }
