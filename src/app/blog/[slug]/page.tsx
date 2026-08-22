@@ -16,15 +16,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     },
   ];
 
-  if (!blog) {
+  if (blog.id === -99) {
     return (
       <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
-        <ArticleHeader
-          breadcrumbItems={breadcrumbItems}
-          currentLabel="Blog Not Found"
-        />
-
-        <h1 className="mb-1 text-lg font-bold md:text-3xl">Blog not found.</h1>
+        <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blog} />
       </main>
     );
   }
@@ -33,12 +28,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
-      <ArticleHeader
-        breadcrumbItems={breadcrumbItems}
-        currentLabel={blog.title}
-      />
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blog} />
 
-      <article className="prose dark:prose-invert prose-img:mx-auto max-w-none">
+      <article className="prose prose-img:mx-auto max-w-none">
         <Article />
       </article>
     </main>
