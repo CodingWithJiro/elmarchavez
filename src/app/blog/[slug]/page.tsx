@@ -38,7 +38,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         currentLabel={blog.title}
       />
 
-      <article className="prose prose-invert max-w-none">
+      <article className="prose dark:prose-invert prose-img:mx-auto max-w-none">
         <Article />
       </article>
     </main>
