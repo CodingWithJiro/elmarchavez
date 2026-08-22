@@ -51,7 +51,6 @@ const Blog = () => {
                     <Link
                       className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
                       href={blogUrl}
-                      target="_blank"
                       aria-label={`Read more about ${title}`}
                     >
                       Read More →
