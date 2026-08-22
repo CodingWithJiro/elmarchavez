@@ -16,6 +16,21 @@ export function getSlug(title: string) {
 
 export function getBlogMeta(slug: string) {
   const blog = BLOGS.find(({ blogUrl }) => blogUrl.endsWith(getSlug(slug)));
+
+  if (!blog) {
+    return {
+      id: -99,
+      title: 'Blog not found',
+      description: 'No description.',
+      publishDate: 'No publish date.',
+      readTime: 'No read time.',
+      tags: [],
+      blogUrl: 'No blog URL.',
+      imgUrl: 'No image URL.',
+      imgAlt: 'No image alt text.',
+    };
+  }
+
   return blog;
 }
 
