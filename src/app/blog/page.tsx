@@ -60,7 +60,7 @@ export default function BlogPage() {
           }) => {
             return (
               <li
-                className="border-border/60 border-b pb-4 last:border-b-0 md:flex md:flex-row md:items-center md:justify-between md:gap-4"
+                className="border-border/60 border-b pb-4 transition-colors duration-150 ease-in-out last:border-b-0 md:flex md:flex-row md:items-center md:justify-between md:gap-4"
                 key={id}
               >
                 <div className="border-ring/20 focus-within:border-ring has-hover:border-ring hidden w-55 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-150 ease-in-out md:block">
@@ -69,7 +69,7 @@ export default function BlogPage() {
                     alt={imgAlt}
                     width={800}
                     height={400}
-                    className="aspect-video w-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="aspect-video w-full object-cover transition-transform duration-150 hover:scale-105"
                   />
                 </div>
 
@@ -94,7 +94,7 @@ export default function BlogPage() {
                     </ul>
 
                     <Link
-                      className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
+                      className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-right"
                       href={blogUrl}
                       aria-label={`Read more about ${title}`}
                     >
