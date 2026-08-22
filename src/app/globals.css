@@ -117,6 +117,25 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.prose {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--muted-foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-links: var(--accent);
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-bullets: var(--accent);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--accent);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-code: var(--foreground);
+  --tw-prose-pre-bg: var(--muted);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+  --tw-prose-captions: var(--muted-foreground);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
