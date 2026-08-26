@@ -33,13 +33,14 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
       </div>
 
       <section>
-        <Image
-          src={blogMeta.imgUrl}
-          alt={blogMeta.imgAlt}
-          width={800}
-          height={400}
-          className="mb-8"
-        />
+        <div className="mb-8 overflow-hidden rounded-xl">
+          <Image
+            src={blogMeta.imgUrl}
+            alt={blogMeta.imgAlt}
+            width={800}
+            height={400}
+          />
+        </div>
 
         <h1 className="mb-8 text-[36px] leading-10 font-extrabold">
           {blogMeta.title}
