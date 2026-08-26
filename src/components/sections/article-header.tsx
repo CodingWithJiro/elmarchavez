@@ -26,7 +26,7 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
   }
 
   return (
-    <header className="mb-12">
+    <header className="mb-8">
       <div className="mb-12 flex items-center justify-between">
         <Breadcrumb items={breadcrumbItems} currentLabel={blogMeta.title} />
         <ThemeToggle />
@@ -48,7 +48,7 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
           })}
         </ul>
 
-        <h1 className="mb-2 text-[32px] leading-10 font-extrabold">
+        <h1 className="mb-4 text-[32px] leading-10 font-extrabold">
           {blogMeta.title}
         </h1>
 
