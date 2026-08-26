@@ -42,21 +42,41 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
           />
         </div>
 
-        <h1 className="mb-8 text-[36px] leading-10 font-extrabold">
-          {blogMeta.title}
-        </h1>
-
-        <p>Elmar Chavez</p>
-
-        <p className="mb-1 text-[0.65rem] font-light">
-          {blogMeta.publishDate} • {blogMeta.readTime}
-        </p>
-
-        <ul className="mb-2 flex gap-2 text-[0.65rem] font-light">
+        <ul className="mb-1 flex gap-2 text-[0.65rem] font-light">
           {blogMeta.tags.map((tag) => {
             return <li key={tag}>{tag}</li>;
           })}
         </ul>
+
+        <h1 className="mb-2 text-[32px] leading-10 font-extrabold">
+          {blogMeta.title}
+        </h1>
+
+        <section>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
+              <div className="size-6 overflow-hidden rounded-full">
+                <Image
+                  src="/img/author-profile_683x771.png"
+                  alt=""
+                  width={683}
+                  height={771}
+                  className="object-cover"
+                />
+              </div>
+
+              <p className="text-[0.65rem] font-light">Elmar Chavez</p>
+            </div>
+
+            <span className="text-[0.65rem] font-light">•</span>
+
+            <p className="text-[0.65rem] font-light">{blogMeta.publishDate}</p>
+
+            <span className="text-[0.65rem] font-light">•</span>
+
+            <p className="text-[0.65rem] font-light">{blogMeta.readTime}</p>
+          </div>
+        </section>
       </section>
     </header>
   );
