@@ -48,7 +48,7 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
           })}
         </ul>
 
-        <h1 className="mb-4 text-[32px] leading-10 font-extrabold">
+        <h1 className="mb-4 text-[24px] font-extrabold md:text-[32px] md:leading-10">
           {blogMeta.title}
         </h1>
 
