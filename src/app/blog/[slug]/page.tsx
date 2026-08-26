@@ -44,7 +44,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <Article />
       </article>
 
-      <div className="flex">
+      <div className="flex justify-end">
         <Link
           href="/blog"
           className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.875rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
