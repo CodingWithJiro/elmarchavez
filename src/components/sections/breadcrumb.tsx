@@ -12,7 +12,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
       <ol className="flex items-center gap-1">
         <li>
           <Link
-            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+            className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-sm font-medium outline-transparent transition-colors focus-visible:underline focus-visible:underline-offset-4"
             href="/"
           >
             Home
@@ -27,7 +27,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
               </span>
 
               <Link
-                className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+                className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-sm font-medium outline-transparent transition-colors focus-visible:underline focus-visible:underline-offset-4"
                 href={href}
               >
                 {label}
