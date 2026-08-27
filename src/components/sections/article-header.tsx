@@ -41,6 +41,7 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
           <Image
             src={blogMeta.imgUrl}
             alt={blogMeta.imgAlt}
+            loading="eager"
             width={800}
             height={400}
           />
