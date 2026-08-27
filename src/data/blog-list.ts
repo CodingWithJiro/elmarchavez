@@ -1,6 +1,7 @@
+import { getSlug } from '@/lib/utils';
 import { BlogType } from '@/types/blog';
 
-const BLOGS: BlogType[] = [
+export const BLOGS: BlogType[] = [
   {
     id: 1,
     title:
@@ -13,6 +14,8 @@ const BLOGS: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
     imgUrl: '/img/blog-1.webp',
+    imgAlt:
+      'A collection of anime characters for a multiversal collaboration for an article.',
   },
   {
     id: 2,
@@ -26,6 +29,8 @@ const BLOGS: BlogType[] = [
     blogUrl:
       'https://dev.to/devengers/two-devs-and-a-copilot-created-classifierai-a-prototype-chrome-extension-that-automatically-4fge',
     imgUrl: '/img/blog-2.webp',
+    imgAlt:
+      'A funny backgroups GIF image where Elmar and Francis are dancing with strange creatures.',
   },
   {
     id: 3,
@@ -35,9 +40,9 @@ const BLOGS: BlogType[] = [
     publishDate: 'June 2026',
     readTime: '3 min read',
     tags: ['#career', '#productivity', '#finances'],
-    blogUrl:
-      'https://dev.to/devengers/why-every-software-engineer-should-read-the-psychology-of-money-2b6e',
+    blogUrl: `/blog/${getSlug('Why Every Software Engineer Should Read "The Psychology of Money"')}`,
     imgUrl: '/img/blog-3.jpg',
+    imgAlt: 'A meme image for stonks.',
   },
   {
     id: 4,
@@ -47,9 +52,9 @@ const BLOGS: BlogType[] = [
     publishDate: 'August 2026',
     readTime: '4 min read',
     tags: ['#laravel', '#learning', '#webdev'],
-    blogUrl:
-      'https://dev.to/devengers/how-i-contributed-to-a-laravel-application-without-knowing-laravel-1dkl',
+    blogUrl: `/blog/${getSlug('How I Contributed to a Laravel Application Without Knowing Laravel')}`,
     imgUrl: '/img/blog-4.jpg',
+    imgAlt: 'Keyboard caps laid down on a white table.',
   },
 ];
 

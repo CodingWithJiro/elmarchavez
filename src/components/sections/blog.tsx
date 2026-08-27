@@ -1,10 +1,14 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { blogList } from '@/data/blog-list';
+import ViewAllLink from '../ui/view-all-link';
 
 const Blog = () => {
   return (
-    <section className="border-border/40 bg-card rounded-lg border p-4 transition-colors duration-150 ease-in-out">
+    <section className="border-border/40 bg-card relative rounded-lg border p-4 transition-colors duration-150 ease-in-out">
       <h2 className="mb-3 text-lg font-bold">Blog</h2>
+
+      <ViewAllLink href="/blog" />
 
       <ul className="flex flex-col gap-4">
         {blogList.map(
@@ -17,6 +21,7 @@ const Blog = () => {
             tags,
             blogUrl,
             imgUrl,
+            imgAlt,
           }) => {
             return (
               <li
@@ -43,19 +48,24 @@ const Blog = () => {
                       })}
                     </ul>
 
-                    <a
-                      className="focus-visible:outline-muted-foreground rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
+                    <Link
+                      className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
                       href={blogUrl}
-                      target="_blank"
                       aria-label={`Read more about ${title}`}
                     >
                       Read More →
-                    </a>
+                    </Link>
                   </div>
                 </article>
 
-                <div className="hidden w-67.5 shrink-0 md:block">
-                  <Image src={imgUrl} alt="" width={800} height={400} />
+                <div className="border-ring/20 focus-within:border-ring has-hover:border-ring hidden w-55 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-150 ease-in-out md:block">
+                  <Image
+                    src={imgUrl}
+                    alt={imgAlt}
+                    width={800}
+                    height={400}
+                    className="aspect-video w-full object-cover"
+                  />
                 </div>
               </li>
             );

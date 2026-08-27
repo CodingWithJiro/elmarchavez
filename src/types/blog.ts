@@ -7,4 +7,5 @@ export type BlogType = {
   tags: string[];
   blogUrl: string;
   imgUrl: string;
+  imgAlt: string;
 };

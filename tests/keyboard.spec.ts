@@ -81,7 +81,7 @@ test.describe('Keyboard Accessibility', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL('https://github.com/CodingWithJiro');
   });
-  test('visitor can tab to blog link and open in a new tab', async ({
+  test('visitor can tab to blog link and opens article page', async ({
     page,
     browserName,
   }) => {
@@ -93,10 +93,8 @@ test.describe('Keyboard Accessibility', () => {
     const link = page.getByRole('link', { name: blog.title });
     await tabUntilFocused(page, link, blog.title);
     expect(link).toBeFocused();
-    const newPagePromise = page.waitForEvent('popup');
     await page.keyboard.press('Enter');
-    const newPage = await newPagePromise;
-    await expect(newPage).toHaveURL(blog.blogUrl);
+    await expect(page).toHaveURL(blog.blogUrl);
   });
   test('visitor can tab to a certificate link and open in a new tab', async ({
     page,

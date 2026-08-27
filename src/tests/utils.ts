@@ -7,7 +7,7 @@ export const isValidUrl = (urlLinks: string[]) => {
     try {
       return new URL(urlLink).protocol === 'https:';
     } catch {
-      return false;
+      return urlLink.startsWith('/');
     }
   });
 };
