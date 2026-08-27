@@ -18,9 +18,13 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
           <ThemeToggle />
         </div>
 
-        <h1 className="mb-8 text-[36px] leading-10 font-extrabold">
+        <h1 className="mb-4 text-[36px] leading-10 font-extrabold">
           {blogMeta.title}
         </h1>
+
+        <p className="text-muted-foreground text-base">
+          {blogMeta.description}
+        </p>
       </header>
     );
   }
