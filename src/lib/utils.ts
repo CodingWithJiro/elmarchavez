@@ -21,7 +21,7 @@ export function getBlogMeta(slug: string) {
     return {
       id: -99,
       title: 'Blog not found',
-      description: 'No description.',
+      description: "Seems like this file doesn't exist ¯\\\_(ツ)_/¯",
       publishDate: 'No publish date.',
       readTime: 'No read time.',
       tags: [],
