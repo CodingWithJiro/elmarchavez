@@ -6,9 +6,10 @@ import ViewAllLink from '../ui/view-all-link';
 const Blog = () => {
   return (
     <section className="border-border/40 bg-card relative rounded-lg border p-4 transition-colors duration-150 ease-in-out">
-      <h2 className="mb-3 text-lg font-bold">Blog</h2>
-
-      <ViewAllLink href="/blog" />
+      <header className="mb-3 flex items-center justify-between">
+        <h2 className="text-lg font-bold">Blog</h2>
+        <ViewAllLink href="/blog" />
+      </header>
 
       <ul className="flex flex-col gap-4">
         {blogList.map(
