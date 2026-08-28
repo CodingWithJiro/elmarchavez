@@ -62,4 +62,28 @@ describe('Article Header', () => {
     const bannerImage = screen.getByRole('img', { name: blogMeta.imgAlt });
     expect(bannerImage).toBeInTheDocument();
   });
+  test('renders the blog not found variant', () => {
+    render(
+      <ArticleHeader
+        breadcrumbItems={breadcrumbItems}
+        blogMeta={{
+          id: -99,
+          title: 'Blog not found',
+          description: "Seems like this file doesn't exist ¯\\\_(ツ)_/¯",
+          publishDate: 'No publish date.',
+          readTime: 'No read time.',
+          tags: [],
+          blogUrl: 'No blog URL.',
+          imgUrl: 'No image URL.',
+          imgAlt: 'No image alt text.',
+        }}
+      />,
+    );
+    const title = screen.getByRole('heading', { name: /blog not found/i });
+    expect(title).toBeInTheDocument();
+    const description = screen.getByText(
+      /^seems like this file doesn't exist/i,
+    );
+    expect(description).toBeInTheDocument();
+  });
 });
