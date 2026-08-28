@@ -50,4 +50,12 @@ test.describe('Blog', () => {
     await expect(heading).toBeVisible();
     await expect(description).toBeVisible();
   });
+  test('visitor can go back to Home page when clicking the home link in breadcrumb', async ({
+    page,
+  }) => {
+    await page.goto('/blog');
+    const homeLink = page.getByRole('link', { name: /home/i });
+    await homeLink.click();
+    await expect(page).toHaveURL('/');
+  });
 });
