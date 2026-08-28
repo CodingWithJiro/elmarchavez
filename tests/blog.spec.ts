@@ -2,14 +2,13 @@ import { test, expect } from '@playwright/test';
 import { blogList } from '@/data/blog-list';
 
 test.describe('Blog', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-  });
   test('visitor can see the Blog section', async ({ page }) => {
+    await page.goto('/');
     const heading = page.getByRole('heading', { name: /^blog$/i });
     await expect(heading).toBeVisible();
   });
   test('blog article link has correct href', async ({ page }) => {
+    await page.goto('/');
     const blog = blogList[0];
     expect(blog).toBeDefined();
     const link = page.getByRole('link', {
@@ -28,5 +27,16 @@ test.describe('Blog', () => {
     await page.goto(blog.blogUrl);
     const blogTitle = page.getByRole('heading', { name: blog.title });
     await expect(blogTitle).toBeVisible();
+  });
+  test('visitor can see a blog article item on the Blog page', async ({
+    page,
+  }) => {
+    const blog = blogList[0];
+    expect(blog).toBeDefined();
+    await page.goto('/blog');
+    const heading = page.getByRole('heading', { name: blog.title });
+    const description = page.getByText(blog.description);
+    await expect(heading).toBeVisible();
+    await expect(description).toBeVisible();
   });
 });
