@@ -20,4 +20,9 @@ describe('Breadcrumb', () => {
       expect(link).toHaveAttribute('href', href);
     });
   });
+  test('renders an accessible breadcrumb navigation', () => {
+    render(<Breadcrumb items={items} currentLabel="Current Article" />);
+    const nav = screen.getByRole('navigation', { name: /breadcrumb/i });
+    expect(nav).toBeInTheDocument();
+  });
 });
