@@ -1,7 +1,7 @@
 import { getBlogMeta, getSlug } from './utils';
 import { BLOGS } from '@/data/blog-list';
 
-describe('Utility functions', () => {
+describe('getSlug', () => {
   test('generates a URL slug from the blog title', () => {
     const result = getSlug(
       'How I Contributed to a Laravel Application Without Knowing Laravel',
@@ -26,6 +26,8 @@ describe('Utility functions', () => {
       ),
     ).toBe('why-every-software-engineer-should-read-the-psychology-of-money');
   });
+});
+describe('getBlogMeta', () => {
   test('returns blog metadata for a valid slug', () => {
     const blogTitle =
       'How I Contributed to a Laravel Application Without Knowing Laravel';
