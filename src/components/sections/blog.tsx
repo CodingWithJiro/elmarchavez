@@ -55,7 +55,7 @@ const Blog = () => {
                       href={blogUrl}
                       aria-label={`Read more about ${title}`}
                     >
-                      <span>Read More</span>
+                      <span>Read more</span>
                       <ArrowRight aria-hidden="true" size={12} />
                     </Link>
                   </div>
