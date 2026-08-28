@@ -93,4 +93,11 @@ describe('Article Header', () => {
     const breadcrumb = screen.getByRole('navigation', { name: /breadcrumb/i });
     expect(breadcrumb).toBeInTheDocument();
   });
+  test('renders the theme toggle component', () => {
+    render(
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blogMeta} />,
+    );
+    const themeToggle = screen.getByRole('button', { name: /toggle theme/i });
+    expect(themeToggle).toBeInTheDocument();
+  });
 });
