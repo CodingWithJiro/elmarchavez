@@ -58,4 +58,13 @@ test.describe('Blog', () => {
     await homeLink.click();
     await expect(page).toHaveURL('/');
   });
+  test('visitor can go back to Home page from an article page', async ({
+    page,
+  }) => {
+    const blogMeta = blogList[0];
+    await page.goto(blogMeta.blogUrl);
+    const homeLink = page.getByRole('link', { name: /^home$/i });
+    await homeLink.click();
+    await expect(page).toHaveURL('/');
+  });
 });
