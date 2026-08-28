@@ -86,4 +86,11 @@ describe('Article Header', () => {
     );
     expect(description).toBeInTheDocument();
   });
+  test('renders the breadcrumb component', () => {
+    render(
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blogMeta} />,
+    );
+    const breadcrumb = screen.getByRole('navigation', { name: /breadcrumb/i });
+    expect(breadcrumb).toBeInTheDocument();
+  });
 });
