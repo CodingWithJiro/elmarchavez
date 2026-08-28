@@ -76,4 +76,13 @@ test.describe('Blog', () => {
     await blogLink.click();
     await expect(page).toHaveURL('/blog');
   });
+  test('visitor can go back to Blog page from an article page using Read more articles link', async ({
+    page,
+  }) => {
+    const blogMeta = blogList[0];
+    await page.goto(blogMeta.blogUrl);
+    const blogLink = page.getByRole('link', { name: /read more articles/i });
+    await blogLink.click();
+    await expect(page).toHaveURL('/blog');
+  });
 });
