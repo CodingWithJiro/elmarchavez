@@ -22,4 +22,11 @@ test.describe('Blog', () => {
     const heading = page.getByRole('heading', { name: /^blog$/i });
     await expect(heading).toBeVisible();
   });
+  test('visitor can view a blog article', async ({ page }) => {
+    const blog = blogList[0];
+    expect(blog).toBeDefined();
+    await page.goto(blog.blogUrl);
+    const blogTitle = page.getByRole('heading', { name: blog.title });
+    await expect(blogTitle).toBeVisible();
+  });
 });
