@@ -39,4 +39,13 @@ test.describe('Blog', () => {
     await expect(heading).toBeVisible();
     await expect(description).toBeVisible();
   });
+  test('visitor sees the Blog not found page for an invalid article', async ({
+    page,
+  }) => {
+    await page.goto('/blog/this-article-does-not-exist');
+    const heading = page.getByRole('heading', { name: /^blog not found$/i });
+    const description = page.getByText(/^seems like this file doesn't exist/i);
+    await expect(heading).toBeVisible();
+    await expect(description).toBeVisible();
+  });
 });
