@@ -33,4 +33,10 @@ describe('Utility functions', () => {
     const blogMeta = BLOGS.find(({ title }) => title === blogTitle);
     expect(blogMeta).toEqual(getBlogMeta(blogSlug));
   });
+  test('returns the fallback not found blog metadata for an invalid slug', () => {
+    const blogSlug = 'this-is-an-invalid-article-slug';
+    const blogMeta = getBlogMeta(blogSlug);
+    expect(blogMeta.id).toBe(-99);
+    expect(blogMeta.title).toBe('Blog not found');
+  });
 });
