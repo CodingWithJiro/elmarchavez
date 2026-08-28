@@ -71,6 +71,7 @@ export default function BlogPage() {
                     alt={imgAlt}
                     width={800}
                     height={400}
+                    loading="eager"
                     className="aspect-video w-full object-cover transition-transform duration-150 hover:scale-105"
                   />
                 </div>
