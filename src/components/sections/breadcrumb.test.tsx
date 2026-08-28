@@ -9,7 +9,7 @@ describe('Breadcrumb', () => {
   ];
   test('renders the Home link', () => {
     render(<Breadcrumb items={items} currentLabel="Current Article" />);
-    const link = screen.getByRole('link', { name: 'Home' });
+    const link = screen.getByRole('link', { name: /home/i });
     expect(link).toHaveAttribute('href', '/');
   });
   test('renders all succeeding breadcrumb item links', () => {
@@ -26,7 +26,14 @@ describe('Breadcrumb', () => {
   });
   test('renders the current page with aria-current', () => {
     render(<Breadcrumb items={items} currentLabel="Current Article" />);
-    const currentPage = screen.getByText('Current Article');
+    const currentPage = screen.getByText(/current article/i);
     expect(currentPage).toHaveAttribute('aria-current', 'page');
+  });
+  test('renders without succeeding breadcrumb item links', () => {
+    render(<Breadcrumb items={[]} currentLabel="Current Article" />);
+    const homeLink = screen.getByRole('link', { name: /home/i });
+    const currentPage = screen.getByText(/current article/i);
+    expect(homeLink).toBeInTheDocument();
+    expect(currentPage).toBeInTheDocument();
   });
 });
