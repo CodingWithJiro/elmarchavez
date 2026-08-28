@@ -5,6 +5,7 @@ import Footer from '@/components/sections/footer';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import { BLOGS } from '@/data/blog-list';
 import Breadcrumb from '@/components/sections/breadcrumb';
+import { ArrowRight } from 'lucide-react';
 
 const metaDescription =
   'Blog posts on full stack development and tech from Elmar Chavez.';
@@ -90,18 +91,19 @@ export default function BlogPage() {
                   </p>
 
                   <div className="flex flex-col gap-4 pr-4 min-[425px]:flex-row min-[425px]:items-center min-[425px]:justify-between">
-                    <ul className="flex gap-2 text-[0.65rem] font-light">
+                    <ul className="hidden gap-2 text-[0.65rem] font-light min-[425px]:flex">
                       {tags.map((tag) => {
                         return <li key={tag}>{tag}</li>;
                       })}
                     </ul>
 
                     <Link
-                      className="focus-visible:outline-muted-foreground w-fit self-end rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:self-auto md:text-right"
+                      className="focus-visible:outline-muted-foreground flex w-fit items-center justify-center gap-1 self-end rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline min-[425px]:self-auto md:text-right"
                       href={blogUrl}
                       aria-label={`Read more about ${title}`}
                     >
-                      Read More →
+                      <span>Read More</span>
+                      <ArrowRight aria-hidden="true" size={12} />
                     </Link>
                   </div>
                 </article>
