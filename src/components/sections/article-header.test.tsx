@@ -55,4 +55,11 @@ describe('Article Header', () => {
       expect(text).toBeInTheDocument();
     });
   });
+  test('renders the banner image with alt text', () => {
+    render(
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blogMeta} />,
+    );
+    const bannerImage = screen.getByRole('img', { name: blogMeta.imgAlt });
+    expect(bannerImage).toBeInTheDocument();
+  });
 });
