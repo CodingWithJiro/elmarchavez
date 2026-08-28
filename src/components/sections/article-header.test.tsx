@@ -39,4 +39,11 @@ describe('Article Header', () => {
     const authorName = screen.getByText('Elmar Chavez');
     expect(authorName).toBeInTheDocument();
   });
+  test('renders the read time', () => {
+    render(
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blogMeta} />,
+    );
+    const readTime = screen.getByText(blogMeta.readTime);
+    expect(readTime).toBeInTheDocument();
+  });
 });
