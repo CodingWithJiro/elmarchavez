@@ -7,7 +7,6 @@ describe('Breadcrumb', () => {
     { label: 'Blog', href: '/blog' },
     { label: 'Technology', href: '/blog/technology' },
   ];
-
   test('renders the Home link', () => {
     render(<Breadcrumb items={items} currentLabel="Current Article" />);
     const link = screen.getByRole('link', { name: 'Home' });
@@ -24,5 +23,10 @@ describe('Breadcrumb', () => {
     render(<Breadcrumb items={items} currentLabel="Current Article" />);
     const nav = screen.getByRole('navigation', { name: /breadcrumb/i });
     expect(nav).toBeInTheDocument();
+  });
+  test('renders the current page with aria-current', () => {
+    render(<Breadcrumb items={items} currentLabel="Current Article" />);
+    const currentPage = screen.getByText('Current Article');
+    expect(currentPage).toHaveAttribute('aria-current', 'page');
   });
 });
