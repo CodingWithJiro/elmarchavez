@@ -98,7 +98,7 @@ export default function BlogPage() {
                     </ul>
 
                     <Link
-                      className="focus-visible:outline-muted-foreground flex w-fit items-center justify-center gap-1 self-end rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline min-[425px]:self-auto md:text-right"
+                      className="focus-visible:outline-muted-foreground flex w-fit items-center justify-center gap-1 self-end rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline min-[425px]:self-auto md:text-right"
                       href={blogUrl}
                       aria-label={`Read more about ${title}`}
                     >
