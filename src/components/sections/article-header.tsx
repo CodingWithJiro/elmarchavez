@@ -67,6 +67,7 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
                   width={683}
                   height={771}
                   className="object-cover"
+                  loading="eager"
                 />
               </div>
 

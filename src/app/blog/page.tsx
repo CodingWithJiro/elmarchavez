@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Footer from '@/components/sections/footer';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import { BLOGS } from '@/data/blog-list';
+import Breadcrumb from '@/components/sections/breadcrumb';
+import { ArrowRight } from 'lucide-react';
 
 const metaDescription =
   'Blog posts on full stack development and tech from Elmar Chavez.';
@@ -34,16 +36,17 @@ const blogsLatestOrder = BLOGS.slice().reverse();
 export default function BlogPage() {
   return (
     <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
-      <header className="flex justify-between">
-        <div>
-          <h1 className="mb-1 text-lg font-bold md:text-3xl">Blog</h1>
-          <p className="mb-6 text-sm font-medium md:text-base">
-            Articles, thoughts, and tech stuff.
-          </p>
-        </div>
-
+      <header className="mb-8 flex items-center justify-between">
+        <Breadcrumb items={[]} currentLabel="Blog" />
         <ThemeToggle />
       </header>
+
+      <section>
+        <h1 className="mb-1 text-lg font-bold md:text-3xl">Blog</h1>
+        <p className="mb-6 text-sm font-medium md:text-base">
+          Articles, thoughts, and tech stuff.
+        </p>
+      </section>
 
       <ul className="flex flex-col gap-4">
         {blogsLatestOrder.map(
@@ -69,6 +72,7 @@ export default function BlogPage() {
                     alt={imgAlt}
                     width={800}
                     height={400}
+                    loading="eager"
                     className="aspect-video w-full object-cover transition-transform duration-150 hover:scale-105"
                   />
                 </div>
@@ -87,18 +91,19 @@ export default function BlogPage() {
                   </p>
 
                   <div className="flex flex-col gap-4 pr-4 min-[425px]:flex-row min-[425px]:items-center min-[425px]:justify-between">
-                    <ul className="flex gap-2 text-[0.65rem] font-light">
+                    <ul className="hidden gap-2 text-[0.65rem] font-light min-[425px]:flex">
                       {tags.map((tag) => {
                         return <li key={tag}>{tag}</li>;
                       })}
                     </ul>
 
                     <Link
-                      className="focus-visible:outline-muted-foreground w-fit rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-right"
+                      className="focus-visible:outline-muted-foreground flex w-fit items-center justify-center gap-1 self-end rounded-sm text-[0.75rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline min-[425px]:self-auto md:text-right"
                       href={blogUrl}
                       aria-label={`Read more about ${title}`}
                     >
-                      Read More →
+                      <span>Read more</span>
+                      <ArrowRight aria-hidden="true" size={12} />
                     </Link>
                   </div>
                 </article>
