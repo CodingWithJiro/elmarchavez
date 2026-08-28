@@ -17,7 +17,9 @@ test.describe('Blog', () => {
     await expect(link).toHaveAttribute('href', blog.blogUrl);
   });
   test('visitor can view the Blog page', async ({ page }) => {
-    await page.goto('/blog');
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/blog"]');
+    await viewAllLink.click();
     const heading = page.getByRole('heading', { name: /^blog$/i });
     await expect(heading).toBeVisible();
   });
