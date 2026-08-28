@@ -9,4 +9,13 @@ describe('Utility functions', () => {
       'how-i-contributed-to-a-laravel-application-without-knowing-laravel',
     );
   });
+  test('normalizes capitalization and whitespace', () => {
+    expect(
+      getSlug(
+        '  How I      Contributed to a     Laravel Application Without     Knowing    Laravel  ',
+      ),
+    ).toBe(
+      'how-i-contributed-to-a-laravel-application-without-knowing-laravel',
+    );
+  });
 });
