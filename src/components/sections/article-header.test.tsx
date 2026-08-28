@@ -25,4 +25,11 @@ describe('Article Header', () => {
     const title = screen.getByRole('heading', { name: blogMeta.title });
     expect(title).toBeInTheDocument();
   });
+  test('renders the article publish date', () => {
+    render(
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blogMeta} />,
+    );
+    const publishDate = screen.getByText(blogMeta.publishDate);
+    expect(publishDate).toBeInTheDocument();
+  });
 });
