@@ -46,4 +46,13 @@ describe('Article Header', () => {
     const readTime = screen.getByText(blogMeta.readTime);
     expect(readTime).toBeInTheDocument();
   });
+  test('renders all the article tags', () => {
+    render(
+      <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blogMeta} />,
+    );
+    blogMeta.tags.forEach((tag) => {
+      const text = screen.getByText(tag);
+      expect(text).toBeInTheDocument();
+    });
+  });
 });
