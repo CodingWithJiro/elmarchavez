@@ -13,4 +13,11 @@ describe('Breadcrumb', () => {
     const link = screen.getByRole('link', { name: 'Home' });
     expect(link).toHaveAttribute('href', '/');
   });
+  test('renders all succeeding breadcrumb item links', () => {
+    render(<Breadcrumb items={items} currentLabel="Current Article" />);
+    items.forEach(({ label, href }) => {
+      const link = screen.getByRole('link', { name: label });
+      expect(link).toHaveAttribute('href', href);
+    });
+  });
 });
