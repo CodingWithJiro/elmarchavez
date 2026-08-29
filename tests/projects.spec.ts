@@ -21,4 +21,10 @@ test.describe('Projects', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(project.siteUrl);
   });
+  test('visitor can view the Projects page', async ({ page }) => {
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await viewAllLink.click();
+    await expect(page).toHaveURL('/projects');
+  });
 });
