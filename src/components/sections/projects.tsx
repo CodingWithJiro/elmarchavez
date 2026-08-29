@@ -42,6 +42,7 @@ const Projects = () => {
                     className="decoration-0 underline-offset-4 opacity-90 hover:underline hover:opacity-100 focus-visible:underline focus-visible:opacity-100 focus-visible:outline-none"
                     href={siteUrl}
                     target="_blank"
+                    aria-label={`Go to project ${title}.`}
                   >
                     {title}
                   </a>
