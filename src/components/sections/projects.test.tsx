@@ -15,7 +15,9 @@ describe('Projects section', () => {
   });
   test('renders every project link', () => {
     render(<Projects />);
-    const projectLinks = screen.getAllByRole('link');
+    const projectLinks = screen.getAllByRole('link', {
+      name: /^go to project/i,
+    });
     expect(projectLinks).toHaveLength(projectList.length);
   });
 });
