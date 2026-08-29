@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import { projectList } from '@/data/project-list';
+import ViewAllLink from '../ui/view-all-link';
 
 const Projects = () => {
   return (
     <section className="border-border/40 bg-card flex w-full flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
-      <h2 className="text-lg font-bold">Projects</h2>
+      <header className="flex items-center justify-between">
+        <h2 className="text-lg font-bold">Projects</h2>
+        <ViewAllLink href="/projects" />
+      </header>
 
       <ul className="grid grid-cols-1 gap-y-3 min-[488px]:grid-cols-2">
         {projectList.map(
