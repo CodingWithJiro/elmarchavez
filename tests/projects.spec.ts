@@ -9,13 +9,10 @@ test.describe('Projects', () => {
   });
   test('visitor can open a project in a new tab', async ({ page }) => {
     await page.goto('/');
+    const project = projectList[0];
     const link = page.getByRole('link', {
-      name: /javascript fundamentals/i,
+      name: project.title,
     });
-    const project = projectList.find(
-      ({ title }) => title === 'JavaScript Fundamentals',
-    )!;
-    expect(project).toBeDefined();
     const newPagePromise = page.waitForEvent('popup');
     await link.click();
     const newPage = await newPagePromise;
