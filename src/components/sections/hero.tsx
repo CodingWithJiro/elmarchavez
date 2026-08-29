@@ -5,14 +5,16 @@ import { socialLinks } from '@/data/social-links';
 const Hero = () => {
   return (
     <header className="mb-6 flex flex-row items-center gap-2 md:gap-4">
-      <Image
-        src="/img/profile-picture_600x600.jpg"
-        alt="Elmar Chavez - Full Stack Developer"
-        className="border-ring/20 h-25 w-25 rounded-lg border md:h-40 md:w-40"
-        width={600}
-        height={600}
-        loading="eager"
-      />
+      <div className="border-ring/20 w-25 shrink-0 overflow-hidden rounded-lg border md:w-30">
+        <Image
+          src="/img/author-profile_683x771.png"
+          alt="Elmar Chavez - Full Stack Developer"
+          className="aspect-square w-full scale-105 object-cover"
+          width={600}
+          height={600}
+          loading="eager"
+        />
+      </div>
 
       <section className="flex w-full flex-row justify-between">
         <div>
