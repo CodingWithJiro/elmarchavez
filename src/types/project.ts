@@ -5,4 +5,6 @@ export type Project = {
   imgUrl: string;
   imgUrlDark: string;
   siteUrl: string;
+  githubUrl: string;
+  technologies: string[];
 };
