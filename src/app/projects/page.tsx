@@ -38,7 +38,13 @@ export default function ProjectsPage() {
         <ThemeToggle />
       </header>
 
-      <h1>Projects</h1>
+      <section>
+        <h1 className="mb-1 text-lg font-bold md:text-3xl">Projects</h1>
+        <p className="mb-6 text-sm font-medium md:text-base">
+          Things I built and worked on.
+        </p>
+      </section>
+
       <p>To add more here</p>
 
       <Footer />
