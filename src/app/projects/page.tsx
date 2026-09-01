@@ -4,6 +4,9 @@ import ThemeToggle from '@/components/theme/theme-toggle';
 import Footer from '@/components/sections/footer';
 import { PROJECTS } from '@/data/project-list';
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
+import { Globe } from 'lucide-react';
 
 const metaDescription =
   'List of built projects by Elmar Chavez as a full stack developer.';
@@ -47,15 +50,24 @@ export default function ProjectsPage() {
         </p>
       </section>
 
-      <ul className="grid grid-cols-1 gap-y-3 min-[488px]:grid-cols-2 md:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-y-3 min-[520px]:grid-cols-2 min-[520px]:gap-x-3 md:grid-cols-3">
         {PROJECTS.map(
-          ({ id, title, description, imgUrl, imgUrlDark, siteUrl }) => {
+          ({
+            id,
+            title,
+            description,
+            imgUrl,
+            imgUrlDark,
+            siteUrl,
+            githubUrl,
+            technologies,
+          }) => {
             return (
               <li
-                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-muted/40 mx-auto flex max-w-50 flex-col items-center justify-start rounded-lg border text-center transition-all duration-150 ease-in-out md:max-w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]"
+                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-background text-foreground mx-auto flex max-w-60 flex-col overflow-hidden rounded-lg border transition-all duration-150 ease-in-out min-[850px]:max-w-70"
                 key={id}
               >
-                <div className="mb-4 h-35.5 w-50 md:w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]">
+                <div className="relative mb-4 aspect-video max-w-60 shrink-0 overflow-hidden min-[850px]:max-w-70">
                   <Image
                     className="border-ring/20 mb-2 h-full w-full rounded-lg border object-cover dark:hidden"
                     src={imgUrl}
@@ -72,20 +84,46 @@ export default function ProjectsPage() {
                     height={960}
                     loading="eager"
                   />
+
+                  <ul className="absolute right-1 bottom-1 flex gap-1 text-[0.50rem] font-light">
+                    {technologies.map((technology) => {
+                      return (
+                        <li
+                          key={technology}
+                          className="bg-background/90 border-border/30 rounded-sm border px-1 py-0.5 text-center"
+                        >
+                          {technology}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
 
-                <h3 className="mb-1 text-[0.875rem] font-semibold">
-                  <a
-                    className="decoration-0 underline-offset-4 opacity-90 hover:underline hover:opacity-100 focus-visible:underline focus-visible:opacity-100 focus-visible:outline-none"
-                    href={siteUrl}
-                    target="_blank"
-                    aria-label={`Go to project ${title}.`}
-                  >
-                    {title}
-                  </a>
-                </h3>
+                <section className="flex h-full flex-col justify-between">
+                  <header className="mb-4 px-4">
+                    <h2 className="text-[0.875rem] font-semibold">{title}</h2>
+                    <p className="text-[0.75rem]">{description}</p>
+                  </header>
 
-                <p className="px-4 pb-2 text-[0.75rem]">{description}</p>
+                  <div className="mb-4 flex items-center justify-center gap-2 px-4 text-[0.75rem]">
+                    <Link
+                      href={githubUrl}
+                      target="_blank"
+                      className="bg-background border-border/50 hover:bg-foreground hover:text-background flex items-center justify-center gap-1 rounded-sm border px-4 py-1 transition-colors duration-150 ease-in-out min-[850px]:px-6"
+                    >
+                      <FaGithub size={12} />
+                      <span>GitHub</span>
+                    </Link>
+                    <Link
+                      href={siteUrl}
+                      target="_blank"
+                      className="bg-background border-border/50 text-foreground hover:bg-foreground hover:text-background flex items-center justify-center gap-1 rounded-sm border px-4 py-1 transition-colors duration-150 ease-in-out min-[850px]:px-6"
+                    >
+                      <Globe size={12} />
+                      <span>Website</span>
+                    </Link>
+                  </div>
+                </section>
               </li>
             );
           },
