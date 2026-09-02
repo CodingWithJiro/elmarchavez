@@ -35,4 +35,17 @@ test.describe('Projects', () => {
     });
     await expect(viewAllProjects).toBeVisible();
   });
+  test.only('visitor can open a project website from projects page', async ({
+    page,
+  }) => {
+    await page.goto('/projects');
+    const project = projectList[0];
+    const projectLink = page.getByRole('link', {
+      name: `Go to ${project.title}'s live website.`,
+    });
+    const newPagePromise = page.waitForEvent('popup');
+    await projectLink.click();
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(project.siteUrl);
+  });
 });
