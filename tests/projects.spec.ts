@@ -24,4 +24,15 @@ test.describe('Projects', () => {
     await viewAllLink.click();
     await expect(page).toHaveURL('/projects');
   });
+  test('visitor can see the Projects page', async ({ page }) => {
+    await page.goto('/projects');
+    const heading = page.getByRole('heading', { name: /^projects$/i });
+    await expect(heading).toBeVisible();
+    const description = page.getByText(/^things i built and worked on.$/i);
+    await expect(description).toBeVisible();
+    const viewAllProjects = page.getByRole('link', {
+      name: /^view all projects$/i,
+    });
+    await expect(viewAllProjects).toBeVisible();
+  });
 });
