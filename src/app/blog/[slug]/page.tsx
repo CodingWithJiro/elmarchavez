@@ -3,7 +3,7 @@ import { BreadcrumbItem } from '@/types/breadcrumb-item';
 import ArticleHeader from '@/components/sections/article-header';
 import Footer from '@/components/sections/footer';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -45,10 +45,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <Article />
       </article>
 
-      <div className="flex justify-end">
+      <div className="flex items-center justify-between">
+        <Link
+          href="/"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+        >
+          <ArrowLeft aria-hidden="true" size={16} />
+          <span>Back to homepage</span>
+        </Link>
+
         <Link
           href="/blog"
-          className="focus-visible:outline-muted-foreground flex w-fit items-center gap-1 rounded-sm text-[0.875rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out hover:underline md:text-right"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-right text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
         >
           <span>Read more articles</span>
           <ArrowRight aria-hidden="true" size={16} />

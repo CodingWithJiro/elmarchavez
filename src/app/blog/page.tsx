@@ -35,7 +35,10 @@ const blogsLatestOrder = BLOGS.slice().reverse();
 
 export default function BlogPage() {
   return (
-    <main id="main" className="mx-auto max-w-130 px-4 py-8 md:max-w-2xl">
+    <main
+      id="main"
+      className="mx-auto min-h-screen max-w-130 px-4 py-8 md:max-w-2xl"
+    >
       <header className="mb-8 flex items-center justify-between">
         <Breadcrumb items={[]} currentLabel="Blog" />
         <ThemeToggle />
