@@ -20,4 +20,8 @@ describe('Project List data', () => {
     const descriptions = PROJECTS.map(({ description }) => description);
     expect(isNotEmpty(descriptions)).toBe(true);
   });
+  test('every project has a valid GitHub URL', () => {
+    const githubUrls = PROJECTS.map(({ githubUrl }) => githubUrl);
+    expect(isValidUrl(githubUrls)).toBe(true);
+  });
 });
