@@ -24,4 +24,10 @@ describe('Project List data', () => {
     const githubUrls = PROJECTS.map(({ githubUrl }) => githubUrl);
     expect(isValidUrl(githubUrls)).toBe(true);
   });
+  test('every project has at least three technologies', () => {
+    const technologies = PROJECTS.map(({ technologies }) => technologies);
+    expect(technologies.every((technology) => technology.length >= 3)).toBe(
+      true,
+    );
+  });
 });
