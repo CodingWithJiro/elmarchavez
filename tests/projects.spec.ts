@@ -61,4 +61,13 @@ test.describe('Projects', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(project.githubUrl);
   });
+  test('visitor can return to homepage via Back to homepage link', async ({
+    page,
+  }) => {
+    await page.goto('/projects');
+    const homeLink = page.getByRole('link', { name: /^back to homepage$/i });
+    await expect(homeLink).toHaveAttribute('href', '/');
+    await homeLink.click();
+    await expect(page).toHaveURL('/');
+  });
 });
