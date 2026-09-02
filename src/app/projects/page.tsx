@@ -6,7 +6,7 @@ import { PROJECTS } from '@/data/project-list';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
-import { Globe } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Globe } from 'lucide-react';
 
 const metaDescription =
   'List of built projects by Elmar Chavez as a full stack developer.';
@@ -50,7 +50,7 @@ export default function ProjectsPage() {
         </p>
       </section>
 
-      <ul className="grid grid-cols-1 gap-y-3 min-[520px]:grid-cols-2 min-[520px]:gap-x-3 md:grid-cols-3">
+      <ul className="mb-8 grid grid-cols-1 gap-y-3 min-[520px]:grid-cols-2 min-[520px]:gap-x-3 md:grid-cols-3">
         {PROJECTS.map(
           ({
             id,
@@ -131,6 +131,25 @@ export default function ProjectsPage() {
           },
         )}
       </ul>
+
+      <div className="flex items-center justify-between">
+        <Link
+          href="/"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+        >
+          <ArrowLeft aria-hidden="true" size={16} />
+          <span>Back to homepage</span>
+        </Link>
+
+        <Link
+          href="https://github.com/CodingWithJiro/Projects-Hub"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+          target="_blank"
+        >
+          <span>View all projects</span>
+          <ArrowRight aria-hidden="true" size={16} />
+        </Link>
+      </div>
 
       <Footer />
     </main>
