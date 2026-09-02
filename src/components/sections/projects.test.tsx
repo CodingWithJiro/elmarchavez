@@ -20,4 +20,9 @@ describe('Projects section', () => {
     });
     expect(projectLinks).toHaveLength(projectList.length);
   });
+  test('renders view all link', () => {
+    render(<Projects />);
+    const viewAllLink = screen.getByRole('link', { name: /view all/i });
+    expect(viewAllLink).toBeInTheDocument();
+  });
 });
