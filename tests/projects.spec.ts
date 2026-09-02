@@ -70,4 +70,18 @@ test.describe('Projects', () => {
     await homeLink.click();
     await expect(page).toHaveURL('/');
   });
+  test('visitor can view all projects and navigate towards my Projects Hub GitHub repository', async ({
+    page,
+  }) => {
+    await page.goto('/projects');
+    const viewAllProjects = page.getByRole('link', {
+      name: /^view all projects$/i,
+    });
+    const newPagePromise = page.waitForEvent('popup');
+    await viewAllProjects.click();
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(
+      'https://github.com/CodingWithJiro/Projects-Hub',
+    );
+  });
 });
