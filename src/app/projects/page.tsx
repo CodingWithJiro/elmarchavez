@@ -109,7 +109,7 @@ export default function ProjectsPage() {
                     <Link
                       href={githubUrl}
                       target="_blank"
-                      className="bg-background border-border/50 hover:bg-foreground hover:text-background flex items-center justify-center gap-1 rounded-sm border px-4 py-1 transition-colors duration-150 ease-in-out min-[850px]:px-6"
+                      className="bg-background border-border/50 hover:bg-foreground hover:text-background focus-visible:outline-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-4 py-1 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2 min-[850px]:px-6"
                     >
                       <FaGithub size={12} />
                       <span>GitHub</span>
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
                     <Link
                       href={siteUrl}
                       target="_blank"
-                      className="bg-background border-border/50 text-foreground hover:bg-foreground hover:text-background flex items-center justify-center gap-1 rounded-sm border px-4 py-1 transition-colors duration-150 ease-in-out min-[850px]:px-6"
+                      className="bg-background border-border/50 text-foreground hover:bg-foreground hover:text-background focus-visible:outline-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-4 py-1 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2 min-[850px]:px-6"
                     >
                       <Globe size={12} />
                       <span>Website</span>
