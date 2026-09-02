@@ -101,7 +101,9 @@ export default function ProjectsPage() {
 
                 <section className="flex h-full flex-col justify-between">
                   <header className="mb-4 px-4">
-                    <h2 className="text-[0.875rem] font-semibold">{title}</h2>
+                    <h2 className="mb-2 text-[0.875rem] font-semibold">
+                      {title}
+                    </h2>
                     <p className="text-[0.75rem]">{description}</p>
                   </header>
 
