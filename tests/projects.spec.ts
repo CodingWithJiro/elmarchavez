@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { projectList } from '@/data/project-list';
+import { projectList, PROJECTS } from '@/data/project-list';
 
 test.describe('Projects', () => {
   test('visitor can see the Project section', async ({ page }) => {
@@ -35,11 +35,11 @@ test.describe('Projects', () => {
     });
     await expect(viewAllProjects).toBeVisible();
   });
-  test.only('visitor can open a project website from projects page', async ({
+  test('visitor can open a project website from projects page', async ({
     page,
   }) => {
     await page.goto('/projects');
-    const project = projectList[0];
+    const project = PROJECTS[0];
     const projectLink = page.getByRole('link', {
       name: `Go to ${project.title}'s live website.`,
     });
@@ -47,5 +47,18 @@ test.describe('Projects', () => {
     await projectLink.click();
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(project.siteUrl);
+  });
+  test('visitor can open a project GitHub repository link from projects page', async ({
+    page,
+  }) => {
+    await page.goto('/projects');
+    const project = PROJECTS[0];
+    const githubLink = page.getByRole('link', {
+      name: `Go to ${project.title}'s GitHub repository.`,
+    });
+    const newPagePromise = page.waitForEvent('popup');
+    await githubLink.click();
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(project.githubUrl);
   });
 });
