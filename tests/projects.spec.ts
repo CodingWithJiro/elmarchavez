@@ -18,14 +18,17 @@ test.describe('Projects', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(project.siteUrl);
   });
-  test('visitor can view the Projects page', async ({ page }) => {
+  test.only('visitor can view the Projects page', async ({ page }) => {
     await page.goto('/');
     const viewAllLink = page.locator('a[href="/projects"]');
+    await expect(viewAllLink).toHaveAttribute('href', '/projects');
     await viewAllLink.click();
     await expect(page).toHaveURL('/projects');
   });
   test('visitor can see the Projects page', async ({ page }) => {
-    await page.goto('/projects');
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await viewAllLink.click();
     const heading = page.getByRole('heading', { name: /^projects$/i });
     await expect(heading).toBeVisible();
     const description = page.getByText(/^things i built and worked on.$/i);
@@ -38,7 +41,9 @@ test.describe('Projects', () => {
   test('visitor can open a project website from projects page', async ({
     page,
   }) => {
-    await page.goto('/projects');
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await viewAllLink.click();
     const project = PROJECTS[0];
     const projectLink = page.getByRole('link', {
       name: `Go to ${project.title}'s live website.`,
@@ -51,7 +56,9 @@ test.describe('Projects', () => {
   test('visitor can open a project GitHub repository link from projects page', async ({
     page,
   }) => {
-    await page.goto('/projects');
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await viewAllLink.click();
     const project = PROJECTS[0];
     const githubLink = page.getByRole('link', {
       name: `Go to ${project.title}'s GitHub repository.`,
@@ -64,7 +71,9 @@ test.describe('Projects', () => {
   test('visitor can return to homepage via Back to homepage link', async ({
     page,
   }) => {
-    await page.goto('/projects');
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await viewAllLink.click();
     const homeLink = page.getByRole('link', { name: /^back to homepage$/i });
     await expect(homeLink).toHaveAttribute('href', '/');
     await homeLink.click();
@@ -73,7 +82,9 @@ test.describe('Projects', () => {
   test('visitor can view all projects and navigate towards my Projects Hub GitHub repository', async ({
     page,
   }) => {
-    await page.goto('/projects');
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await viewAllLink.click();
     const viewAllProjects = page.getByRole('link', {
       name: /^view all projects$/i,
     });
