@@ -253,6 +253,7 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 | Layered Testing Strategy               | Combined unit, integration, end-to-end, and accessibility testing to validate both implementation details and real user interactions.                                         |
 | Meaningful Code Coverage               | Measured coverage on application-owned code instead of inflating metrics with third-party wrapper components or generated files.                                              |
 | Continuous Integration                 | Automated linting, testing, production builds, and artifact generation using GitHub Actions to validate every change.                                                         |
+| Structured Metadata + MDX Content      | Separated article metadata from long-form content so listing data remains structured while article content remains easy to author and maintain.                               |
 
 ---
 
