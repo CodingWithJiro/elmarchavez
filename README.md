@@ -87,6 +87,9 @@ Rather than emphasizing on complex animations, I intentionally focused on access
 [<img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [<img alt="Markdown" src="https://img.shields.io/badge/-Markdown-000000?style=flat-square&logo=markdown&logoColor=white" />](https://www.markdownguide.org/)
 
+**Content:** [<img alt="MDX" src="https://img.shields.io/badge/-MDX-1B1F24?style=flat-square&logo=mdx&logoColor=white" />](https://mdxjs.com/)
+[<img alt="Tailwind CSS Typography" src="https://img.shields.io/badge/-Tailwind%20CSS%20Typography-0F172A?style=flat-square&logo=tailwindcss&logoColor=38BDF8" />](https://tailwindcss.com/docs/typography-plugin)
+
 **UI:** [<img alt="shadcn/ui" src="https://img.shields.io/badge/-shadcn%2Fui-000000?style=flat-square&logo=shadcnui&logoColor=white" />](https://ui.shadcn.com/)
 [<img alt="Radix UI" src="https://img.shields.io/badge/-Radix%20UI-161618?style=flat-square&logo=radixui&logoColor=white" />](https://www.radix-ui.com/)
 [<img alt="next-themes" src="https://img.shields.io/badge/-next--themes-000000?style=flat-square&logo=nextdotjs&logoColor=white" />](https://github.com/pacocoursey/next-themes)
