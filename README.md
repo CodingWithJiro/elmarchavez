@@ -11,7 +11,7 @@
 [![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/public/docs/lighthouse-report.pdf)
 
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
-![Test Coverage](https://img.shields.io/badge/test%20coverage-87%25-brightgreen)
+![Test Coverage](https://img.shields.io/badge/test%20coverage-85%25-brightgreen)
 ![Experience](https://img.shields.io/badge/experience-year%201-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.elmarchavez&left_text=repo%20views)
 
@@ -19,7 +19,10 @@
 
 A professional and modern web portfolio to showcase my projects, skills, and growth as a full stack developer.
 
-![Site Preview](/public/img/preview_1650x928.png)
+| _Mobile Preview (iPhone 14 Pro Max)_                   | _Desktop Preview (MacBook Air)_                           |
+| ------------------------------------------------------ | --------------------------------------------------------- |
+| ![Mobile](public/img/site-preview-iphone-14.webp)      | ![Desktop](public/img/site-preview-macbook-air.webp)      |
+| ![Mobile](public/img/site-preview-iphone-14-dark.webp) | ![Desktop](public/img/site-preview-macbook-air-dark.webp) |
 
 ---
 
@@ -53,25 +56,26 @@ Rather than emphasizing on complex animations, I intentionally focused on access
 
 ### User Features
 
-| Feature             | Description                                                                                                                    |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Responsive Design   | Optimized layout for mobile, tablet, and desktop devices using a mobile-first approach.                                        |
-| Theme System        | Supports light, dark, and system themes with persistent user preferences using `next-themes`.                                  |
-| Project Showcase    | Displays featured projects with responsive layouts and theme-aware screenshots that automatically adapt to the selected theme. |
-| Experience Timeline | Highlights professional experience, freelance work, and certifications using a semantic timeline-inspired layout.              |
-| Technical Blog      | Showcases technical articles with publish dates, reading times, tags, and article previews.                                    |
-| External Profiles   | Provides quick access to GitHub, LinkedIn, Frontend Mentor, DEV Community, and Codewars.                                       |
+| Feature             | Description                                                                                                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Responsive Design   | Optimized layout for mobile, tablet, and desktop devices using a mobile-first approach.                                   |
+| Theme System        | Supports light, dark, and system themes with persistent user preferences using `next-themes`.                             |
+| Project Showcase    | Displays featured projects on the homepage and provides a dedicated `/projects` page for the complete project collection. |
+| Experience Timeline | Highlights professional experience, freelance work, and certifications using a semantic timeline-inspired layout.         |
+| Technical Blog      | Provides a dedicated `/blog` page and dynamic `/blog/[slug]` article pages powered by MDX.                                |
+| External Profiles   | Provides quick access to GitHub, LinkedIn, Frontend Mentor, DEV Community, and Codewars.                                  |
 
 ### Engineering Highlights
 
-| Feature                    | Description                                                                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Accessibility              | Built with semantic HTML, keyboard navigation, skip links, accessible names, and visible focus states for improved accessibility               |
-| Testing Strategy           | Comprehensive unit, integration, and end-to-end testing using Vitest, React Testing Library, and Playwright.                                   |
-| Continuous Integration     | Automated linting, testing, coverage reporting, end-to-end testing, and production build verification using GitHub Actions.                    |
-| Feature-Based Architecture | Organized using reusable components, centralized data modules, shared TypeScript types, and reusable utilities for long-term maintainability.  |
-| Code Quality               | Uses TypeScript, ESLint, Prettier, and consistent project organization to improve readability and maintainability.                             |
-| Performance Optimization   | Leverages Next.js `<Image>` optimization, font optimization, SSR-safe theme handling, and responsive image loading for a fast user experience. |
+| Feature                    | Description                                                                                                                                                 |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accessibility              | Built with semantic HTML, keyboard navigation, skip links, accessible names, and visible focus states for improved accessibility                            |
+| Testing Strategy           | Comprehensive unit, integration, and end-to-end testing using Vitest, React Testing Library, and Playwright.                                                |
+| Continuous Integration     | Automated linting, testing, coverage reporting, end-to-end testing, and production build verification using GitHub Actions.                                 |
+| Feature-Based Architecture | Organized using reusable components, centralized data modules, shared TypeScript types, and reusable utilities for long-term maintainability.               |
+| Code Quality               | Uses TypeScript, ESLint, Prettier, and consistent project organization to improve readability and maintainability.                                          |
+| Content Architecture       | Separates structured portfolio metadata from long-form MDX content using centralized typed data, reusable utilities, and dynamic routes.                    |
+| Performance Optimization   | Leverages Next.js `<Image>` and `<Link>` optimization, font optimization, SSR-safe theme handling, and responsive image loading for a fast user experience. |
 
 ---
 
@@ -85,6 +89,9 @@ Rather than emphasizing on complex animations, I intentionally focused on access
 [<img alt="HTML5" src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [<img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [<img alt="Markdown" src="https://img.shields.io/badge/-Markdown-000000?style=flat-square&logo=markdown&logoColor=white" />](https://www.markdownguide.org/)
+
+**Content:** [<img alt="MDX" src="https://img.shields.io/badge/-MDX-1B1F24?style=flat-square&logo=mdx&logoColor=white" />](https://mdxjs.com/)
+[<img alt="Tailwind CSS Typography" src="https://img.shields.io/badge/-Tailwind%20CSS%20Typography-0F172A?style=flat-square&logo=tailwindcss&logoColor=38BDF8" />](https://tailwindcss.com/docs/typography-plugin)
 
 **UI:** [<img alt="shadcn/ui" src="https://img.shields.io/badge/-shadcn%2Fui-000000?style=flat-square&logo=shadcnui&logoColor=white" />](https://ui.shadcn.com/)
 [<img alt="Radix UI" src="https://img.shields.io/badge/-Radix%20UI-161618?style=flat-square&logo=radixui&logoColor=white" />](https://www.radix-ui.com/)
@@ -112,34 +119,52 @@ elmarchavez/
 │   └── workflows/              # GitHub Actions CI workflow
 │
 ├── public/                     # Static assets
-│   ├── icons/                  # Favicons and application icons
+│   ├── docs/                   # Documentation and generated reports
+│   ├── icons/                  # Application icons
 │   ├── img/                    # Profile and portfolio images
 │   └── projects/               # Project screenshots
+│   └── favicon.ico             # Site favicon
 │
 ├── src/
 │   ├── app/                    # Next.js App Router
+│   │   ├── blog/               # Dedicated blog page and dynamic article routes
+│   │   └── projects/           # Dedicated projects page
+│   │   ├── globals.css         # Global styles and theme variables
+│   │   ├── layout.tsx          # Root application layout
+│   │   └── page.tsx            # Homepage
 │   ├── components/
 │   │   ├── accessibility/      # Accessibility components (Skip Link, etc.)
 │   │   ├── providers/          # Global React providers
 │   │   ├── sections/           # Portfolio page sections
 │   │   ├── theme/              # Theme system components
 │   │   └── ui/                 # Reusable UI components
-│   ├── data/                   # Centralized portfolio content
+│   ├── content/
+│   │   └── blog/               # MDX blog article content
+│   ├── data/                   # Centralized portfolio and content metadata
+│   ├── hooks/                  # Reusable React hooks
 │   ├── lib/                    # Shared utility functions
 │   ├── tests/                  # Unit and integration test helpers
 │   └── types/                  # Shared TypeScript types
+│   └── mdx-components.tsx      # Custom components for MDX content
 │
 ├── tests/
 │   └── utils/                  # Playwright testing utilities
 │
-├── package.json                # Project dependencies and scripts
-├── playwright.config.ts        # Playwright configuration
-├── vitest.config.ts            # Vitest configuration
-├── tsconfig.json               # TypeScript configuration
-├── next.config.ts              # Next.js configuration
+├── .gitignore                  # Git ignore rules
+├── .prettierignore             # Prettier ignore rules
+├── .prettierrc                 # Prettier configuration
+├── components.json             # shadcn/ui configuration
 ├── eslint.config.mjs           # ESLint configuration
 ├── LICENSE                     # MIT License
-└── README.md                   # You are here
+├── next.config.ts              # Next.js configuration
+├── package-lock.json           # Dependency lockfile
+├── package.json                # Project dependencies and scripts
+├── playwright.config.ts        # Playwright configuration
+├── postcss.config.mjs          # PostCSS configuration
+├── README.md                   # You are here
+├── setupTests.ts               # Vitest test setup
+├── tsconfig.json               # TypeScript configuration
+└── vitest.config.ts            # Vitest configuration
 ```
 
 ---
@@ -252,6 +277,7 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 | Layered Testing Strategy               | Combined unit, integration, end-to-end, and accessibility testing to validate both implementation details and real user interactions.                                         |
 | Meaningful Code Coverage               | Measured coverage on application-owned code instead of inflating metrics with third-party wrapper components or generated files.                                              |
 | Continuous Integration                 | Automated linting, testing, production builds, and artifact generation using GitHub Actions to validate every change.                                                         |
+| Structured Metadata + MDX Content      | Separated article metadata from long-form content so listing data remains structured while article content remains easy to author and maintain.                               |
 
 ---
 
@@ -259,7 +285,7 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 | Improvement               | Description                                                                                                          |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Integrated Blog           | Build a dedicated blog using Next.js instead of linking to external articles.                                        |
+| Tech Stack Expansion      | Add a dedicated `/tech-stack` page and a "View all" entry point from the homepage Tech Stack section.                |
 | Visual Regression Testing | Add screenshot-based testing to detect unintended UI changes.                                                        |
 | Accessibility Auditing    | Integrate automated accessibility testing into the existing testing workflow.                                        |
 | Performance Monitoring    | Continue optimizing bundle size and Core Web Vitals as the project grows.                                            |
@@ -290,7 +316,7 @@ The following scripts are available for local development, testing, and producti
 
 Created by: **Elmar Chavez** (CodingWithJiro)
 
-Month/Year: **April 2026**
+Last updated: **September 2026**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-2F6F8F?style=for-the-badge)](https://elmarchavez.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elmar-chavez/)
