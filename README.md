@@ -116,34 +116,52 @@ elmarchavez/
 │   └── workflows/              # GitHub Actions CI workflow
 │
 ├── public/                     # Static assets
-│   ├── icons/                  # Favicons and application icons
+│   ├── docs/                   # Documentation and generated reports
+│   ├── icons/                  # Application icons
 │   ├── img/                    # Profile and portfolio images
 │   └── projects/               # Project screenshots
+│   └── favicon.ico             # Site favicon
 │
 ├── src/
 │   ├── app/                    # Next.js App Router
+│   │   ├── blog/               # Dedicated blog page and dynamic article routes
+│   │   └── projects/           # Dedicated projects page
+│   │   ├── globals.css         # Global styles and theme variables
+│   │   ├── layout.tsx          # Root application layout
+│   │   └── page.tsx            # Homepage
 │   ├── components/
 │   │   ├── accessibility/      # Accessibility components (Skip Link, etc.)
 │   │   ├── providers/          # Global React providers
 │   │   ├── sections/           # Portfolio page sections
 │   │   ├── theme/              # Theme system components
 │   │   └── ui/                 # Reusable UI components
-│   ├── data/                   # Centralized portfolio content
+│   ├── content/
+│   │   └── blog/               # MDX blog article content
+│   ├── data/                   # Centralized portfolio and content metadata
+│   ├── hooks/                  # Reusable React hooks
 │   ├── lib/                    # Shared utility functions
 │   ├── tests/                  # Unit and integration test helpers
 │   └── types/                  # Shared TypeScript types
+│   └── mdx-components.tsx      # Custom components for MDX content
 │
 ├── tests/
 │   └── utils/                  # Playwright testing utilities
 │
-├── package.json                # Project dependencies and scripts
-├── playwright.config.ts        # Playwright configuration
-├── vitest.config.ts            # Vitest configuration
-├── tsconfig.json               # TypeScript configuration
-├── next.config.ts              # Next.js configuration
+├── .gitignore                  # Git ignore rules
+├── .prettierignore             # Prettier ignore rules
+├── .prettierrc                 # Prettier configuration
+├── components.json             # shadcn/ui configuration
 ├── eslint.config.mjs           # ESLint configuration
 ├── LICENSE                     # MIT License
-└── README.md                   # You are here
+├── next.config.ts              # Next.js configuration
+├── package-lock.json           # Dependency lockfile
+├── package.json                # Project dependencies and scripts
+├── playwright.config.ts        # Playwright configuration
+├── postcss.config.mjs          # PostCSS configuration
+├── README.md                   # You are here
+├── setupTests.ts               # Vitest test setup
+├── tsconfig.json               # TypeScript configuration
+└── vitest.config.ts            # Vitest configuration
 ```
 
 ---
