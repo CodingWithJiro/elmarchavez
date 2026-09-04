@@ -11,7 +11,7 @@
 [![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/public/docs/lighthouse-report.pdf)
 
 ![Status](https://img.shields.io/badge/status-complete-brightgreen)
-![Test Coverage](https://img.shields.io/badge/test%20coverage-87%25-brightgreen)
+![Test Coverage](https://img.shields.io/badge/test%20coverage-85%25-brightgreen)
 ![Experience](https://img.shields.io/badge/experience-year%201-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.elmarchavez&left_text=repo%20views)
 
