@@ -71,6 +71,7 @@ Rather than emphasizing on complex animations, I intentionally focused on access
 | Continuous Integration     | Automated linting, testing, coverage reporting, end-to-end testing, and production build verification using GitHub Actions.                                 |
 | Feature-Based Architecture | Organized using reusable components, centralized data modules, shared TypeScript types, and reusable utilities for long-term maintainability.               |
 | Code Quality               | Uses TypeScript, ESLint, Prettier, and consistent project organization to improve readability and maintainability.                                          |
+| Content Architecture       | Separates structured portfolio metadata from long-form MDX content using centralized typed data, reusable utilities, and dynamic routes.                    |
 | Performance Optimization   | Leverages Next.js `<Image>` and `<Link>` optimization, font optimization, SSR-safe theme handling, and responsive image loading for a fast user experience. |
 
 ---
