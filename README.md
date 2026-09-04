@@ -292,7 +292,7 @@ The following scripts are available for local development, testing, and producti
 
 Created by: **Elmar Chavez** (CodingWithJiro)
 
-Month/Year: **April 2026**
+Last updated: **September 2026**
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-2F6F8F?style=for-the-badge)](https://elmarchavez.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elmar-chavez/)
