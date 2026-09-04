@@ -261,7 +261,7 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 
 | Improvement               | Description                                                                                                          |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Integrated Blog           | Build a dedicated blog using Next.js instead of linking to external articles.                                        |
+| Tech Stack Expansion      | Add a dedicated `/tech-stack` page and a "View all" entry point from the homepage Tech Stack section.                |
 | Visual Regression Testing | Add screenshot-based testing to detect unintended UI changes.                                                        |
 | Accessibility Auditing    | Integrate automated accessibility testing into the existing testing workflow.                                        |
 | Performance Monitoring    | Continue optimizing bundle size and Core Web Vitals as the project grows.                                            |
