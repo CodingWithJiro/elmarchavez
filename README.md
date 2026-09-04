@@ -19,7 +19,10 @@
 
 A professional and modern web portfolio to showcase my projects, skills, and growth as a full stack developer.
 
-![Site Preview](/public/img/preview_1650x928.png)
+| _Mobile Preview (iPhone 14 Pro Max)_                   | _Desktop Preview (MacBook Air)_                           |
+| ------------------------------------------------------ | --------------------------------------------------------- |
+| ![Mobile](public/img/site-preview-iphone-14.webp)      | ![Desktop](public/img/site-preview-macbook-air.webp)      |
+| ![Mobile](public/img/site-preview-iphone-14-dark.webp) | ![Desktop](public/img/site-preview-macbook-air-dark.webp) |
 
 ---
 
