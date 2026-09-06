@@ -19,14 +19,14 @@ export const workExperiences: WorkExperience[] = [
   },
 ];
 
-export const certificates: Certificate[] = [
+export const CERTIFICATES: Certificate[] = [
   {
-    id: 3,
-    title: 'Relational Databases',
+    id: 1,
+    title: 'Responsive Web Design',
     institution: 'freeCodeCamp',
-    dateReceived: 'May 2026',
+    dateReceived: 'Dec 2025',
     urlLink:
-      'https://www.freecodecamp.org/certification/codingwithjiro/relational-databases-v9',
+      'https://www.freecodecamp.org/certification/codingwithjiro/responsive-web-design-v9',
   },
   {
     id: 2,
@@ -37,11 +37,21 @@ export const certificates: Certificate[] = [
       'https://www.freecodecamp.org/certification/codingwithjiro/javascript-v9',
   },
   {
-    id: 1,
-    title: 'Responsive Web Design',
+    id: 3,
+    title: 'Relational Databases',
     institution: 'freeCodeCamp',
-    dateReceived: 'Dec 2025',
+    dateReceived: 'May 2026',
     urlLink:
-      'https://www.freecodecamp.org/certification/codingwithjiro/responsive-web-design-v9',
+      'https://www.freecodecamp.org/certification/codingwithjiro/relational-databases-v9',
+  },
+  {
+    id: 4,
+    title: 'Front-End Libraries',
+    institution: 'freeCodeCamp',
+    dateReceived: 'September 2026',
+    urlLink:
+      'https://www.freecodecamp.org/certification/codingwithjiro/front-end-development-libraries-v9',
   },
 ];
+
+export const certificates: Certificate[] = CERTIFICATES.slice(-3).reverse();
