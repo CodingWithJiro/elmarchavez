@@ -4,10 +4,43 @@ import ArticleHeader from '@/components/sections/article-header';
 import Footer from '@/components/sections/footer';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+
+const metaDescription =
+  'Blog posts on full stack development and tech from Elmar Chavez.';
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = getBlogMeta(slug);
+  const title = `${blog.title} | Elmar Chavez`;
+  const metadata: Metadata = {
+    title,
+    description: metaDescription,
+    keywords: [
+      'Elmar Chavez Blog',
+      'Web Development Blog',
+      'Tech Articles',
+      'Tech Community',
+      'Software Engineering Blog',
+    ],
+    openGraph: {
+      title,
+      description: metaDescription,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: metaDescription,
+    },
+  };
+  return metadata;
+}
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
