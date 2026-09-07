@@ -1,3 +1,5 @@
+import ViewAllLink from '../ui/view-all-link';
+
 export const FRONTEND: string[] = [
   'JavaScript',
   'TypeScript',
@@ -11,7 +13,10 @@ export const DEVOPS: string[] = ['GitHub Actions', 'Docker'];
 const TechStack = () => {
   return (
     <section className="border-border/40 bg-card flex flex-col gap-3 rounded-lg border p-4 transition-colors duration-150 ease-in-out">
-      <h2 className="text-lg font-bold">Tech Stack</h2>
+      <header className="flex items-center justify-between">
+        <h2 className="text-lg font-bold">Tech Stack</h2>
+        <ViewAllLink href="/tech-stack" />
+      </header>
 
       <section>
         <h3 className="mb-1 text-base font-semibold">Frontend</h3>
