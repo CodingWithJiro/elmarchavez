@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     'Elmar Chavez Tech Stack',
     'Web Development Technologies',
     'Full Stack Development Skills',
-    'Frontend',
-    'Backend',
+    'Frontend Tech',
+    'Backend Tech',
   ],
   openGraph: {
     title: 'Tech Stack | Elmar Chavez',

@@ -47,12 +47,18 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
             /
           </span>
 
-          <p
-            className="text-muted-foreground hover:text-foreground max-w-32 truncate text-[12px] font-medium transition-colors hover:cursor-pointer md:max-w-62 md:text-sm"
-            aria-current="page"
-          >
-            {currentLabel}
-          </p>
+          <div className="group relative">
+            <p
+              className="text-muted-foreground group-hover:text-foreground max-w-32 truncate text-[12px] font-medium transition-colors hover:cursor-pointer md:max-w-62 md:text-sm"
+              aria-current="page"
+            >
+              {currentLabel}
+            </p>
+
+            <span className="bg-foreground text-background after:bg-foreground absolute bottom-full left-[75%] hidden rounded-md rounded-bl-none px-2 py-1 text-xs whitespace-nowrap group-hover:block">
+              You are here!
+            </span>
+          </div>
         </li>
       </ol>
     </nav>
