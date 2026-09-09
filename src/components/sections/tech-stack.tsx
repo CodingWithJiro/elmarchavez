@@ -1,5 +1,6 @@
 import { backend, devOps, frontend } from '@/data/tech-stack';
 import ViewAllLink from '../ui/view-all-link';
+import TechList from './tech-list';
 
 const TechStack = () => {
   return (
@@ -8,57 +9,9 @@ const TechStack = () => {
         <h2 className="text-lg font-bold">Tech Stack</h2>
         <ViewAllLink href="/tech-stack" />
       </header>
-
-      <section>
-        <h3 className="mb-1 text-base font-semibold">Frontend</h3>
-
-        <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
-          {frontend.map((tech) => {
-            return (
-              <li
-                className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1.5 text-[0.85rem]"
-                key={tech}
-              >
-                {tech}
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-
-      <section>
-        <h3 className="mb-1 text-base font-semibold">Backend</h3>
-
-        <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
-          {backend.map((tech) => {
-            return (
-              <li
-                className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1 text-[0.85rem]"
-                key={tech}
-              >
-                {tech}
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-
-      <section>
-        <h3 className="mb-1 text-base font-semibold">DevOps</h3>
-
-        <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
-          {devOps.map((tech) => {
-            return (
-              <li
-                className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1 text-[0.85rem]"
-                key={tech}
-              >
-                {tech}
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      <TechList category="Frontend" technologies={frontend} />
+      <TechList category="Backend" technologies={backend} />
+      <TechList category="DevOps" technologies={devOps} />
     </section>
   );
 };
