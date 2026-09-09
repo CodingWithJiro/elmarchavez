@@ -2,9 +2,11 @@ import type { Metadata } from 'next';
 import Breadcrumb from '@/components/sections/breadcrumb';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import Footer from '@/components/sections/footer';
+import TechList from '@/components/sections/tech-list';
+import { TECH_STACK } from '@/data/tech-stack';
 
 const metaDescription =
-  'List of all the technologies Elmar Chavez have experience with.';
+  'Technologies and tools Elmar Chavez has worked with across his projects.';
 
 export const metadata: Metadata = {
   title: 'Elmar Chavez | Tech Stack',
@@ -38,14 +40,22 @@ export default function TechStackPage() {
         <ThemeToggle />
       </header>
 
-      <section>
+      <section className="mb-8">
         <h1 className="mb-1 text-lg font-bold md:text-3xl">Tech Stack</h1>
         <p className="mb-6 text-sm font-medium md:text-base">
-          List of technologies I used so far.
+          Technologies and tools I&apos;ve worked with so far.
         </p>
       </section>
 
-      <p>Add list here.</p>
+      <ul className="flex flex-col gap-10">
+        {TECH_STACK.map(({ category, technologies }) => {
+          return (
+            <li key={category}>
+              <TechList category={category} technologies={technologies} />
+            </li>
+          );
+        })}
+      </ul>
 
       <Footer />
     </main>
