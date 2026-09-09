@@ -9,6 +9,7 @@ export const FRONTEND: string[] = [
   'HTML',
   'CSS',
   'Vite',
+  'Responsive Web Design',
 ];
 export const BACKEND: string[] = ['Node.js', 'Express.js', 'PostgreSQL'];
 export const TESTING_AND_QUALITY: string[] = [
@@ -17,6 +18,7 @@ export const TESTING_AND_QUALITY: string[] = [
   'MSW',
   'Playwright',
   'Axe DevTools',
+  'Lighthouse',
   'ESLint',
   'Prettier',
 ];
@@ -34,3 +36,30 @@ export const TOOLS: string[] = [
 export const frontend = FRONTEND.slice(0, 5);
 export const backend = BACKEND.slice(0, 5);
 export const devOps = DEVOPS.slice(0, 5);
+
+export const TECH_STACK = [
+  {
+    category: 'Frontend',
+    technologies: FRONTEND,
+  },
+  {
+    category: 'Backend',
+    technologies: BACKEND,
+  },
+  {
+    category: 'DevOps',
+    technologies: DEVOPS,
+  },
+  {
+    category: 'Testing & Quality',
+    technologies: TESTING_AND_QUALITY,
+  },
+  {
+    category: 'Content',
+    technologies: CONTENT,
+  },
+  {
+    category: 'Tools',
+    technologies: TOOLS,
+  },
+];
