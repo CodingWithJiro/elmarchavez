@@ -1,14 +1,5 @@
+import { backend, devOps, frontend } from '@/data/tech-stack';
 import ViewAllLink from '../ui/view-all-link';
-
-export const FRONTEND: string[] = [
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Tailwind CSS',
-];
-export const BACKEND: string[] = ['Node.js', 'Express.js', 'PostgreSQL'];
-export const DEVOPS: string[] = ['GitHub Actions', 'Docker'];
 
 const TechStack = () => {
   return (
@@ -22,7 +13,7 @@ const TechStack = () => {
         <h3 className="mb-1 text-base font-semibold">Frontend</h3>
 
         <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
-          {FRONTEND.map((tech) => {
+          {frontend.map((tech) => {
             return (
               <li
                 className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1.5 text-[0.85rem]"
@@ -39,7 +30,7 @@ const TechStack = () => {
         <h3 className="mb-1 text-base font-semibold">Backend</h3>
 
         <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
-          {BACKEND.map((tech) => {
+          {backend.map((tech) => {
             return (
               <li
                 className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1 text-[0.85rem]"
@@ -56,7 +47,7 @@ const TechStack = () => {
         <h3 className="mb-1 text-base font-semibold">DevOps</h3>
 
         <ul className="gap flex flex-wrap gap-x-2 gap-y-1">
-          {DEVOPS.map((tech) => {
+          {devOps.map((tech) => {
             return (
               <li
                 className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1 text-[0.85rem]"

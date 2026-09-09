@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { FRONTEND, BACKEND, DEVOPS } from './tech-stack';
+import { frontend, backend, devOps } from '@/data/tech-stack';
 import TechStack from './tech-stack';
 
 describe('Tech Stack section', () => {
@@ -26,7 +26,7 @@ describe('Tech Stack section', () => {
   test('renders every tech in each category', () => {
     render(<TechStack />);
     const techLists = screen.getAllByRole('listitem');
-    const totalTech = FRONTEND.length + BACKEND.length + DEVOPS.length;
+    const totalTech = frontend.length + backend.length + devOps.length;
     expect(techLists.length).toBe(totalTech);
   });
 });
