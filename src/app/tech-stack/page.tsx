@@ -42,9 +42,9 @@ export default function TechStackPage() {
 
       <section className="mb-8">
         <h1 className="mb-1 text-lg font-bold md:text-3xl">Tech Stack</h1>
-        <p className="mb-6 text-sm font-medium md:text-base">
+        <h2 className="mb-6 text-sm font-medium md:text-base">
           Technologies and tools I&apos;ve worked with so far.
-        </p>
+        </h2>
       </section>
 
       <ul className="flex flex-col gap-10">

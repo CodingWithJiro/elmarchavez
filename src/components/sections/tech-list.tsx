@@ -12,7 +12,7 @@ export default function TechList({ category, technologies }: TechListProps) {
         {technologies.map((tech) => {
           return (
             <li
-              className="bg-muted/40 border-ring/20 rounded-sm border px-2 py-1.5 text-[0.85rem]"
+              className="bg-muted/40 border-ring/20 hover:border-foreground rounded-sm border px-2 py-1.5 text-[0.85rem] transition-colors duration-150 ease-in-out"
               key={tech}
             >
               {tech}
