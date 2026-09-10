@@ -29,4 +29,9 @@ describe('Tech Stack section', () => {
     const totalTech = frontend.length + backend.length + devOps.length;
     expect(techLists.length).toBe(totalTech);
   });
+  test('renders view all link', () => {
+    render(<TechStack />);
+    const viewAllLink = screen.getByRole('link', { name: /view all/i });
+    expect(viewAllLink).toBeInTheDocument();
+  });
 });
