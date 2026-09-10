@@ -92,7 +92,7 @@ test.describe('Keyboard Accessibility', () => {
     const blog = blogList[0];
     const link = page.getByRole('link', { name: blog.title });
     await tabUntilFocused(page, link, blog.title);
-    expect(link).toBeFocused();
+    await expect(link).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL(blog.blogUrl);
   });
@@ -107,10 +107,24 @@ test.describe('Keyboard Accessibility', () => {
     const certificate = certificates[0];
     const link = page.getByRole('link', { name: certificate.title });
     await tabUntilFocused(page, link, certificate.title);
-    expect(link).toBeFocused();
+    await expect(link).toBeFocused();
     const newPagePromise = page.waitForEvent('popup');
     await page.keyboard.press('Enter');
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(certificate.urlLink);
+  });
+  test('visitor can tab to the Tech Stack view all link and open the Tech Stack section', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const viewAllLink = page.locator('a[href="/tech-stack"]');
+    await tabUntilFocused(page, viewAllLink, 'View all link');
+    await expect(viewAllLink).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL('/tech-stack');
   });
 });
