@@ -6,4 +6,11 @@ test.describe('Tech Stack', () => {
     const heading = page.getByRole('heading', { name: /^tech stack$/i });
     await expect(heading).toBeVisible();
   });
+  test('visitor can view the Tech Stack page', async ({ page }) => {
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/tech-stack"]');
+    await viewAllLink.click();
+    const heading = page.getByRole('heading', { name: /^tech stack$/i });
+    await expect(heading).toBeVisible();
+  });
 });
