@@ -30,7 +30,7 @@ const Blog = () => {
                 className="border-border/60 border-b pb-4 last:border-b-0 md:flex md:flex-row md:items-center md:justify-between md:gap-4"
                 key={id}
               >
-                <div className="border-ring/20 focus-within:border-ring has-hover:border-ring hidden w-55 shrink-0 overflow-hidden rounded-xl border-2 transition-all duration-150 ease-in-out md:block">
+                <div className="border-ring/20 focus-within:border-foreground has-hover:border-foreground hidden w-55 shrink-0 overflow-hidden rounded-xl border transition-all duration-150 ease-in-out md:block">
                   <Image
                     src={imgUrl}
                     alt={imgAlt}
