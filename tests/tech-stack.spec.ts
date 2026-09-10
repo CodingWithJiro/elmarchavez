@@ -10,6 +10,7 @@ test.describe('Tech Stack', () => {
     await page.goto('/');
     const viewAllLink = page.locator('a[href="/tech-stack"]');
     await viewAllLink.click();
+    await expect(page).toHaveURL('/tech-stack');
     const heading = page.getByRole('heading', { name: /^tech stack$/i });
     await expect(heading).toBeVisible();
   });
