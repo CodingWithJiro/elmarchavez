@@ -113,7 +113,7 @@ test.describe('Keyboard Accessibility', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(certificate.urlLink);
   });
-  test('visitor can tab to the Tech Stack view all link and open the Tech Stack section', async ({
+  test('visitor can tab to the Tech Stack view all link and open the Tech Stack page', async ({
     page,
     browserName,
   }) => {
@@ -126,5 +126,19 @@ test.describe('Keyboard Accessibility', () => {
     await expect(viewAllLink).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL('/tech-stack');
+  });
+  test.only('visitor can tab to the Projects view all link and open the Projects page', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const viewAllLink = page.locator('a[href="/projects"]');
+    await tabUntilFocused(page, viewAllLink, 'View all link');
+    await expect(viewAllLink).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL('/projects');
   });
 });
