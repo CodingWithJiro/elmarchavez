@@ -5,7 +5,7 @@ import { socialLinks } from '@/data/social-links';
 const Hero = () => {
   return (
     <header className="mb-6 flex flex-row items-center gap-2 md:gap-4">
-      <div className="border-ring/20 w-25 shrink-0 overflow-hidden rounded-lg border md:w-30">
+      <div className="border-ring/20 hover:border-foreground w-25 shrink-0 overflow-hidden rounded-lg border transition-colors duration-150 ease-in-out md:w-30">
         <Image
           src="/img/author-profile_683x771.png"
           alt="Elmar Chavez - Full Stack Developer"
