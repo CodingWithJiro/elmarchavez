@@ -15,7 +15,7 @@ const Projects = () => {
           ({ id, title, description, imgUrl, imgUrlDark, siteUrl }) => {
             return (
               <li
-                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-muted/40 mx-auto flex max-w-50 flex-col items-center justify-start rounded-lg border text-center transition-all duration-150 ease-in-out md:max-w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]"
+                className="border-ring/20 focus-within:border-foreground has-hover:border-foreground bg-muted/40 mx-auto flex max-w-50 flex-col items-center justify-start rounded-lg border text-center transition-all duration-150 ease-in-out md:max-w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]"
                 key={id}
               >
                 <div className="mb-4 h-35.5 w-50 md:w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]">
