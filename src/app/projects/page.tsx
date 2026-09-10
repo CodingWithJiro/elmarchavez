@@ -44,8 +44,10 @@ export default function ProjectsPage() {
       </header>
 
       <section>
-        <h1 className="mb-1 text-lg font-bold md:text-3xl">Projects</h1>
-        <p className="mb-6 text-sm font-medium md:text-base">
+        <h1 className="mb-1 text-lg font-bold transition-colors duration-150 ease-in-out md:text-3xl">
+          Projects
+        </h1>
+        <p className="mb-6 text-sm font-medium transition-colors duration-150 ease-in-out md:text-base">
           Things I built and worked on.
         </p>
       </section>
@@ -64,7 +66,7 @@ export default function ProjectsPage() {
           }) => {
             return (
               <li
-                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-background text-foreground mx-auto flex max-w-60 flex-col overflow-hidden rounded-lg border transition-all duration-150 ease-in-out min-[850px]:max-w-70"
+                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-background text-foreground mx-auto flex max-w-60 flex-col overflow-hidden rounded-lg border duration-150 ease-in-out hover:transition-colors focus-visible:transition-colors min-[850px]:max-w-70"
                 key={id}
               >
                 <div className="relative mb-4 aspect-video max-w-60 shrink-0 overflow-hidden min-[850px]:max-w-70">
@@ -101,17 +103,19 @@ export default function ProjectsPage() {
 
                 <section className="flex h-full flex-col justify-between">
                   <header className="mb-4 px-4">
-                    <h2 className="mb-2 text-[0.875rem] font-semibold">
+                    <h2 className="text-foreground mb-2 text-[0.875rem] font-semibold">
                       {title}
                     </h2>
-                    <p className="text-[0.75rem]">{description}</p>
+                    <p className="text-foreground text-[0.75rem]">
+                      {description}
+                    </p>
                   </header>
 
                   <div className="mb-4 flex items-center justify-center gap-2 px-4 text-[0.75rem]">
                     <Link
                       href={githubUrl}
                       target="_blank"
-                      className="bg-background border-border/50 hover:bg-foreground hover:text-background focus-visible:outline-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-4 py-1 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2 min-[850px]:px-6"
+                      className="bg-background border-border/50 text-foreground hover:bg-foreground hover:text-background focus-visible:outline-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-4 py-1 outline-offset-4 outline-transparent duration-150 ease-in-out hover:transition-colors focus-visible:outline-2 focus-visible:transition-colors min-[850px]:px-6"
                       aria-label={`Go to ${title}'s GitHub repository.`}
                     >
                       <FaGithub size={12} />
@@ -120,7 +124,7 @@ export default function ProjectsPage() {
                     <Link
                       href={siteUrl}
                       target="_blank"
-                      className="bg-background border-border/50 text-foreground hover:bg-foreground hover:text-background focus-visible:outline-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-4 py-1 outline-offset-4 outline-transparent transition-colors duration-150 ease-in-out focus-visible:outline-2 min-[850px]:px-6"
+                      className="bg-background border-border/50 text-foreground hover:bg-foreground hover:text-background focus-visible:outline-muted-foreground flex items-center justify-center gap-1 rounded-sm border px-4 py-1 outline-offset-4 outline-transparent duration-150 ease-in-out hover:transition-colors focus-visible:outline-2 focus-visible:transition-colors min-[850px]:px-6"
                       aria-label={`Go to ${title}'s live website.`}
                     >
                       <Globe size={12} />
@@ -137,7 +141,7 @@ export default function ProjectsPage() {
       <div className="flex items-center justify-between">
         <Link
           href="/"
-          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-6 outline-transparent hover:underline focus-visible:transition-colors focus-visible:duration-150 focus-visible:ease-in-out md:text-[0.875rem]"
         >
           <ArrowLeft aria-hidden="true" size={16} />
           <span>Back to homepage</span>
@@ -145,7 +149,7 @@ export default function ProjectsPage() {
 
         <Link
           href="https://github.com/CodingWithJiro/Projects-Hub"
-          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-6 outline-transparent hover:underline focus-visible:transition-colors focus-visible:duration-150 focus-visible:ease-in-out md:text-[0.875rem]"
           target="_blank"
         >
           <span>View all projects</span>

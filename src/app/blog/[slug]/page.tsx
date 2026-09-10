@@ -81,7 +81,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <div className="flex items-center justify-between">
         <Link
           href="/"
-          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-6 outline-transparent hover:underline focus-visible:transition-colors focus-visible:duration-150 focus-visible:ease-in-out md:text-[0.875rem]"
         >
           <ArrowLeft aria-hidden="true" size={16} />
           <span>Back to homepage</span>
@@ -89,7 +89,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <Link
           href="/blog"
-          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-right text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline md:text-[0.875rem]"
+          className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-right text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-6 outline-transparent hover:underline focus-visible:transition-colors focus-visible:duration-150 focus-visible:ease-in-out md:text-[0.875rem]"
         >
           <span>Read more articles</span>
           <ArrowRight aria-hidden="true" size={16} />

@@ -12,7 +12,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
       <ol className="flex items-center gap-1">
         <li className="flex items-center">
           <Link
-            className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent transition-colors focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
+            className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
             href="/"
           >
             Home
@@ -30,7 +30,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
               </span>
 
               <Link
-                className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent transition-colors focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
+                className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
                 href={href}
               >
                 {label}
@@ -49,7 +49,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
 
           <div className="group relative">
             <p
-              className="text-muted-foreground group-hover:text-foreground max-w-32 truncate text-[12px] font-medium transition-colors hover:cursor-pointer md:max-w-62 md:text-sm"
+              className="text-muted-foreground group-hover:text-foreground max-w-32 truncate text-[12px] font-medium hover:cursor-pointer md:max-w-62 md:text-sm"
               aria-current="page"
             >
               {currentLabel}
