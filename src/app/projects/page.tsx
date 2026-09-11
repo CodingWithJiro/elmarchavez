@@ -66,7 +66,7 @@ export default function ProjectsPage() {
           }) => {
             return (
               <li
-                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-background text-foreground mx-auto flex max-w-60 flex-col overflow-hidden rounded-lg border duration-150 ease-in-out hover:transition-colors focus-visible:transition-colors min-[850px]:max-w-70"
+                className="border-ring/40 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-60 flex-col overflow-hidden rounded-lg border duration-150 ease-in-out hover:transition-colors focus-visible:transition-colors min-[850px]:max-w-70"
                 key={id}
               >
                 <div className="relative mb-4 aspect-video max-w-60 shrink-0 overflow-hidden min-[850px]:max-w-70">
