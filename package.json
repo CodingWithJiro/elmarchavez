@@ -1,7 +1,14 @@
 {
   "name": "elmarchavez",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "A professional and modern web portfolio to showcase my projects, skills, and growth as a full stack developer.",
+  "author": "Elmar Chavez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingWithJiro/elmarchavez.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
