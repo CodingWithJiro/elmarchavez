@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { projectList } from '@/data/project-list';
 import ViewAllLink from '../ui/view-all-link';
 
@@ -15,7 +16,7 @@ const Projects = () => {
           ({ id, title, description, imgUrl, imgUrlDark, siteUrl }) => {
             return (
               <li
-                className="border-ring/20 focus-within:border-ring has-hover:border-ring bg-muted/40 mx-auto flex max-w-50 flex-col items-center justify-start rounded-lg border text-center transition-all duration-150 ease-in-out md:max-w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]"
+                className="border-ring/20 focus-within:border-foreground has-hover:border-foreground bg-muted/40 mx-auto flex max-w-50 flex-col items-center justify-start rounded-lg border text-center transition-all duration-150 ease-in-out md:max-w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]"
                 key={id}
               >
                 <div className="mb-4 h-35.5 w-50 md:w-[clamp(12.5rem,1.25rem+23.4375vw,14.375rem)]">
@@ -38,14 +39,14 @@ const Projects = () => {
                 </div>
 
                 <h3 className="mb-1 text-[0.875rem] font-semibold">
-                  <a
+                  <Link
                     className="decoration-0 underline-offset-4 opacity-90 hover:underline hover:opacity-100 focus-visible:underline focus-visible:opacity-100 focus-visible:outline-none"
                     href={siteUrl}
                     target="_blank"
                     aria-label={`Go to project ${title}.`}
                   >
                     {title}
-                  </a>
+                  </Link>
                 </h3>
 
                 <p className="px-4 pb-2 text-[0.75rem]">{description}</p>

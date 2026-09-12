@@ -12,7 +12,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
       <ol className="flex items-center gap-1">
         <li className="flex items-center">
           <Link
-            className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent transition-colors focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
+            className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
             href="/"
           >
             Home
@@ -30,7 +30,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
               </span>
 
               <Link
-                className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent transition-colors focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
+                className="text-muted-foreground hover:text-foreground focus-visible:text-foreground text-[12px] font-medium outline-transparent focus-visible:underline focus-visible:underline-offset-4 md:text-sm"
                 href={href}
               >
                 {label}
@@ -47,12 +47,18 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
             /
           </span>
 
-          <p
-            className="text-muted-foreground hover:text-foreground max-w-32 truncate text-[12px] font-medium transition-colors hover:cursor-pointer md:max-w-62 md:text-sm"
-            aria-current="page"
-          >
-            {currentLabel}
-          </p>
+          <div className="group relative">
+            <p
+              className="text-muted-foreground group-hover:text-foreground max-w-32 truncate text-[12px] font-medium hover:cursor-pointer md:max-w-62 md:text-sm"
+              aria-current="page"
+            >
+              {currentLabel}
+            </p>
+
+            <span className="bg-foreground text-background after:bg-foreground pointer-events-none absolute bottom-full left-[75%] rounded-md rounded-bl-none px-2 py-1 text-xs whitespace-nowrap opacity-0 transition-opacity duration-150 ease-in-out group-hover:opacity-100 group-hover:delay-1000">
+              You are here!
+            </span>
+          </div>
         </li>
       </ol>
     </nav>

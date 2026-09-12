@@ -47,18 +47,18 @@ const ArticleHeader = ({ breadcrumbItems, blogMeta }: ArticleHeaderProps) => {
           />
         </div>
 
-        <ul className="mb-1 flex gap-2 text-[0.65rem] font-light">
+        <ul className="text-foreground mb-1 flex gap-2 text-[0.65rem] font-light">
           {blogMeta.tags.map((tag) => {
             return <li key={tag}>{tag}</li>;
           })}
         </ul>
 
-        <h1 className="mb-4 text-[24px] font-extrabold md:text-[32px] md:leading-10">
+        <h1 className="text-foreground mb-4 text-[24px] font-extrabold md:text-[32px] md:leading-10">
           {blogMeta.title}
         </h1>
 
         <section>
-          <div className="flex items-center gap-2">
+          <div className="text-foreground flex items-center gap-2">
             <div className="flex items-center gap-1">
               <div className="size-6 overflow-hidden rounded-full">
                 <Image
