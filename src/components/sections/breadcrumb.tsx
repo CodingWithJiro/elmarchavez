@@ -55,7 +55,7 @@ const Breadcrumb = ({ items, currentLabel }: BreadCrumbProps) => {
               {currentLabel}
             </p>
 
-            <span className="bg-foreground text-background after:bg-foreground absolute bottom-full left-[75%] hidden rounded-md rounded-bl-none px-2 py-1 text-xs whitespace-nowrap group-hover:block">
+            <span className="bg-foreground text-background after:bg-foreground pointer-events-none absolute bottom-full left-[75%] rounded-md rounded-bl-none px-2 py-1 text-xs whitespace-nowrap opacity-0 transition-opacity duration-150 ease-in-out group-hover:opacity-100 group-hover:delay-1000">
               You are here!
             </span>
           </div>
