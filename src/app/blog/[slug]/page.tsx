@@ -74,11 +74,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     >
       <ArticleHeader breadcrumbItems={breadcrumbItems} blogMeta={blog} />
 
-      <article className="prose prose-img:mx-auto mb-4 max-w-none">
+      <article className="prose prose-img:mx-auto mb-8 max-w-none">
         <Article />
       </article>
 
-      <div className="flex items-center justify-between">
+      <div className="before:border-border relative flex items-center justify-between pt-8 before:absolute before:top-0 before:left-1/2 before:w-1/4 before:-translate-x-1/2 before:border-t">
         <Link
           href="/"
           className="focus-visible:outline-muted-foreground flex items-center gap-1 rounded-sm text-[0.85rem] font-normal underline-offset-4 outline-2 outline-offset-6 outline-transparent hover:underline focus-visible:transition-colors focus-visible:duration-150 focus-visible:ease-in-out md:text-[0.875rem]"

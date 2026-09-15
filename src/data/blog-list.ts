@@ -11,8 +11,7 @@ export const BLOGS: BlogType[] = [
     publishDate: 'May 2026',
     readTime: '19 min read',
     tags: ['#llm', '#ollama', '#gemma4'],
-    blogUrl:
-      'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
+    blogUrl: `/blog/${getSlug('Should you use Gemma 4 for your Development? A Multiversal Analysis to Determine if Gemma 4 is Right for You!')}`,
     imgUrl: '/img/blog-1.webp',
     imgAlt:
       'A collection of anime characters for a multiversal collaboration for an article.',
@@ -26,8 +25,7 @@ export const BLOGS: BlogType[] = [
     publishDate: 'June 2026',
     readTime: '15 min read',
     tags: ['#opensource', '#machinelearning', '#copilot'],
-    blogUrl:
-      'https://dev.to/devengers/two-devs-and-a-copilot-created-classifierai-a-prototype-chrome-extension-that-automatically-4fge',
+    blogUrl: `/blog/${getSlug('Two Devs and a Copilot Created ClassifierAI: A Prototype Chrome Extension that Automatically Detects AI-Generated Content on DEV!')}`,
     imgUrl: '/img/blog-2.webp',
     imgAlt:
       'A funny backgroups GIF image where Elmar and Francis are dancing with strange creatures.',
@@ -55,6 +53,19 @@ export const BLOGS: BlogType[] = [
     blogUrl: `/blog/${getSlug('How I Contributed to a Laravel Application Without Knowing Laravel')}`,
     imgUrl: '/img/blog-4.jpg',
     imgAlt: 'Keyboard caps laid down on a white table.',
+  },
+  {
+    id: 5,
+    title: 'The Slow and Quiet Cognitive Atrophy of a Modern Software Engineer',
+    description:
+      'My thoughts on AI dependency and why struggling through problems is still one of the best ways to combat cognitive atrophy and become a better engineer.',
+    publishDate: 'September 2026',
+    readTime: '8 min read',
+    tags: ['#ai', '#programming', '#software'],
+    blogUrl: `/blog/${getSlug('The Slow and Quiet Cognitive Atrophy of a Modern Software Engineer')}`,
+    imgUrl: '/img/blog-5.webp',
+    imgAlt:
+      'A painting of six blind men stumbling, depicting of a tragedy when following without thinking.',
   },
 ];
 

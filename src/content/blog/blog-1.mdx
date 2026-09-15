@@ -1,0 +1,551 @@
+_This article was originally posted in [DEV Community](https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol) and is a submission for the [Gemma 4 Challenge: Write About Gemma 4](https://dev.to/challenges/google-gemma-2026-05-06). I only contributed to this article as a co-author. Below is the original text file submitted by the main author._
+
+> **Disclaimer:** _This is an individual submission for Francis Tran (@francistrdev). Everyone involved has their own accounts of using Gemma 4 and has been paraphrased in this post. See below for the list of people involved._
+
+> **Author:** Francis Tran (@francistrdev)
+>
+> **Featuring:** Elmar Chavez (@codingwithjiro), Konark Sharma (@konark_13), and Julien Avezou (@javz)
+>
+> _The cover image uses characters from various Anime chosen by the people who are featured in this post, put together in using Pixlr, and using AI to enhance the quality of the image. Some contents started off using AI and has been paraphrased by the author's own words._
+
+---
+
+# Table of Contents
+
+- [Introduction](#Introduction)
+
+- [Setting up Gemma 4 using Ollama](#Elmar)
+  - [Installing Ollama and Gemma 4](#Elmar1)
+  - [Trying out Gemma 4](#Elmar2)
+  - [Running Gemma 4 Offline](#Elmar3)
+  - [Elmar's Verdict on Gemma 4](#Elmar4)
+
+- [Using Gemma 4 as a Confused Developer](#Konark)
+  - [The Strawberry Test](#Konark1)
+  - [The Tic Tac Toe Rotation Test](#Konark2)
+  - [The Broken Cup Test](#Konark3)
+  - [Konark's Verdict on Gemma 4](#Konark4)
+
+- [Building a Prototype using Gemma 4](#Julien)
+  - [Results of Gemma 4 Vs. GPT 5.4](#Julien1)
+    - [Technical Depth](#Julien2)
+    - [Architecture & System Thinking](#Julien3)
+  - [Julien's Verdict on Gemma 4](#Julien4)
+
+- [Using Gemma 4 as an AI-Agent](#Francis)
+  - [Gemma 4 is Strict](#Francis1)
+  - [Please Google I need this. Gemma 4 is kind of Looping Itself](#Francis2)
+  - [Francis' Verdict on Gemma 4](#Francis3)
+
+- [Summary](#Summary)
+
+[Thank you for Reading!](#End)
+
+---
+
+# Introduction <a id='Introduction'></a>
+
+In the age of AI, many developers are using AI in their workflows. This can range from AI assistants cleaning up a large code-base to developers vibe coding a prototype to showcase to others.
+
+Regardless of your use of AI in your development, it is important to choose the model you want to work with. There are a lot of choices to choose from such as ChatGPT, Gemini, Copilot, etc. **The one we are talking about today is Google's latest model: Gemma 4!**
+
+The goal of this article is to share our experiences using Gemma 4 in 4 different perspectives of Development **starting from setting up Gemma 4 using Ollama, testing the hallucination of Gemma 4, how Gemma 4 outputs, and using Gemma 4 as an AI-Agent.** Additionally, I will share our discoveries and whether we recommend using Gemma 4 based on our experiences! **We hope that our experience of using Gemma 4 will help you to decide if Gemma 4 is right for you in any skill level of your developer career!**
+
+With that said, we will now talk about the setup process. In any development, we all experience setting up our environment whether it is OpenClaw or a simple `NPM` package! Having a local LLM is one of them. Here is Elmar's experience of setting up Gemma 4 using Ollama!
+
+![Mashed up meme](/img/mashed-up-meme.webp)
+
+---
+
+# Setting up Gemma 4 using Ollama <a id='Elmar'></a>
+
+_By [Elmar Chavez](https://dev.to/codingwithjiro)_
+
+Elmar has been using ChatGPT for the past year where he mainly uses it as a mentor when doing projects. He was interested having a LLM locally. He believes that having an LLM locally is convenient for his case, due to power outages he has to faced in the Philippines. Having Gemma 4 locally will allow him to be productive when coding without the need to worry about connecting to the internet. With that said, he started to research about setting up Gemma 4 using Ollama.
+
+---
+
+### Installing Ollama and Gemma 4 <a id='Elmar1'></a>
+
+Elmar started to search on the internet, looking for tutorials on getting started on Gemma 4.
+
+[Gemma4 Tutorial](https://www.youtube.com/watch?v=7LEvSOiTWZk)
+
+One of the ways to get started is installing Ollama, which Elmar thought was a weird name until he realized the logo was an actual llama.
+
+When downloading Ollama, the main issue is the storage, which was nearing 100% capacity and Ollama installer defaults to the `C:\\ drive`.
+
+After searching more about installing Ollama without installing on the `C:\\ drive`, which led to this command he had to run on the terminal:
+
+```shell
+C:\Users\ELMAR>cd Downloads
+C:\Users\ELMAR\Downloads>OllamaSetup.exe /DIR="D:\Ollama"
+```
+
+Ultimately, it worked well. He had done other configurations such as redirecting the AI model installation in the same drive under `D:\\OllamaModels`. He then downloaded the **gemma4:e4b**.
+
+---
+
+### Trying out Gemma 4 <a id='Elmar2'></a>
+
+The first thing Elmar tried was **\"hi gemma4\"**. Although the expected outcome is Gemma 4 saying hello back, it gave him this error:
+
+```shell
+Error
+500 Internal Server Error: model requires more system memory (9.8 GiB) than is available (4.9 GiB)
+```
+
+![Dog covering ears.](/img/dog-covering-ears.webp)
+
+For context, this is his device specifications:
+
+![Elmar device specs.](/img/elmar-device-specs.webp)
+
+His laptop is great for programming and other developments. The issue is that his laptop is only suitable for \"lightweight models\" when it comes to downloading LLMs locally.
+
+**Elmar discovered that local AI depends heavily on your own hardware, unlike browser-based AI tools like ChatGPT.**
+
+One of the things Elmar did was to run a smaller version of Gemma 4:
+
+```shell
+ollama run gemma4:e2b
+```
+
+It gave him a similar error as before:
+
+```shell
+Error
+500 Internal Server Error: model requires more system memory (7.2 GiB) than is available (5.7 GiB)
+```
+
+After investigating a bit more, he closed other applications that were running on his computer and taking up space and it outputted!
+
+![Hi Gemma.](/img/hi-gemma.webp)
+
+The big thing about running it for the first time is that it took longer than he expected, but he mentioned that he had VSCode, Notepad, and 4 tabs currently opened in his Chrome Browser.
+
+---
+
+### Running Gemma 4 Offline <a id='Elmar3'></a>
+
+Elmar was curious about the result of using Gemma 4 without connecting to the internet.
+
+![Using Gemma.](/img/using-gemma.webp)
+
+It ran slower than usual, but it is still under a minute.
+
+Elmar then tried to ask questions to Gemma 4 that he would normally ask to ChatGPT as part of his Development workflow.
+
+![Bruce Almighty typing.](/img/bruce-almighty-typing.gif)
+
+In this case, he is currently building his website portfolio. Elmar asked a question along with attaching a screenshot to Gemma 4 and here is what it output:
+
+![Using Gemma again.](/img/using-gemma-again.webp)
+Surprisingly, it took less time considering the fact that he inserted an image for this use case.
+
+The wait time for the LLM to respond, which is around a minute, is reasonable for Elmar since he has a decent laptop. It is quite useful especially for countries that commonly have power outages or that have unreliable internet.
+
+---
+
+### Elmar's Verdict on Gemma 4 <a id='Elmar4'></a>
+
+This is Elmar's Verdict of Gemma 4 in terms of setting up via Ollama and using it for the first time:
+
+> Web-based LLMs are great for convenience and device flexibility. While local LLMs are great for offline reliability and privacy, I'd say the experience of experimenting with Ollama + Gemma 4 only made my perspective with AI clearer.
+>
+> It is not magic, it's just data combined with probability and rendering models that require large amounts of RAM for compute power.
+>
+> This begs the question, if I have a higher end device, would I invest fully into local LLM's?
+>
+> ![No meme.](/img/no-meme.webp)
+>
+> I would not sacrifice my own hardware for running AI computations just to get responses faster.
+>
+> There are data centers that have the hardware especially built for AI. I would rather give the job to them.
+>
+> Overall, ChatGPT is still far more practical for my current workflow so I will be sticking to it as my default. However, I would definitely use Ollama + Gemma 4 as a reliable alternative.
+
+That is Elmar's Verdict on Gemma 4! In the early stage, it is fast to setup, but difficult to use when it comes to response time and the hardware needed, especially considering most users do not have a powerful laptop.
+
+Now you know about the setup with Gemma 4! Starting off with Gemma 4 and seeing its outputs is a good sign that everything works! However, although Gemma 4 is a small and powerful model, how good is it at not being confused? We now transition to Konark where he tested Gemma 4 to the limit!
+
+---
+
+# Using Gemma 4 as a Confused Developer <a id='Konark'></a>
+
+_By [Konark Sharma](https://dev.to/konark_13)_
+
+Konark has been using Gemma 4 for some time and the one thing he wanted to know is to see if he can **abuse Gemma 4 to its confusion.**
+
+![AI Token Batman.](/img/ai-token-batman.webp)
+
+We all have that one moment where we randomly test an AI just to see **“How smart are you actually?\"** with questions like **“How many r’s are there in strawberry?”.** Konark did three tests such as the **Strawberry test, the Tic Tac Toe Rotation test, and the Broken Cup Test.**
+
+---
+
+### The Strawberry Test <a id='Konark1'></a>
+
+Konark asked Gemma 4: **“How many r’s are there in strawberry?”** (The answer would be three). Initially, this type of question was commonly used to confuse many AI models.
+
+Gemma 4 thought for a while and gave Konark three different interpretations regarding the number of \"r’s\" in strawberry.
+
+![Strawberry test.](/img/strawberry-test.webp)
+
+Konark realized that sometimes AI over complicates simple questions and he would rather prefer simple answers. For example, if there are 10 apples in a basket and you asked Gemma 4: “How many apples are there?”.
+
+Would you prefer this answer:
+
+“This is my first time counting. Do you mean apples inside the basket or around the basket?”
+
+Or would you simply perfer:
+
+“There are 10 apples.”
+
+Konark would prefer the second answer.
+
+With these results, he was curious about how Gemini would answer to the strawberry test. As such, he asked Gemini and it simply replied:
+
+```
+3 r’s.
+```
+
+It is straightforward and it is always good to have a simple, non-complex answer.
+
+---
+
+### The Tic Tac Toe Rotation Test <a id='Konark2'></a>
+
+Another fun question Konark asked Gemma 4 was: **“How would rotating a tic tac toe board by 90 degrees change the rules of the game and its strategy?”**
+
+The whole goal is to see if Gemma 4 thinks it's still the same, expect the board is rotated.
+
+However, Gemma 4 took quite some time to conclude this. It explained things properly and even walked through a rotated example.
+
+![Tic-Tac-Toe test.](/img/tic-tac-toe-test.webp)
+
+Although it is a helpful response, it would be nice to get a more straightforward answer similarly to the Strawberry Test.
+
+---
+
+### The Broken Cup Test <a id='Konark3'></a>
+
+This is Konark's favorite test, in which he asked Gemma 4: **“I have a metal cup with the bottom missing and the top sealed. How can I use this cup?”**
+
+The simple answer would be **\"Rotate the cup. And suddenly, it becomes usable again.\".**
+
+However, Gemma 4 did not really understand the trick. Instead, it started suggesting alternative ways to use the object.
+
+![Broken cup test.](/img/broken-cup-test.webp)
+
+Although it is creative, it is not entirely correct.
+
+On the other hand, Gemini understood the trick faster and then even expanded on practical uses.
+
+**Overall, Gemma 4 still struggles with certain trick questions and edge-case reasoning.**
+
+---
+
+### Konark's Verdict on Gemma 4 <a id='Konark4'></a>
+
+This is Konark's verdict of using Gemma 4.
+
+> After playing around with both models, I reached a simple conclusion.
+>
+> #### Gemma 4 feels good for:
+>
+> - learning
+> - content generation
+> - straightforward explanations
+> - slower, detailed responses
+>
+> #### Gemini feels better for:
+>
+> - trick questions
+> - quick reasoning
+> - direct answers
+> - faster conclusions
+>
+> And honestly, both have their place.
+>
+> Sometimes I want a detailed explanation.
+>
+> Sometimes I just want: **“Bro, just give me the answer.”**
+>
+> And that matters.
+>
+> Because developers don’t always want essays. Sometimes we just want the bug fixed.
+
+This is important to consider when you want to use Gemma 4. Sometimes, we just want a simple answer to the issue we are trying to solve. Of course, prompting varies and this is Konark's experience using Gemma 4 so it can be different from others.
+
+![Asking Gemma.](/img/asking-gemma.webp)
+
+Speaking of prompting, AI is used to prototype projects in development! We now transition to Julien's experience on using Gemma 4 when it comes to prototyping a project and how it compares to what he usually uses, which is Codex!
+
+---
+
+# Building a Prototype using Gemma 4 <a id='Julien'></a>
+
+_By [Julien Avezou](https://dev.to/javz)_
+
+Julien planned on using AI to create a fast prototype.
+
+![Prototype meme.](/img/prototype-meme.webp)
+
+He was curious about how Gemma 4 performs compared to his usual setup, **Codex (GPT 5.4).**
+
+For context, the project is a Chrome extension to help develop better use of LLMs. **He will share more on his blog page in the future!**
+
+His goal is to compare **Gemma 4 Vs. GPT 5.4** when it comes to prototyping. For this comparison, he will run tests across the following 2 categories using the same prompt as input and comparing the quality of the outputs:
+
+1. **Technical Depth:** The factual accuracy, understanding of deep system mechanics and ability to compare non-trivial trade-offs.
+
+2. **Architecture & System Thinking:** The ability to think at the macro level, identifying bottlenecks, scaling issues, and making justifiable \"when/why\" decisions.
+
+---
+
+### Results of Gemma 4 Vs. GPT 5.4 <a id='Julien1'></a>
+
+Here are the results for the cases of **Technical Depth and Architecture & System Thinking!**
+
+#### Technical Depth <a id='Julien2'></a>
+
+This is the prompt given to both LLMs:
+
+> _I am building a Chrome extension which detects when a developer is using ChatGPT, Claude, or Gemini, shows a floating button, opens a side panel, lets the user describe their task, recommends one of five AI thinking modes, generates a better prompt, and lets the user copy it manually._
+>
+> _Modes:_
+> _1. Explore — when I don’t fully understand the problem yet_
+> _2. Challenge — when I have a plan, but it might be wrong_
+> _3. Decide — when I need to choose between options_
+> _4. Audit — when I need to verify quality or correctness_
+> _5. Reflect — when I want to actually learn from what I did_
+>
+> _MVP constraints:_
+>
+> - _Chrome extension only_
+> - _no login_
+> - _no dashboard_
+> - _no automatic prompt insertion_
+> - _no usage tracking yet_
+>
+> _Task:_
+> _Give me a technically detailed implementation plan for the MVP._
+
+Here is the results:
+
+![Technical debt result.](/img/technical-debt-result.webp)
+
+Overall, **GPT 5.4 gives the stronger Technical Depth output since it is more accurate, more build-ready, and more specific.**
+
+#### Architecture & System Thinking <a id='Julien3'></a>
+
+This is the prompt given to both LLMs:
+
+> _I am building a Chrome extension that helps developers use AI more intentionally._
+>
+> _It sits on top of ChatGPT, Claude, and Gemini. The user describes their task, then it recommends one of five thinking modes and generates a better prompt to copy._
+>
+> _Modes:_
+> _1. Explore — when I don’t fully understand the problem yet_
+> _2. Challenge — when I have a plan, but it might be wrong_
+> _3. Decide — when I need to choose between options_
+> _4. Audit — when I need to verify quality or correctness_
+> _5. Reflect — when I want to actually learn from what I did_
+>
+> _MVP:_
+>
+> - _detect supported AI chat pages_
+> - _show floating ModeCheck button_
+> - _open side panel_
+> - _recommend mode_
+> - _generate better prompt_
+> - _copy manually_
+> - _soft CTA to the Thinking Engineer Toolkit_
+>
+> _Future:_
+> _A SaaS dashboard may later track AI usage modes, cognitive cost, dependency patterns, and optional hard blocks._
+>
+> _Task:_
+> _Think at the system architecture level._
+>
+> _Cover:_
+>
+> - _best one-week MVP architecture_
+> - _what to build now vs postpone_
+> - _key system boundaries_
+> - _privacy/trust risks_
+> - _maintenance risks for a solo builder_
+> - _how to preserve future optionality for analytics/dashboard_
+> - _strongest argument for and against the browser extension approach_
+> - _recommended roadmap: week 1, month 1, month 3_
+>
+> _Be concise but thoughtful. Focus on trade-offs and “when/why” decisions._
+
+Here is the results:
+
+![Architecture result.](/img/architecture-result.webp)
+
+**Overall, GPT 5.4 wins on Architecture & System Thinking. Gemma 4 provides a solid, restrained MVP strategy, but GPT 5.4 gives a more complete architectural view: system boundaries, trust, local-first design, future analytics optionality, solo-builder maintenance risk, and roadmap discipline.**
+
+---
+
+### Julien's Verdict on Gemma 4 <a id='Julien4'></a>
+
+This is Julien's verdict on the use of Gemma 4:
+
+> GPT 5.4 seems to be the strongest at high-level reasoning and synthesis as you would expect from a recent frontier model.
+>
+> However a good use case for Gemma 4 in terms of prototyping work would be for codebase analysis, running experiments through constraints and for privacy-sensitive workflows.
+>
+> Being an open model which can be run locally has great specific and complementary use cases when prototyping developer tools.
+>
+> I will consider this going forward.
+
+Even though GPT is preferred when it comes to high-level reasoning and synthesis, there are other cases where Gemma 4 is useful for prototyping.
+
+Speaking of prototyping, now we transition over to using Gemma 4 as an AI-Agent!
+
+---
+
+# Using Gemma 4 as an AI-Agent <a id='Francis'></a>
+
+_By [Francis Tran](https://dev.to/francistrdev)_
+
+Whenever I am contributing to Open Source, it is quite useful to have an AI-Agent to work with you. My preference is to use an agent living in an application like **Visual Studio Code.**
+
+I have been using GitHub Copilot when it comes to contributing to Forem and it has been useful when it comes to navigating code bases, problem solving issues, etc.
+
+When I heard about Gemma 4, I thought it would be a good idea to try out when using Gemma 4 as an AI-Agent. I specifically used the cloud version using Ollama since the hardware I have cannot handle LLM locally, even though I tried the smaller version of the model.
+
+Setting up wasn't too difficult on my part. Since I tried Ollama to begin with before the release of Gemma 4, it was as easy as pulling the model using this command:
+
+```shell
+ollama pull gemma4:31b-cloud
+```
+
+After installing, I selected the model and was ready to go!
+
+![Selecting Gemma model](/img/selecting-gemma-model.webp)
+
+When using the model, I noticed there wasn't much of a big change compared to my initial workflow of using Copilot as my agent.
+
+Both models asked me for permission when running commands, able to problem solve the issue I requested, etc. To be fair, I wasn't using \"Continue\" Visual Studio code extension since it is quite popular when using local LLMs. Also, Visual Studio code is flexible when it comes to adding your own model in addition to using Copilot, which I wasn't surprised that it behaves similarly when using Copilot.
+
+However, there are a couple of things I noticed when using Gemma 4 that I believe are important to address based on my experience using Gemma 4.
+
+---
+
+### Gemma 4 is Strict <a id='Francis1'></a>
+
+![Deku eating.](/img/deku-eating.webp)
+
+The main difference between Gemma 4 and Copilot was that it is quite firm on the tasks it is given to them. I notice that whenever I request a plan on tackling an issue, it provides a To-do list of the steps Gemma 4 is planning on doing to fix the issue.
+
+For example, this is the prompt I gave to Gemma 4:
+
+```
+I have this issue. How do I approach this?
+
+https://github.com/forem/forem/issues/23277
+```
+
+It will output their findings like any other LLM. However, it would not act right away and instead, listed out the next steps:
+
+![Gemma next steps.](/img/gemma-next-steps.webp)
+
+In cases like these, I just follow up the Agent **\"Go for it\"** or **\"Proceed\".** Sometimes it does everything in the to-do list in one go and in other cases it goes one by one where I have to tell the Agent to **\"Do all the tasks\".** Do note that I did not change any settings as I was setting up Gemma 4 since it was just pulling the model and selecting it in Visual Studio Code.
+
+Compare that to Copilot, where regardless of the prompt, it would take action right away. There were cases where I **forgot to change the mode from \"Agent\" to \"Chat\" and I was specifically asking the AI about the plan to tackle the issue.** Instead of listing out the steps, **it did it right away which I did not want it to do.**
+
+In all fairness, Gemma 4 and Copilot are from different companies (Google and Microsoft) and since Copilot is built into Visual Studio Code, it is fair to assume that **its actions strictly follows based on the settings you have in Visual Studio Code for Copilot.**
+
+However, it is always nice to see Gemma 4 listing out the To-do list and asking the user to proceed. I believe it is good practice by default if you are a type of user that wants to get an AI's advice on what to do and doing it yourself from there.
+
+---
+
+### Please Google I need this. Gemma 4 is kind of Looping Itself <a id='Francis2'></a>
+
+![Speed Gemma Loop](/img/speed-gemma-loop.webp)
+
+It is exactly what you are thinking. This is a common occurrence where Gemma 4 will read a file from top to bottom and reread it again. Here is an example that I encountered when using Gemma 4:
+
+![Gemma read bug.](/img/gemma-read-bug.webp)
+
+I am not sure what is causing this issue since this happens randomly.
+
+The solution is stopping the Agent and sending the same prompt. This fixes the issue really well, though this bug remains a mystery to why it occurs in the first place.
+
+![Agents still working.](/img/agents-still-working.webp)
+
+---
+
+### Francis' Verdict on Gemma 4 <a id='Francis3'></a>
+
+This is my verdict on the use of Gemma 4 as an AI-Agent:
+
+> I believe Gemma 4 works really well when being an open source developer. It can navigate large code-bases and being able to solve complex problems well for a model that is quite small.
+>
+> Although there isn't a big difference between Gemma 4 and other models I have used, it is good to consider token usage. I would recommend Ollama when using Gemma 4. It is free to use the cloud version and the tokens reset weekly whereas Copilot resets monthly. If you are heavily relying on AI-Agents, I would recommend the Ollama solution since it is more flexible. Even if you reach the daily limit of tokens, it resets every few hours.
+>
+> I would highly recommend Gemma 4 as a great starting point when it comes to using it as an Agent when you want to contribute to open source. Just remember to monitor the response time since there is a very good chance where it loops itself in which it would burn tokens in the process.
+
+---
+
+# Summary <a id='Summary'></a>
+
+Gemma 4 has been used in some aspects when it comes to setting up Ollama to use Gemma 4, testing out the response of the model, prototyping using Gemma 4, and the role as an Agent. Here are the main things to consider based on what I have shared above.
+
+![Gemma4 cover.](/img/gemma4-cover.webp)
+
+### 1. Convenience
+
+Like any other local models, you have to consider not only if you are conformable downloading a model locally, but ensuring you have enough compute power to run an LLM. Although there are options to use LLM on the cloud **(for Ollama at least)**, having a local LLM is very convenient for developers who want to run the model locally and not worry about:
+
+- Use of Tokens limits and payed services.
+- The environment when it comes to data centers in the age of AI.
+
+### 2. Performance
+
+Speaking of compute power, having a local LLM, even with smaller models of Gemma 4, still needs a lot of power. We saw that in Elmar's experience, it took a while for Gemma 4 to produce an output comparable to using any cloud model. If you are comfortable with the wait time of the model, then it shouldn't be a problem!
+
+### 3. Context Output
+
+Every model behaves differently whether cloud or local models. This is no different to Gemma 4. If you are using Gemma 4, **you have to make sure the prompt is specific to your needs.** This is best practice in prompts in general when it comes to requesting your needs and being as specific as possible.
+
+### 4. Role as an AI-Agent
+
+It is common for developers nowadays to use a local model to run as an Agent. Using Gemma 4 via Ollama has been a great experience for me. Do note that you may encounter issues when using Gemma 4. I would recommend monitoring Gemma 4's token usage in the event of Gemma 4 looping itself and burning unnecessary tokens.
+
+> **Verdict:** Overall, if you have enough power to run a local LLM and would like to have a model that is smaller but more powerful than other Flagship models to use in your development knowing the limitations of local LLMs in general, then I believe Gemma 4 is right for you!
+
+I hope that this Multiversal Analysis has helped you to determine if Gemma 4 is right for you! If you like to learn more about Gemma 4 in detail, you can read [here](https://deepmind.google/models/gemma/gemma-4/).
+
+> **Note:** Gemma 4 has different model sizes and the conclusion based on the verdicts may not be accurate to your own personal experience. **However, I believe these experiences capture the feeling on what to expect when using Gemma 4 and any local AI model in general.**
+>
+> ![Gemma model versions.](/img/gemma-model-versions.webp)
+>
+> Visit the [Google Documentation](https://ai.google.dev/gemma/docs/core) to learn more.
+
+---
+
+# Thank you for Reading! <a id='End'></a>
+
+If you have made it this far, thank you for taking the time to read this article! I hope you have learned something based on our experiences using Gemma 4 in different areas of development.
+
+![Deku excited.](/img/deku-excited.webp)
+
+I would like to give credit to the **Virtual Coffee Group** where I used their **\"#co-working\"** room to meet with Elmar Chavez (@codingwithjiro), Konark Sharma (@konark_13), and Julien Avezou (@javz) for the first time outside of DEV and would love to work with them again in the future!
+
+Check out Virtual Coffee below to see what they do!
+
+- [Virtual Coffee](https://dev.to/virtualcoffee)
+
+**Feel free to send us love by following us individually and our DEVenger org!**
+
+- [DEVengers Org](https://dev.to/devengers)
+- [Francis Tran](https://dev.to/francistrdev)
+- [Julien Avezou](https://dev.to/javz)
+- [Konark Sharma](https://dev.to/konark_13)
+- [Elmar Chavez](https://dev.to/codingwithjiro)
+
+![Pixel bear wave.](/img/pixel-bear-wave.webp)
