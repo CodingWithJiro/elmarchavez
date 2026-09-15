@@ -56,6 +56,19 @@ export const BLOGS: BlogType[] = [
     imgUrl: '/img/blog-4.jpg',
     imgAlt: 'Keyboard caps laid down on a white table.',
   },
+  {
+    id: 5,
+    title: 'The Slow and Quiet Cognitive Atrophy of a Modern Software Engineer',
+    description:
+      'My thoughts on AI dependency and why struggling through problems is still one of the best ways to combat cognitive atrophy and become a better engineer.',
+    publishDate: 'September 2026',
+    readTime: '8 min read',
+    tags: ['#ai', '#programming', '#software'],
+    blogUrl: `/blog/${getSlug('The Slow and Quiet Cognitive Atrophy of a Modern Software Engineer')}`,
+    imgUrl: '/img/blog-5.webp',
+    imgAlt:
+      'A painting of six blind men stumbling, depicting of a tragedy when following without thinking.',
+  },
 ];
 
 export const blogList: BlogType[] = BLOGS.slice(-3).reverse();
