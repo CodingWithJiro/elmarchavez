@@ -1,0 +1,438 @@
+_This article was originally posted in [DEV Community](https://dev.to/devengers/two-devs-and-a-copilot-created-classifierai-a-prototype-chrome-extension-that-automatically-4fge) and is a submission for the [GitHub Finish-Up-A-Thon Challenge](https://dev.to/challenges/github-2026-05-21). I only contributed to this article as a co-author. Below is the original text file submitted by the main author._
+
+> **Note:** _AI is currently a Hot Topic in the developer space. **I recommend reading this post in full before commenting.** The dataset being used does not come from dev.to, so expect the AI model to be inaccurate. This is to showcase a tool that can be helpful for others in the future and eventually tune it to be more accurate on the DEV platform. **I will talk more about it further in the post. If you have any questions or concerns, I would love to hear from you!**_
+
+> # Authors
+>
+> **Main Author:** Francis Tran @francistrdev
+>
+> **Co-Author:** Elmar Chavez @codingwithjiro
+>
+> **_This is a Team Submission featuring Francis and Elmar!_**
+
+---
+
+> # Table of Contents
+>
+> - [Introduction](#Introduction)
+> - [What We Built](#Built)
+> - [Why does this Project Exist?](#Exist)
+> - [Demo](#Demo)
+> - [Installation](#Installation)
+> - [Using the Chrome Extension](#UsingCE)
+> - [The Comeback Story](#Story)
+> - [The Old Era](#OldEra)
+> - [The New Era](#NewEra)
+> - [My Experience with GitHub Copilot](#Copilot)
+> - [Summary](#Summary)
+> - [Current Challenges in our Chrome Extension](#Challenges)
+> - [Thank You!](#ThankYou)
+
+---
+
+# Introduction <a id='Introduction'></a>
+
+AI has shaped everything on the internet. This ranges from easier access to information faster than before to having AI in our development workflows.
+
+With the good side of the use of AI, there is also the bad side of using AI. Currently, there is a lot of purely AI-generated content being produced on the internet in order for sites to boost themselves to relevance on Google, which creates unnecessary competition. Additionally, with the advance of AI, it has continuously become more difficult to distinguish content that is AI-generated versus content made by a Human. \"AI\" as a name on its own has a bad reputation due to how people are using AI regardless of if you are using it as a tool.
+
+Even though AI is everywhere, many people are combating it. Sometimes it is handled in a professional setting while others handle on a vigilante level (not recommended at all). **As a DEV user, the goal is to try to minimize AI-generated articles on dev.to in order to enhance the user experience and diversifying content where others can learn and grow as a developer.**
+
+**With that said, along with Elmar's collaboration, we built ClassifierAI!**
+
+![Surprised Pikachu.](/img/surprised-pikachu.webp)
+
+> **Disclaimer:** _Before commenting, this project is a prototype! This is meant to showcase what the Chrome Extension can do based on existing data used, which the model is not accurate due to data not coming from dev.to directly. **This Chrome Extension is not meant to be used as a perfect solution to filter out AI-Generated content** as a result of data outside of dev.to. **I will talk more about this later in the post.**_
+
+---
+
+# What We Built <a id='Built'></a>
+
+We built **ClassifierAI**, which is a _**prototype**_ Chrome Extension that allows you to detect AI-generated content on DEV in an instant. This is built using **Tensorflow.js** to perform:
+
+- **Image Classification** to determine if the cover image of the article is AI-generated using [Teachable Machine](https://teachablemachine.withgoogle.com/) by Google.
+- The dataset used to train the model: https://huggingface.co/datasets/Hemg/AI-Generated-vs-Real-Images-Datasets
+- The settings to train the model based on **866 images in total** (433 images per class where we have two classes that is labeled \"AI\" and \"NotAI\"):
+
+```
+866 Images Total
+2 Classes Total
+
+- \"AI\" Class
+- \"NotAI\" Class
+
+Epochs: 30
+Batch Size: 16
+Learning Rate: 0.0001
+```
+
+- **Text Classification** to determine if the article itself is AI-generated.
+- [The dataset used](https://huggingface.co/datasets/gouwsxander/wikipedia-human-ai)
+
+Initially, **it started off as a Chrome Extension that scans 100 images on Google Images to detect if the image is AI-generated and label them accordingly.**
+
+For this case, we updated the Chrome Extension where it only works on dev.to, and is able to classify the entire article, including the cover image, and showing the result to the user whether the content is AI-generated. This Chrome Extension works every time the user clicks on an article on DEV.
+
+![Classifier AI screenshot.](/img/classifier-ai-screenshot.webp)
+
+---
+
+## Why does this Project Exist? <a id='Exist'></a>
+
+Generative AI is currently a hot topic in my experience. Many friends and colleagues I have despise Generative AI because they have the notion that **\"it will replace your job\".**
+
+![Speed praying.](/img/speed-praying.webp)
+
+**Sounds familiar? We all heard that phrase at least once...**
+
+Although there are tools to combat this like **GPTZero**, it is still an issue because:
+
+- It is a **lot of manual work** just to copy/paste to see if it is AI-generated.
+- There are tools that bypass GPTZero in order to get the \"Human\" result. **Every style of writing is different across communities, so it can be difficult to identify AI-generated content overtime.**
+
+With these problems in mind and the state of DEV, I want to create a useful tool that **identifies AI-generated content automatically without having to open GPTZero and copy and pasting just to know the result of the content.**
+
+Additionally, **this Chrome Extension is personalized for DEV since I believe the dataset collected in the future will be more focused and accurate** (I believe all blogging platforms have different writing styles regardless of content being AI-Generated. Hence, making it more personalized and focus on the DEV space).
+
+Overall, _this Chrome Extension solves the issue when it comes to less manual work and more personalized for DEV since I believe it reduces the chance of having tools that bypass the AI scanner since it is more focused than broad._
+
+**With community support, I hope that the model will be more tuned and accurate as DEV continues forward! Which is why we made it Open Sourced as an Unofficial DEV Chrome Extension. More details later in the post.**
+
+![Speed agreeing.](/img/speed-agreeing.gif)
+
+With that said, we will now show our prototype Chrome Extension in action!
+
+---
+
+# Demo <a id='Demo'></a>
+
+In this demo, we will show you the installation process in order to get the Chrome Extension running in your browser and showcasing how the Chrome Extension works.
+
+![Pixel breakdancing.](/img/pixel-breakdancing.gif)
+
+---
+
+## Installation <a id='Installation'></a>
+
+To get started, create an empty folder on your computer and open it using **VScode or any IDE.**
+
+**1) In the Terminal, clone the repository:**
+
+`git clone https://github.com/FrancisTR/ClassifierAI.git`
+
+**2) Ensure you are in the directory by doing:**
+
+`cd ClassifierAI`
+
+**3) Then install packages and run the build:**
+
+`npm install`
+`npm run build`
+
+**4) On your browser, head over to the extension page and ensure you enabled Developer Mode.**
+
+**5) Finally, drag the \"_dist_\" folder onto the extension page and you are ready to go!**
+
+![Extension page.](/img/extension-page.webp)
+
+Now we will talk about how to use the Chrome Extension on dev.to!
+
+---
+
+## Using the Chrome Extension <a id='UsingCE'></a>
+
+To use the Chrome Extension, open the popup located on the top right of the browser and enable the switch.
+
+![Using Classifier AI.](/img/using-classifier-ai.webp)
+
+Then, click on any article you see on dev.to and it will do its thing: Scanning the Cover image and the article to determine if either of them are AI-generated.
+
+**For the Cover Image,** the AI will perform Image Classification to determine if the image is AI-generated. Once the scan is complete, the AI will embed an icon, located on the bottom right of the image. In this case, it is not AI-generated.
+
+![Checkmark demo.](/img/checkmark-demo.webp)
+
+**There are three icons to expect:**
+
+![Checkmark.](/img/checkmark.webp)
+
+- Like we saw, this icon indicates that the image is not AI-generated.
+
+![Neutral mark.](/img/neutral-mark.webp)
+
+- This icon indicates that it may or may not be AI-Generated.
+
+![AI mark.](/img/ai-mark.webp)
+
+- This icon indicates that it is AI-generated.
+
+**For the article itself,** the way you can see if the article is written by AI or not is located in the popup menu in the Chrome Extension on the top right as shown below:
+
+![Classifier sample result.](/img/classifier-sample-result.webp)
+
+> **Note:** _There is currently no breakdown feature on which part of the article is AI-generated or not._
+
+---
+
+# The Comeback Story <a id='Story'></a>
+
+Initially, the project was considered **\"complete\"** in my view a couple years ago. However, I wasn't proud of the outcome due to the fact that there were bugs that were hard to detect and how **\"messy\" it felt.** I haven't touched the project in years due to other things that needed my attention during that span.
+
+![Pixel cat playing.](/img/pixel-cat-playing.gif)
+
+When I heard about this challenge, I though it would be a **great opportunity to not only finish the project, but also to work with Elmar directly and explain the code-base to someone.**
+
+This gave me the opportunity to practice my skills in communication and to be able to explain what I have built. It was also a good opportunity for Elmar as well since this is his first time working on an existing code-base and contributing to it!
+
+![Anime dap up.](/img/anime-dap-up.webp)
+
+Not only did we finish the prototype, but we also learned from each other when it comes to:
+
+- Explaining the code-base to a new developer.
+- Organization and Communication skills when working in different time zones.
+- Learning the responsibility of a Maintainer for a project.
+
+With that said, **I will be explaining what the project was meant to be and how we got to the finish line!**
+
+---
+
+## The Old Era <a id='OldEra'></a>
+
+The old ClassifierAI's purpose was to scan 100 Images sequentially based on what is currently being loaded on the page and to label each image accordingly if it is made by a Human or not via icons shown here.
+
+![Classifier AI old function.](/img/classifier-ai-old-function.webp)
+
+For the main functionality, all you have to do is enable the scan in the popup.
+
+![Classifier AI old output.](/img/classifier-ai-old-output.webp)
+
+You then scroll the Google Image page and let it do its thing.
+
+That's it.
+
+![Bruh.](/img/bruh.webp)
+
+Additionally, the repository is incomplete since the \"demo\" section in the README.md is empty during that time. The overall project back then didn't feel \"impactful\" since its only purpose was to scan images and the model I currently have **isn't accurate due to an unbalanced data sample in the dataset overall.**
+
+**If you would like to see what it looked like initially, feel free to visit the branch I linked below:**
+
+**[Old Project Link](https://github.com/FrancisTRAlt/ClassifierAI/tree/OldProject)**
+
+Now, we then transfer to the new Era and how we complete the project **(as a prototype)!**
+
+---
+
+## The New Era <a id='NewEra'></a>
+
+When the Challenge was announced, I asked Elmar if he would like to contribute to my half-baked project, which he said \"Yes\"!
+
+**The first thing we did was to migrate to Vite.** The reason is that in the old project, the packages were installed locally instead of via `npm`. The reason is how Chrome Extension works is that it restricts developers from calling \"CDN\" links and external packages. The only way to do this in Vanilla was to install the files locally.
+
+![Classifier package screenshot.](/img/classifier-package-screenshot.webp)
+
+Is this ideal? Definitely not. Back then, with the knowledge I had, it was the only solution.
+
+Fortunately, with the help of AI, we were able to Migrate to Vite. Migrating to Vite allows us to install packages via `npm`. It is much more clean and saves a lot of space.
+
+Speaking of installing packages, Elmar noted that the **ml5.js**, a library that is used for Teachable Machines, is a deprecated package and other issues he came across:
+
+![Funny Slack chat](/img/funny-slack-chat.webp)
+
+![Vulnerabilities npm.](/img/vulnerabilities-npm.webp)
+
+The bright side is that the issues were fixed, though it gave us this when we `npm install`:
+
+![More vulnerabilities npm.](/img/more-vulnerabilities-npm.webp)
+
+You could say that we can do `npm audit fix --force`, but that lead to more issues than before. Even then when doing `npm audit fix` doesn't change anything. **For right now, these vulnerabilities exist in the current state...**
+
+With the migration to Vite, **we then moved on to the bigger tasks, which is training the AI Model!**
+
+![Yes yes.](/img/yes-yes.gif)
+
+Initially, the goal was using Gemma 4 instead of using the custom model I have trained using Teachable Machines for scanning cover images. However, like any local model, the problem was performance since it takes awhile to produce an output.
+
+For some reason, it got to the point where the Chrome Extension nuked the whole browser, making it unusable _(Don't ask how that happened or even how it is possible to begin with)._
+
+Instead of using an existing LLM, **I thought about using an existing dataset that already has images for me to train as an improvement to the current model I have for Image Classification.**
+
+[AI-Generated vs. Real Images Dataset](https://huggingface.co/datasets/Hemg/AI-Generated-vs-Real-Images-Datasets)
+
+Although this is an improvement, the model is still not perfect **since the images in the dataset is WAY different from images being used on DEV**, but it is at least diversified compared to the previous dataset I had. Additionally, instead of scanning 100 images, it only scans one (which is the Cover Image).
+
+The new feature we implemented in our Chrome Extension is classifying articles and determining if the article is AI-generated. I looked on YouTube for an approach and I found this video explaining on classifying text:
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=10XNXASCgNs)
+
+The way text-classification works on this current Chrome Extension is that it grabs the entire text from the article to feed into the model.
+
+```javascript
+function getCleanArticleText() {
+  const root =
+    document.querySelector('.crayons-article__body') ||
+    document.querySelector('article');
+
+  return root ? normalizeWhitespace(root.innerText) : '';
+}
+```
+
+Then, it takes in the article and performs classification based on the dataset used from Wikipedia **(which is the reason why it is not accurate when using this extension on dev.to due to the style of the content).**
+
+It then gives a score to the user a percentage on how much it is Human generated versus AI-generated.
+
+```javascript
+function detectGPTStyle(text) {
+  if (!wikipediaDataset || wikipediaDataset.length < 10) {
+    return baseUnknownResult();
+  }
+
+  const datasetScore = compareDataset(text); // AI %
+  const devHuman = computeDevHumanScore(text); // Human %
+  const generalHuman = computeGeneralScore(text); // Human %
+  const aiPenalty = detectAIPatterns(text); // AI %
+
+  // Adjust weights here
+  let humanScore =
+    devHuman * 0.4 +
+    (100 - datasetScore) * 0.35 +
+    generalHuman * 0.25 -
+    aiPenalty * 0.25;
+
+  // Modify squash sensitivity
+  humanScore = squashScore(humanScore);
+
+  // Adjust classification thresholds
+  let label =
+    humanScore <= 33.33
+      ? 'AI-generated'
+      : humanScore >= 66.66
+        ? 'Human-written'
+        : 'Mixed';
+
+  const finalScore = Number(humanScore.toFixed(2));
+  return {
+    label,
+    averageAIScore: finalScore,
+    humanPercent: finalScore,
+    aiPercent: Number((100 - humanScore).toFixed(2)),
+    mixedPercent: finalScore > 33.33 && finalScore < 66.66 ? 100 : 0,
+  };
+}
+```
+
+Other small things we added was UI enhancements where we used **chart.js** to display information in a more clean way.
+
+![Chart.js integration.](/img/chart-js-integration.webp)
+
+That's it! The project is complete! Is it perfect?
+
+![No meme.](/img/no-meme.webp)
+
+I say this because there is always room for improvements, especially with the dataset we currently have. The dataset for the image classification and text classification is there as a placeholder just to showcase the main functionality. **In the future, we hope to use the dataset coming from dev.to specifically in order for the model to be more accurate.**
+
+![Young Deku happy.](/img/young-deku-happy.gif)
+
+---
+
+# My Experience with GitHub Copilot <a id='Copilot'></a>
+
+> **Disclaimer:** _This section accounts for my experience using GitHub Copilot. Elmar uses ChatGPT for his development workflow and has been using it as a mentor to navigate the code-base and fix bugs as shown earlier._
+
+I have used GitHub Copilot before in past challenges on DEV and I talked about my experience using GitHub Copilot. For this project, nothing really changed much. The main thing GitHub Copilot has been really useful for is in the **migration process** such as
+
+- Translating **Bootstrap to Tailwind CSS.**
+- Moving away from **ml5.js to Tensorflow.js.**
+- Ensuring the project follows the Chrome Extension Manifest V3.
+
+One example I will showcase is telling GitHub Copilot to translate the current **ml5.js code to Tensorflow.js.**
+
+![ML5 to TensorFlow](/img/ml5-to-tensorflow.webp)
+
+Essentially, I asked GitHub Copilot **\"Migrate from ml5.js to tensorflow.js\"** and it did the work!
+
+It was quite a smooth process when migrating. Sometimes there were errors during the migration such as:
+
+`Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'NotAI')`
+
+Even with that, it was able to fix the issue relatively fast without the need for me to undo everything and re-prompt it **(which is the biggest issue when working with AI).**
+
+Overall, it was nice to see GitHub Copilot being able to migrate, fix errors, and ensure the code-base cleanly migrates without any issues.
+
+However, **token usage has been burning faster than before when I used it in a previous DEV challenge where we used GitHub Copilot.** I am not sure if there is a change in policy of how many tokens are being burnt, but it is one thing I noticed. Other than that, it was a good experience!
+
+![Shaun the Sheep ok.](/img/shaun-the-sheep-ok.webp)
+
+---
+
+# Summary <a id='Summary'></a>
+
+In conclusion, this is the project we built with the intention of reducing the number of AI-generated content on DEV. Additionally, we intended for this project to diversify content and enhance the user's experience when it comes to connecting and growing as a developer.
+
+Not only did we create this project with the intention of helping the community, but we also learned new things when working on the project.
+
+For me, **I learned about the responsibility as a project maintainer and being able to communicate with my partner on the tasks that needed to be completed as well as considering the time zone we live in** (I am based in the US while Elmar is based in the Philippines). Additionally, as this is Elmar's first time seeing my existing code, **I learned not to over explain my code and to be as simple and straightforward as possible when it comes to delivering tasks to Elmar and reviewing his Pull Requests.**
+
+For Elmar, this is his statement about this project overall:
+
+> ### Navigating My First Open Source Chrome Extension Codebase
+>
+> Working on someone else's codebase was a completely different challenge.
+>
+> At times, it felt like I was walking on glass, afraid to mess something up.
+>
+> It forced me to slow down and read the codebase first. While ChatGPT helped me understand concepts and unfamiliar parts of the code.
+>
+> I've had experience reviewing other people's code through Frontend Mentor, but this felt very different. When contributing to a real project, every change has consequences. I found myself asking more questions than usual and learning the answers along the way.
+>
+> One thing I learned even more than the codebase itself was the importance of communication. I spent a lot of time discussing ideas, asking questions, and seeking clarification from the maintainer.
+>
+> Looking back, I think the cycle of asking, learning, understanding, and validating took far more time than writing the code itself.
+>
+> I also learned the importance of being adaptable. The project evolved during my contribution journey, which meant my assumptions and plans had to evolve as well. On top of that, I encountered my first real merge conflicts but I managed to pull through in the end.
+>
+> Overall, contributing to ClassifierAI gave me a much better understanding of how real-world software development differs from building projects alone.
+>
+> Beyond the technical skills, I learned how to collaborate with maintainers and communicate changes through pull requests.
+>
+> This experience yet again proved what I read early on in my career:
+>
+> _\"The ability to read and understand code is often more valuable than the ability to write it.\"_
+
+Although we have learn a lot, there are still current issues that I believe it is important to address when using this Chrome Extension.
+
+![Starwars robot.](/img/starwars-robot.webp)
+
+---
+
+## Current Challenges in our Chrome Extension <a id='Challenges'></a>
+
+As mentioned many times before, this project is a prototype for many reasons. Right now:
+
+- **The model and the dataset is not aligned to what we have on dev.to.** In detail, the dataset comes from the Wikipedia while the dataset for images comes from HuggingFace. Both of these dataset are not accurate to the dev.to platform. We hope, with more collaboration, to get data from dev.to and retrain the model that is more accurate than before and align to value of the DEV community.
+
+- **Limited features to the users such as which area in the article is AI-generated and which is not.** Also, not accounting for when it is appropriate to use AI such as using AI as a translation, grammatical checks, etc.
+
+With that said, we hope you see the value in our work and contributing to this project further!
+
+![Speed agreeing.](/img/speed-agreeing.gif)
+
+---
+
+# Thank You! <a id='ThankYou'></a>
+
+**Thank you for reading our post** on our Chrome Extension Project! It was fun to work with Elmar and getting to know him more and his current knowledge as a developer!
+
+**If you would love to contribute to our Chrome Extension, feel free to visit the repository below. Your contribution matters to dev.to! Feel free to provide any feature requests and issues you may notice!**
+
+[View the ClassifierAI repository on GitHub](https://github.com/FrancisTR/ClassifierAI)
+
+I hope this project will be useful for you and inspire you to build something that will make an impact! Thanks for stopping by!
+
+![My Hero Academia Hero saying goodbye.](/img/my-hero-academia-hero-saying-goodbye.webp)
+
+**Follow The DEVengers Organization!**
+
+[Visit The DEVengers on DEV Community](https://dev.to/devengers)
+
+**Check out Elmar Chavez!**
+
+[Visit Elmar Chavez on DEV Community](https://dev.to/codingwithjiro)
