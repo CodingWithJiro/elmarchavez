@@ -11,8 +11,7 @@ export const BLOGS: BlogType[] = [
     publishDate: 'May 2026',
     readTime: '19 min read',
     tags: ['#llm', '#ollama', '#gemma4'],
-    blogUrl:
-      'https://dev.to/devengers/should-you-use-gemma-4-for-your-development-a-multiversal-analysis-to-determine-if-gemma-4-is-2iol',
+    blogUrl: `/blog/${getSlug('Should you use Gemma 4 for your Development? A Multiversal Analysis to Determine if Gemma 4 is Right for You!')}`,
     imgUrl: '/img/blog-1.webp',
     imgAlt:
       'A collection of anime characters for a multiversal collaboration for an article.',
@@ -26,8 +25,7 @@ export const BLOGS: BlogType[] = [
     publishDate: 'June 2026',
     readTime: '15 min read',
     tags: ['#opensource', '#machinelearning', '#copilot'],
-    blogUrl:
-      'https://dev.to/devengers/two-devs-and-a-copilot-created-classifierai-a-prototype-chrome-extension-that-automatically-4fge',
+    blogUrl: `/blog/${getSlug('Two Devs and a Copilot Created ClassifierAI: A Prototype Chrome Extension that Automatically Detects AI-Generated Content on DEV!')}`,
     imgUrl: '/img/blog-2.webp',
     imgAlt:
       'A funny backgroups GIF image where Elmar and Francis are dancing with strange creatures.',
