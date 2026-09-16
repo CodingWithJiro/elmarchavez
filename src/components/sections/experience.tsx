@@ -31,7 +31,10 @@ const Experience = () => {
       </article>
 
       <article>
-        <h2 className="mb-3 text-lg font-bold">Certificates</h2>
+        <header className="mb-3 flex items-center justify-between">
+          <h2 className="text-lg font-bold">Certificates</h2>
+          <ViewAllLink href="/certificates" />
+        </header>
 
         <ul className="flex flex-col gap-4">
           {certificates.map(
