@@ -1,12 +1,16 @@
 import { FiExternalLink } from 'react-icons/fi';
 import { workExperiences, certificates } from '@/data/experiences';
+import ViewAllLink from '../ui/view-all-link';
 import Link from 'next/link';
 
 const Experience = () => {
   return (
     <section className="border-border/40 bg-card flex shrink-0 flex-col gap-4 rounded-lg border p-4 transition-colors duration-150 ease-in-out min-[488px]:flex-row md:max-w-[clamp(16rem,-12rem+50vw,20rem)] md:flex-col md:gap-8">
       <article>
-        <h2 className="mb-3 text-lg font-bold">Experience</h2>
+        <header className="mb-3 flex items-center justify-between">
+          <h2 className="text-lg font-bold">Experience</h2>
+          <ViewAllLink href="/experience" />
+        </header>
 
         <ul className="flex flex-col gap-4 md:gap-8">
           {workExperiences.map(
