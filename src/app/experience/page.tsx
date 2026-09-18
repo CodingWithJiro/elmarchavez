@@ -20,35 +20,44 @@ export default function ExperiencePage() {
         </h2>
       </section>
 
-      <ul className="flex flex-col gap-4 md:gap-8">
-        {WORK_EXPERIENCES.map(
-          ({
-            id,
-            startDate,
-            endDate,
-            position,
-            companyName,
-            location,
-            responsibilities,
-          }) => {
-            return (
-              <li
-                className="before:border-border before:bg-background first:before:bg-foreground after:bg-border/50 hover:before:bg-foreground relative pl-4.5 before:absolute before:top-1 before:left-0 before:h-3 before:w-3 before:rounded-full before:border-2 before:transition-colors before:duration-150 before:ease-in-out after:absolute after:top-4 after:-bottom-6 after:left-1.5 after:w-px last:after:hidden md:pl-6 md:after:-bottom-10"
-                key={id}
-              >
-                <p className="mb-1 text-base font-semibold">{position}</p>
-                <p className="text-[0.75rem]">{`${companyName} · ${location}`}</p>
-                <p className="text-muted-foreground text-[0.75rem]">{`${startDate} - ${endDate}`}</p>
+      <ul className="before:bg-border/50 relative flex flex-col gap-4 before:absolute before:top-4 before:bottom-4 before:left-1 before:w-px md:gap-8">
+        {WORK_EXPERIENCES.slice()
+          .reverse()
+          .map(
+            (
+              {
+                id,
+                startDate,
+                endDate,
+                position,
+                companyName,
+                location,
+                responsibilities,
+              },
+              index,
+            ) => {
+              return (
+                <li className="group relative pl-5" key={id}>
+                  <span
+                    className={`border-border group-hover:bg-foreground absolute top-3 -left-1 size-4 rounded-full border-2 transition-colors duration-150 ease-in-out ${index === 0 ? 'bg-foreground' : 'bg-background'}`}
+                    aria-hidden="true"
+                  />
 
-                <ul>
-                  {responsibilities.map((responsibility) => {
-                    return <li key={responsibility}>{responsibility}</li>;
-                  })}
-                </ul>
-              </li>
-            );
-          },
-        )}
+                  <article className="border-border/40 bg-card group-hover:border-border rounded-lg border p-4 transition-colors duration-150">
+                    <p className="mb-1 text-base font-semibold">{position}</p>
+                    <p className="text-[0.75rem]">{`${companyName} · ${location}`}</p>
+                    <p className="text-muted-foreground text-[0.75rem]">{`${startDate} - ${endDate}`}</p>
+
+                    <ul>
+                      {responsibilities.map((responsibility) => {
+                        return <li key={responsibility}>{responsibility}</li>;
+                      })}
+                    </ul>
+                  </article>
+                </li>
+              );
+            },
+          )}
       </ul>
     </main>
   );
