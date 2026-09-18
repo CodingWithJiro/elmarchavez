@@ -1,14 +1,6 @@
 import { WorkExperience, Certificate } from '@/types/experience';
 
-export const workExperiences: WorkExperience[] = [
-  {
-    id: 2,
-    startDate: 'June 2026',
-    endDate: 'Present',
-    position: 'Full Stack Developer',
-    companyName: 'CALEC',
-    location: 'New York, USA (Remote)',
-  },
+export const WORK_EXPERIENCES: WorkExperience[] = [
   {
     id: 1,
     startDate: 'March 2025',
@@ -17,7 +9,18 @@ export const workExperiences: WorkExperience[] = [
     companyName: 'Freelance',
     location: 'Philippines',
   },
+  {
+    id: 2,
+    startDate: 'June 2026',
+    endDate: 'Present',
+    position: 'Full Stack Developer',
+    companyName: 'CALEC',
+    location: 'New York, USA (Remote)',
+  },
 ];
+
+export const workExperiences: WorkExperience[] =
+  WORK_EXPERIENCES.slice(-2).reverse();
 
 export const CERTIFICATES: Certificate[] = [
   {
