@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const Experience = () => {
   return (
-    <section className="border-border/40 bg-card flex shrink-0 flex-col gap-4 rounded-lg border p-4 transition-colors duration-150 ease-in-out min-[488px]:flex-row md:max-w-[clamp(16rem,-12rem+50vw,20rem)] md:flex-col md:gap-8">
-      <article>
+    <section className="border-border/40 bg-card flex shrink-0 flex-col gap-4 rounded-lg border p-4 transition-colors duration-150 ease-in-out min-[488px]:flex-row md:max-w-[20rem] md:flex-col md:gap-8">
+      <article className="min-w-0 flex-1">
         <header className="mb-3 flex items-center justify-between">
           <h2 className="text-lg font-bold">Experience</h2>
           <ViewAllLink href="/experience" />
@@ -30,7 +30,7 @@ const Experience = () => {
         </ul>
       </article>
 
-      <article>
+      <article className="min-w-0 flex-1">
         <header className="mb-3 flex items-center justify-between">
           <h2 className="text-lg font-bold">Certificates</h2>
           <ViewAllLink href="/certificates" />
