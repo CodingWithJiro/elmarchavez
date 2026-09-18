@@ -7,6 +7,7 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     endDate: 'June 2026',
     position: 'Full Stack Developer',
     companyName: 'Freelance',
+    companyUrl: 'https://github.com/CodingWithJiro',
     location: 'Philippines',
     responsibilities: [
       'Managed and reviewed pull requests, approving and merging changes into main and staging branches.',
@@ -21,6 +22,7 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     endDate: 'Present',
     position: 'Full Stack Developer',
     companyName: 'CALEC',
+    companyUrl: 'https://calec.org/',
     location: 'New York, USA (Remote)',
     responsibilities: [
       'Developed modern Next.js and React applications using JavaScript, TypeScript, and Tailwind CSS.',
