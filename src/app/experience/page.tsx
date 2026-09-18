@@ -1,6 +1,8 @@
 import Breadcrumb from '@/components/sections/breadcrumb';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import { WORK_EXPERIENCES } from '@/data/experiences';
+import Link from 'next/link';
+import { FiExternalLink } from 'react-icons/fi';
 
 export default function ExperiencePage() {
   return (
@@ -20,7 +22,7 @@ export default function ExperiencePage() {
         </h2>
       </section>
 
-      <ul className="before:bg-border/50 relative flex flex-col gap-4 before:absolute before:top-4 before:bottom-4 before:left-1 before:w-px md:gap-8">
+      <ul className="before:bg-border/50 relative mx-auto flex max-w-125 flex-col gap-4 before:absolute before:top-4 before:bottom-4 before:left-1 before:w-px md:gap-8">
         {WORK_EXPERIENCES.slice()
           .reverse()
           .map(
@@ -31,6 +33,7 @@ export default function ExperiencePage() {
                 endDate,
                 position,
                 companyName,
+                companyUrl,
                 location,
                 responsibilities,
               },
@@ -44,13 +47,27 @@ export default function ExperiencePage() {
                   />
 
                   <article className="border-border/40 bg-card group-hover:border-border rounded-lg border p-4 transition-colors duration-150">
-                    <p className="mb-1 text-base font-semibold">{position}</p>
-                    <p className="text-[0.75rem]">{`${companyName} · ${location}`}</p>
-                    <p className="text-muted-foreground text-[0.75rem]">{`${startDate} - ${endDate}`}</p>
+                    <h3 className="mb-2 text-base font-semibold">{position}</h3>
+                    <div className="mb-1 flex items-center gap-1 text-sm">
+                      <Link
+                        className="flex items-center gap-0.5 underline-offset-4 hover:underline"
+                        href={companyUrl}
+                      >
+                        <span className="">{companyName}</span>
+                        <FiExternalLink className="text-foreground relative -top-0.5 size-4" />
+                      </Link>
+                      <span>·</span>
+                      <p className="text-[0.75rem] font-light">{location}</p>
+                    </div>
+                    <p className="text-muted-foreground mb-4 text-[0.75rem]">{`${startDate} - ${endDate}`}</p>
 
-                    <ul>
+                    <ul className="flex list-disc flex-col gap-2 text-[0.75rem] leading-4.5 tracking-wide">
                       {responsibilities.map((responsibility) => {
-                        return <li key={responsibility}>{responsibility}</li>;
+                        return (
+                          <li className="ml-4" key={responsibility}>
+                            {responsibility}
+                          </li>
+                        );
                       })}
                     </ul>
                   </article>
