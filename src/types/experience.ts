@@ -5,6 +5,7 @@ export type WorkExperience = {
   position: string;
   companyName: string;
   location: string;
+  responsibilities: string[];
 };
 
 export type Certificate = {
