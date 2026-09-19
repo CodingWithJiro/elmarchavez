@@ -47,21 +47,26 @@ export default function ExperiencePage() {
                   />
 
                   <article className="border-border/40 bg-card group-hover:border-border rounded-lg border p-4 transition-colors duration-150">
-                    <h3 className="mb-2 text-base font-semibold">{position}</h3>
-                    <div className="mb-1 flex items-center gap-1 text-sm">
+                    <h3 className="mb-2 text-base font-semibold md:text-lg">
+                      {position}
+                    </h3>
+                    <div className="mb-1 flex items-center gap-1 text-sm md:text-base">
                       <Link
                         className="flex items-center gap-0.5 underline-offset-4 hover:underline"
                         href={companyUrl}
+                        target="_blank"
                       >
-                        <span className="">{companyName}</span>
-                        <FiExternalLink className="text-foreground relative -top-0.5 size-4" />
+                        <span>{companyName}</span>
+                        <FiExternalLink className="text-foreground relative bottom-0.5 size-4" />
                       </Link>
                       <span>·</span>
-                      <p className="text-[0.75rem] font-light">{location}</p>
+                      <p className="text-[0.75rem] font-light md:text-sm">
+                        {location}
+                      </p>
                     </div>
-                    <p className="text-muted-foreground mb-4 text-[0.75rem]">{`${startDate} - ${endDate}`}</p>
+                    <p className="text-muted-foreground mb-4 text-[0.75rem] md:text-sm">{`${startDate} - ${endDate}`}</p>
 
-                    <ul className="flex list-disc flex-col gap-2 text-[0.75rem] leading-4.5 tracking-wide">
+                    <ul className="marker:text-muted-foreground flex list-disc flex-col gap-0 text-[0.75rem] leading-4.5 tracking-wide marker:text-base md:gap-1 md:text-sm">
                       {responsibilities.map((responsibility) => {
                         return (
                           <li className="ml-4" key={responsibility}>
