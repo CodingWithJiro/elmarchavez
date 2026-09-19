@@ -50,14 +50,15 @@ export default function ExperiencePage() {
                     <h3 className="mb-2 text-base font-semibold md:text-lg">
                       {position}
                     </h3>
-                    <div className="mb-1 flex items-center gap-1 text-sm md:text-base">
+                    <div className="mb-1 flex items-center gap-1 text-sm md:gap-2 md:text-base">
                       <Link
-                        className="flex items-center gap-0.5 underline-offset-4 hover:underline"
+                        className="focus-visible:outline-muted-foreground text-muted-foreground hover:text-foreground flex items-center gap-0.5 rounded-lg underline-offset-4 outline-2 outline-offset-4 outline-transparent hover:underline hover:transition-colors hover:duration-150 hover:ease-in-out focus-visible:transition-colors focus-visible:duration-150 focus-visible:ease-in-out"
+                        aria-label={`Open ${companyName}'s official website to new tab.`}
                         href={companyUrl}
                         target="_blank"
                       >
-                        <span>{companyName}</span>
-                        <FiExternalLink className="text-foreground relative bottom-0.5 size-4" />
+                        <span className="text-foreground">{companyName}</span>
+                        <FiExternalLink className="relative bottom-0.5 size-4" />
                       </Link>
                       <span>·</span>
                       <p className="text-[0.75rem] font-light md:text-sm">
