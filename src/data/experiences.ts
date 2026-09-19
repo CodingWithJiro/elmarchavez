@@ -10,10 +10,10 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     companyUrl: 'https://github.com/CodingWithJiro',
     location: 'Philippines',
     responsibilities: [
-      'Managed and reviewed pull requests, approving and merging changes into main and staging branches.',
-      'Resolved application issues in Laravel and Livewire by tracing generated markup and debugging.',
-      'Improved WCAG accessibility across the Ri2L web application by auditing pages with Axe DevTools.',
-      'Established a Laravel development environment with WSL2, Docker, PHP, Composer, Node.js, and Ubuntu.',
+      'Developed modern Next.js and React applications using JavaScript, TypeScript, and Tailwind CSS.',
+      'Implemented client-side routing, state management, and API integration in React-based projects.',
+      'Built testing workflows using Vitest, Playwright, React Testing Library, and Mock Service Worker (MSW).',
+      'Collaborated on open-source projects using Git, GitHub, pull requests, and code review workflows.',
     ],
   },
   {
@@ -25,10 +25,10 @@ export const WORK_EXPERIENCES: WorkExperience[] = [
     companyUrl: 'https://calec.org/',
     location: 'New York, USA (Remote)',
     responsibilities: [
-      'Developed modern Next.js and React applications using JavaScript, TypeScript, and Tailwind CSS.',
-      'Implemented client-side routing, state management, and API integration in React-based projects.',
-      'Built testing workflows using Vitest, Playwright, React Testing Library, and Mock Service Worker (MSW).',
-      'Collaborated on open-source projects using Git, GitHub, pull requests, and code review workflows.',
+      'Managed and reviewed pull requests, approving and merging changes into main and staging branches.',
+      'Resolved application issues in Laravel and Livewire by tracing generated markup and debugging.',
+      'Improved WCAG accessibility across the Ri2L web application by auditing pages with Axe DevTools.',
+      'Established a Laravel development environment with WSL2, Docker, PHP, Composer, Node.js, and Ubuntu.',
     ],
   },
 ];
