@@ -52,4 +52,17 @@ test.describe('Experience', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(companyUrl);
   });
+  test('visitor can focus the company website link with keyboard', async ({
+    page,
+  }) => {
+    await page.goto('/experience');
+    const latestWorkExperience: WorkExperience = WORK_EXPERIENCES.at(-1)!;
+    const { companyUrl, companyName } = latestWorkExperience;
+    const companyLink = page.getByRole('link', {
+      name: `Open ${companyName}'s official website to new tab.`,
+    });
+    await expect(companyLink).toHaveAttribute('href', companyUrl);
+    await companyLink.focus();
+    await expect(companyLink).toBeFocused();
+  });
 });
