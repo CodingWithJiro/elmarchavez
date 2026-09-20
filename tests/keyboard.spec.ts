@@ -155,4 +155,18 @@ test.describe('Keyboard Accessibility', () => {
     await page.keyboard.press('Enter');
     await expect(page).toHaveURL('/blog');
   });
+  test('visitor can tab to the Experience view all link and open the Experience page', async ({
+    page,
+    browserName,
+  }) => {
+    test.skip(
+      browserName === 'webkit',
+      'WebKit on Windows does not traverse focus order correctly.',
+    );
+    const viewAllLink = page.locator('a[href="/experience"]');
+    await tabUntilFocused(page, viewAllLink, 'View all link');
+    await expect(viewAllLink).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page).toHaveURL('/experience');
+  });
 });
