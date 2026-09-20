@@ -40,4 +40,16 @@ test.describe('Experience', () => {
     const companyLocation = page.getByText(location);
     await expect(companyLocation).toBeVisible();
   });
+  test('visitor can view a company website in new tab', async ({ page }) => {
+    await page.goto('/experience');
+    const latestWorkExperience: WorkExperience = WORK_EXPERIENCES.at(-1)!;
+    const { companyUrl, companyName } = latestWorkExperience;
+    const companyLink = page.getByRole('link', {
+      name: `Open ${companyName}'s official website to new tab.`,
+    });
+    const newPagePromise = page.waitForEvent('popup');
+    await companyLink.click();
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(companyUrl);
+  });
 });
