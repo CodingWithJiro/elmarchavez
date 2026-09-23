@@ -44,6 +44,7 @@ export const CERTIFICATES: Certificate[] = [
     dateReceived: 'Dec 2025',
     urlLink:
       'https://www.freecodecamp.org/certification/codingwithjiro/responsive-web-design-v9',
+    imgUrl: '/certificates/responsive-web-design-certificate.webp',
   },
   {
     id: 2,
@@ -52,6 +53,7 @@ export const CERTIFICATES: Certificate[] = [
     dateReceived: 'Dec 2025',
     urlLink:
       'https://www.freecodecamp.org/certification/codingwithjiro/javascript-v9',
+    imgUrl: '/certificates/javascript-certificate.webp',
   },
   {
     id: 3,
@@ -60,6 +62,7 @@ export const CERTIFICATES: Certificate[] = [
     dateReceived: 'May 2026',
     urlLink:
       'https://www.freecodecamp.org/certification/codingwithjiro/relational-databases-v9',
+    imgUrl: '/certificates/relational-database-certificate.webp',
   },
   {
     id: 4,
@@ -68,6 +71,7 @@ export const CERTIFICATES: Certificate[] = [
     dateReceived: 'September 2026',
     urlLink:
       'https://www.freecodecamp.org/certification/codingwithjiro/front-end-development-libraries-v9',
+    imgUrl: '/certificates/frontend-developement-libraries-certificate.webp',
   },
 ];
 
