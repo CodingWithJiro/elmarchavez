@@ -15,4 +15,5 @@ export type Certificate = {
   institution: string;
   dateReceived: string;
   urlLink: string;
+  imgUrl: string;
 };
