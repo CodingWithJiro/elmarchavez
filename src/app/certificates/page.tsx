@@ -26,10 +26,7 @@ export default function ExperiencePage() {
         {CERTIFICATES.map(
           ({ id, title, institution, dateReceived, urlLink }) => {
             return (
-              <li
-                className="before:border-border before:bg-background first:before:bg-foreground after:bg-border/50 hover:before:bg-foreground relative pl-4.5 before:absolute before:top-1 before:left-0 before:h-3 before:w-3 before:rounded-full before:border-2 before:transition-colors before:duration-150 before:ease-in-out after:absolute after:top-4 after:-bottom-6 after:left-1.5 after:w-px after:transition-colors after:duration-150 after:ease-in-out last:after:hidden md:pl-6"
-                key={id}
-              >
+              <li className="pl-4.5 md:pl-6" key={id}>
                 <Link
                   className="group decoration-muted-foreground relative mb-1 inline-block text-[0.85rem] font-semibold decoration-1 underline-offset-4 outline-0 hover:underline focus-visible:underline"
                   href={urlLink}
