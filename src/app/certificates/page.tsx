@@ -3,6 +3,7 @@ import ThemeToggle from '@/components/theme/theme-toggle';
 import { CERTIFICATES } from '@/data/experiences';
 import { FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ExperiencePage() {
   return (
@@ -22,26 +23,42 @@ export default function ExperiencePage() {
         </h2>
       </section>
 
-      <ul>
+      <ul className="grid grid-cols-1 gap-y-3">
         {CERTIFICATES.map(
-          ({ id, title, institution, dateReceived, urlLink }) => {
+          ({ id, title, institution, dateReceived, urlLink, imgUrl }) => {
             return (
-              <li className="pl-4.5 md:pl-6" key={id}>
+              <li
+                className="border-ring/40 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-60 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out min-[850px]:max-w-70"
+                key={id}
+              >
+                <Image
+                  className="border-ring/20 mb-4 border"
+                  src={imgUrl}
+                  alt={`Elmar Chavez's certificate for ${title}.`}
+                  width={1250}
+                  height={830}
+                  loading="eager"
+                />
+
+                <h3 className="text-foreground mb-2 text-[0.875rem] font-semibold transition-colors duration-150 ease-in-out">
+                  {title}
+                </h3>
+                <p className="text-foreground text-[0.75rem] transition-colors duration-150 ease-in-out">
+                  {institution}
+                </p>
+                <p className="text-muted-foreground text-[0.70rem] transition-colors duration-150 ease-in-out">
+                  Issued {dateReceived}
+                </p>
+
                 <Link
-                  className="group decoration-muted-foreground relative mb-1 inline-block text-[0.85rem] font-semibold decoration-1 underline-offset-4 outline-0 hover:underline focus-visible:underline"
+                  className="border-border/50 bg-background text-foreground hover:bg-foreground hover:text-background flex items-center justify-end gap-1 self-end rounded-lg border px-3 py-1.5"
                   href={urlLink}
                   target="_blank"
-                  aria-label={`Open ${title} certificate`}
+                  aria-label={`See Elmar Chavez's ${title} certificate in new tab`}
                 >
-                  {title}
-                  <FiExternalLink className="group-focus-visible:text-foreground text-muted-foreground group-hover:text-foreground absolute top-px -right-5" />
+                  <span className="text-[0.75rem]">View Credential</span>
+                  <FiExternalLink className="relative bottom-px" size={14} />
                 </Link>
-                <p className="flex flex-col text-[0.75rem]">
-                  <span>{institution}</span>
-                  <span className="text-muted-foreground text-[0.70rem]">
-                    {`Issued ${dateReceived}`}
-                  </span>
-                </p>
               </li>
             );
           },
