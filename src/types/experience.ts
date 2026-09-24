@@ -16,4 +16,5 @@ export type Certificate = {
   dateReceived: string;
   urlLink: string;
   imgUrl: string;
+  description: string;
 };
