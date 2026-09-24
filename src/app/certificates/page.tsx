@@ -25,7 +25,15 @@ export default function ExperiencePage() {
 
       <ul className="grid grid-cols-1 gap-y-3">
         {CERTIFICATES.map(
-          ({ id, title, institution, dateReceived, urlLink, imgUrl }) => {
+          ({
+            id,
+            title,
+            institution,
+            dateReceived,
+            urlLink,
+            imgUrl,
+            description,
+          }) => {
             return (
               <li
                 className="border-ring/40 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-60 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out min-[850px]:max-w-70"
@@ -40,18 +48,21 @@ export default function ExperiencePage() {
                   loading="eager"
                 />
 
-                <h3 className="text-foreground mb-2 text-[0.875rem] font-semibold transition-colors duration-150 ease-in-out">
+                <h3 className="text-foreground mb-2 text-sm font-semibold transition-colors duration-150 ease-in-out">
                   {title}
                 </h3>
                 <p className="text-foreground text-[0.75rem] transition-colors duration-150 ease-in-out">
                   {institution}
                 </p>
-                <p className="text-muted-foreground text-[0.70rem] transition-colors duration-150 ease-in-out">
+                <p className="text-muted-foreground mb-2 text-[0.70rem] transition-colors duration-150 ease-in-out">
                   Issued {dateReceived}
+                </p>
+                <p className="text-muted-foreground mb-4 text-[0.70rem] transition-colors duration-150 ease-in-out">
+                  {description}
                 </p>
 
                 <Link
-                  className="border-border/50 bg-background text-foreground hover:bg-foreground hover:text-background flex items-center justify-end gap-1 self-end rounded-lg border px-3 py-1.5"
+                  className="border-border/50 bg-background text-foreground hover:bg-foreground hover:text-background flex items-center justify-end gap-1 self-start rounded-lg border px-3 py-1.5"
                   href={urlLink}
                   target="_blank"
                   aria-label={`See Elmar Chavez's ${title} certificate in new tab`}
