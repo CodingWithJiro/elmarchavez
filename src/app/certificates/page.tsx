@@ -48,28 +48,27 @@ export default function ExperiencePage() {
                   loading="eager"
                 />
 
-                <h3 className="text-foreground mb-2 text-sm font-semibold transition-colors duration-150 ease-in-out">
-                  {title}
-                </h3>
+                <Link
+                  className="mb-1 flex items-center gap-1"
+                  href={urlLink}
+                  target="_blank"
+                  aria-label={`See Elmar Chavez's ${title} certificate in new tab`}
+                >
+                  <h3 className="text-foreground text-sm font-semibold transition-colors duration-150 ease-in-out">
+                    {title}
+                  </h3>
+                  <FiExternalLink className="relative bottom-px" size={14} />
+                </Link>
+
                 <p className="text-foreground text-[0.75rem] transition-colors duration-150 ease-in-out">
                   {institution}
                 </p>
                 <p className="text-muted-foreground mb-2 text-[0.70rem] transition-colors duration-150 ease-in-out">
                   Issued {dateReceived}
                 </p>
-                <p className="text-muted-foreground mb-4 text-[0.70rem] transition-colors duration-150 ease-in-out">
+                <p className="text-muted-foreground text-[0.70rem] transition-colors duration-150 ease-in-out">
                   {description}
                 </p>
-
-                <Link
-                  className="border-border/50 bg-background text-foreground hover:bg-foreground hover:text-background flex items-center justify-end gap-1 self-start rounded-lg border px-3 py-1.5"
-                  href={urlLink}
-                  target="_blank"
-                  aria-label={`See Elmar Chavez's ${title} certificate in new tab`}
-                >
-                  <span className="text-[0.75rem]">View Credential</span>
-                  <FiExternalLink className="relative bottom-px" size={14} />
-                </Link>
               </li>
             );
           },
