@@ -1,10 +1,10 @@
 import Breadcrumb from '@/components/sections/breadcrumb';
 import ThemeToggle from '@/components/theme/theme-toggle';
+import Footer from '@/components/sections/footer';
 import { CERTIFICATES } from '@/data/experiences';
 import { FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
-import Footer from '@/components/sections/footer';
 
 export default function ExperiencePage() {
   return (
@@ -61,6 +61,7 @@ export default function ExperiencePage() {
                   <FiExternalLink
                     className="text-muted-foreground group-hover:text-foreground group-focus-visible:text-foreground relative bottom-px transition-colors duration-150 ease-in-out"
                     size={14}
+                    aria-hidden="true"
                   />
                 </Link>
 
