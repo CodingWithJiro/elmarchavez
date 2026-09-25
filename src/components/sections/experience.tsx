@@ -45,13 +45,13 @@ const Experience = () => {
                   key={id}
                 >
                   <Link
-                    className="group decoration-muted-foreground relative mb-1 inline-block text-[0.85rem] font-semibold decoration-1 underline-offset-4 outline-0 hover:underline focus-visible:underline"
+                    className="group decoration-muted-foreground mb-1 flex items-center gap-1 text-[0.85rem] font-semibold decoration-1 underline-offset-4 outline-0 hover:underline focus-visible:underline"
                     href={urlLink}
                     target="_blank"
                     aria-label={`Open ${title} certificate`}
                   >
                     {title}
-                    <FiExternalLink className="group-focus-visible:text-foreground text-muted-foreground group-hover:text-foreground absolute top-px -right-5" />
+                    <FiExternalLink className="group-focus-visible:text-foreground text-muted-foreground group-hover:text-foreground relative bottom-px" />
                   </Link>
                   <p className="flex flex-col text-[0.75rem]">
                     <span>{institution}</span>
