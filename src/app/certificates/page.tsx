@@ -23,7 +23,7 @@ export default function ExperiencePage() {
         </h2>
       </section>
 
-      <ul className="grid grid-cols-1 gap-y-3">
+      <ul className="grid grid-cols-1 gap-x-3 gap-y-3 min-[520px]:grid-cols-2 md:grid-cols-3 md:gap-y-6">
         {CERTIFICATES.map(
           ({
             id,
@@ -36,7 +36,7 @@ export default function ExperiencePage() {
           }) => {
             return (
               <li
-                className="border-ring/80 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-60 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out min-[850px]:max-w-70"
+                className="border-ring/80 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-57.5 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out md:max-w-65"
                 key={id}
               >
                 <Image
@@ -54,7 +54,7 @@ export default function ExperiencePage() {
                   target="_blank"
                   aria-label={`See Elmar Chavez's ${title} certificate in new tab`}
                 >
-                  <h3 className="text-foreground text-sm font-semibold decoration-1 underline-offset-4 transition-colors duration-150 ease-in-out group-hover:underline group-focus-visible:underline">
+                  <h3 className="text-foreground text-sm font-semibold decoration-1 underline-offset-4 transition-colors duration-150 ease-in-out group-hover:underline group-focus-visible:underline md:text-base">
                     {title}
                   </h3>
                   <FiExternalLink
@@ -63,13 +63,13 @@ export default function ExperiencePage() {
                   />
                 </Link>
 
-                <p className="text-foreground text-[0.75rem] transition-colors duration-150 ease-in-out">
+                <p className="text-foreground text-[0.75rem] transition-colors duration-150 ease-in-out md:text-sm">
                   {institution}
                 </p>
-                <p className="text-muted-foreground mb-2 text-[0.70rem] transition-colors duration-150 ease-in-out">
+                <p className="text-muted-foreground mb-2 text-[0.70rem] transition-colors duration-150 ease-in-out md:text-[0.75rem]">
                   Issued {dateReceived}
                 </p>
-                <p className="text-muted-foreground text-[0.70rem] transition-colors duration-150 ease-in-out">
+                <p className="text-muted-foreground mb-2 text-[0.70rem] transition-colors duration-150 ease-in-out md:text-[0.75rem]">
                   {description}
                 </p>
               </li>
