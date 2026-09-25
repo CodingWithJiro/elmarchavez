@@ -4,6 +4,7 @@ import { CERTIFICATES } from '@/data/experiences';
 import { FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
+import Footer from '@/components/sections/footer';
 
 export default function ExperiencePage() {
   return (
@@ -77,6 +78,8 @@ export default function ExperiencePage() {
           },
         )}
       </ul>
+
+      <Footer />
     </main>
   );
 }
