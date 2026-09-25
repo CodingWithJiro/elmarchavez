@@ -36,7 +36,7 @@ export default function ExperiencePage() {
           }) => {
             return (
               <li
-                className="border-ring/40 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-60 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out min-[850px]:max-w-70"
+                className="border-ring/80 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-60 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out min-[850px]:max-w-70"
                 key={id}
               >
                 <Image
@@ -49,15 +49,18 @@ export default function ExperiencePage() {
                 />
 
                 <Link
-                  className="mb-1 flex items-center gap-1"
+                  className="group mb-1 flex items-center gap-1 outline-0"
                   href={urlLink}
                   target="_blank"
                   aria-label={`See Elmar Chavez's ${title} certificate in new tab`}
                 >
-                  <h3 className="text-foreground text-sm font-semibold transition-colors duration-150 ease-in-out">
+                  <h3 className="text-foreground text-sm font-semibold decoration-1 underline-offset-4 transition-colors duration-150 ease-in-out group-hover:underline group-focus-visible:underline">
                     {title}
                   </h3>
-                  <FiExternalLink className="relative bottom-px" size={14} />
+                  <FiExternalLink
+                    className="text-muted-foreground group-hover:text-foreground group-focus-visible:text-foreground relative bottom-px transition-colors duration-150 ease-in-out"
+                    size={14}
+                  />
                 </Link>
 
                 <p className="text-foreground text-[0.75rem] transition-colors duration-150 ease-in-out">
