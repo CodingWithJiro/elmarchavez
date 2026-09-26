@@ -1,10 +1,10 @@
 import Breadcrumb from '@/components/sections/breadcrumb';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import Footer from '@/components/sections/footer';
+import CertificateImage from '@/components/ui/certificate-image';
 import { CERTIFICATES } from '@/data/experiences';
 import { FiExternalLink } from 'react-icons/fi';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function ExperiencePage() {
   return (
@@ -40,13 +40,10 @@ export default function ExperiencePage() {
                 className="border-ring/80 focus-within:border-foreground has-hover:border-foreground bg-background text-foreground mx-auto flex max-w-57.5 flex-col rounded-lg border p-2 transition-colors duration-150 ease-in-out md:max-w-65"
                 key={id}
               >
-                <Image
-                  className="border-ring/20 mb-4 border"
+                <CertificateImage
                   src={imgUrl}
+                  title={title}
                   alt={`Elmar Chavez's certificate for ${title}.`}
-                  width={1250}
-                  height={830}
-                  loading="eager"
                 />
 
                 <Link
