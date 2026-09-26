@@ -2,6 +2,11 @@ import { test, expect } from '@playwright/test';
 import { certificates } from '@/data/experiences';
 
 test.describe('Certificates', () => {
+  test('visitor can see the Certificates section', async ({ page }) => {
+    await page.goto('/');
+    const heading = page.getByRole('heading', { name: /^certificates$/i });
+    await expect(heading).toBeVisible();
+  });
   test('visitor can open certificate link in a new tab', async ({ page }) => {
     await page.goto('/');
     const certificate = certificates[0];
