@@ -60,4 +60,17 @@ test.describe('Certificates', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(urlLink);
   });
+  test('visitor can view enlarged image of the latest certificate entry', async ({
+    page,
+  }) => {
+    await page.goto('/certificates');
+    const latestCertificate = CERTIFICATES.at(-1)!;
+    const { title, urlLink } = latestCertificate;
+    const imageButton = page.getByRole('button', {
+      name: `Enlarge and view ${title} certificate.`,
+    });
+    await imageButton.click();
+    const closeButton = page.getByRole('button', { name: /close/i });
+    await expect(closeButton).toBeVisible();
+  });
 });
