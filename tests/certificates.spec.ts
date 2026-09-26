@@ -7,6 +7,12 @@ test.describe('Certificates', () => {
     const heading = page.getByRole('heading', { name: /^certificates$/i });
     await expect(heading).toBeVisible();
   });
+  test('visitor can view the Certificates page', async ({ page }) => {
+    await page.goto('/');
+    const viewAllLink = page.locator('a[href="/certificates"]');
+    await viewAllLink.click();
+    await expect(page).toHaveURL('/certificates');
+  });
   test('visitor can open certificate link in a new tab', async ({ page }) => {
     await page.goto('/');
     const certificate = certificates[0];
