@@ -35,7 +35,7 @@ export default function CertificateImage({
   return (
     <>
       <button
-        className="mb-4 block w-full cursor-pointer"
+        className="focus-visible:outline-foreground mb-4 block w-full cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2"
         type="button"
         onClick={handleClick}
         aria-label={`Enlarge and view ${title} certificate.`}
