@@ -46,4 +46,18 @@ test.describe('Certificates', () => {
     });
     await expect(link).toHaveAttribute('href', urlLink);
   });
+  test('visitor can open the latest certificate link in new tab', async ({
+    page,
+  }) => {
+    await page.goto('/certificates');
+    const latestCertificate = CERTIFICATES.at(-1)!;
+    const { title, urlLink } = latestCertificate;
+    const link = page.getByRole('link', {
+      name: `See Elmar Chavez's ${title} certificate in new tab`,
+    });
+    const newPagePromise = page.waitForEvent('popup');
+    await link.click();
+    const newPage = await newPagePromise;
+    await expect(newPage).toHaveURL(urlLink);
+  });
 });
