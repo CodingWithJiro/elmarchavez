@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { certificates } from '@/data/experiences';
+import { certificates, CERTIFICATES } from '@/data/experiences';
 
 test.describe('Certificates', () => {
   test('visitor can see the Certificates section', async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe('Certificates', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(certificate.urlLink);
   });
-  test('visitor can see the Certificate page contents', async ({ page }) => {
+  test('visitor can see the Certificates page contents', async ({ page }) => {
     await page.goto('/certificates');
     const heading = page.getByRole('heading', { name: /^certificates$/i });
     await expect(heading).toBeVisible();
@@ -32,5 +32,18 @@ test.describe('Certificates', () => {
       /^list of all my professional certifications to date.$/i,
     );
     await expect(description).toBeVisible();
+  });
+  test('visitor can see the latest certificate entry in Certificates page', async ({
+    page,
+  }) => {
+    await page.goto('/certificates');
+    const latestCertificate = CERTIFICATES.at(-1)!;
+    const { title, urlLink } = latestCertificate;
+    const heading = page.getByRole('heading', { name: title });
+    await expect(heading).toBeVisible();
+    const link = page.getByRole('link', {
+      name: `See Elmar Chavez's ${title} certificate in new tab`,
+    });
+    await expect(link).toHaveAttribute('href', urlLink);
   });
 });
