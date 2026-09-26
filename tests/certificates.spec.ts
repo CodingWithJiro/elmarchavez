@@ -24,4 +24,13 @@ test.describe('Certificates', () => {
     const newPage = await newPagePromise;
     await expect(newPage).toHaveURL(certificate.urlLink);
   });
+  test('visitor can see the Certificate page contents', async ({ page }) => {
+    await page.goto('/certificates');
+    const heading = page.getByRole('heading', { name: /^certificates$/i });
+    await expect(heading).toBeVisible();
+    const description = page.getByText(
+      /^list of all my professional certifications to date.$/i,
+    );
+    await expect(description).toBeVisible();
+  });
 });
