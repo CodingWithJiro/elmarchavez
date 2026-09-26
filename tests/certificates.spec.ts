@@ -65,7 +65,7 @@ test.describe('Certificates', () => {
   }) => {
     await page.goto('/certificates');
     const latestCertificate = CERTIFICATES.at(-1)!;
-    const { title, urlLink } = latestCertificate;
+    const { title } = latestCertificate;
     const imageButton = page.getByRole('button', {
       name: `Enlarge and view ${title} certificate.`,
     });
