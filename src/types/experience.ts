@@ -4,7 +4,9 @@ export type WorkExperience = {
   endDate: string;
   position: string;
   companyName: string;
+  companyUrl: string;
   location: string;
+  responsibilities: string[];
 };
 
 export type Certificate = {
@@ -13,4 +15,6 @@ export type Certificate = {
   institution: string;
   dateReceived: string;
   urlLink: string;
+  imgUrl: string;
+  description: string;
 };

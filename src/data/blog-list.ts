@@ -60,7 +60,7 @@ export const BLOGS: BlogType[] = [
     description:
       'My thoughts on AI dependency and why struggling through problems is still one of the best ways to combat cognitive atrophy and become a better engineer.',
     publishDate: 'September 2026',
-    readTime: '8 min read',
+    readTime: '9 min read',
     tags: ['#ai', '#programming', '#software'],
     blogUrl: `/blog/${getSlug('The Slow and Quiet Cognitive Atrophy of a Modern Software Engineer')}`,
     imgUrl: '/img/blog-5.webp',
