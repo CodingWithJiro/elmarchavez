@@ -1,4 +1,5 @@
 import Breadcrumb from '@/components/sections/breadcrumb';
+import Footer from '@/components/sections/footer';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import { WORK_EXPERIENCES } from '@/data/experiences';
 import Link from 'next/link';
@@ -82,6 +83,8 @@ export default function ExperiencePage() {
             },
           )}
       </ul>
+
+      <Footer />
     </main>
   );
 }
