@@ -4,7 +4,31 @@ import Footer from '@/components/sections/footer';
 import CertificateImage from '@/components/ui/certificate-image';
 import { CERTIFICATES } from '@/data/experiences';
 import { FiExternalLink } from 'react-icons/fi';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+const metaDescription =
+  'Professional certifications and credentials earned by Elmar Chavez as a full stack developer.';
+export const metadata: Metadata = {
+  title: 'Elmar Chavez | Certificates',
+  description: metaDescription,
+  keywords: [
+    'Elmar Chavez Certificates',
+    'Elmar Chavez Certifications',
+    'Web Development Certifications',
+    'Full Stack Developer Certifications',
+    'Software Development Certifications',
+  ],
+  openGraph: {
+    title: 'Certificates | Elmar Chavez',
+    description: metaDescription,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Certificates | Elmar Chavez',
+    description: metaDescription,
+  },
+};
 
 export default function ExperiencePage() {
   return (
