@@ -2,8 +2,32 @@ import Breadcrumb from '@/components/sections/breadcrumb';
 import Footer from '@/components/sections/footer';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import { WORK_EXPERIENCES } from '@/data/experiences';
-import Link from 'next/link';
 import { FiExternalLink } from 'react-icons/fi';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+const metaDescription =
+  'Professional experience and roles of Elmar Chavez as a full stack developer.';
+export const metadata: Metadata = {
+  title: 'Elmar Chavez | Experience',
+  description: metaDescription,
+  keywords: [
+    'Elmar Chavez Experience',
+    'Elmar Chavez Developer',
+    'Full Stack Developer Experience',
+    'Web Developer Experience',
+    'Software Developer Experience',
+  ],
+  openGraph: {
+    title: 'Experience | Elmar Chavez',
+    description: metaDescription,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Experience | Elmar Chavez',
+    description: metaDescription,
+  },
+};
 
 export default function ExperiencePage() {
   return (

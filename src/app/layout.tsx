@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { Sora } from 'next/font/google';
+import { cn } from '@/lib/utils';
 import './globals.css';
 import ThemeProvider from '@/components/providers/theme-provider';
-import { cn } from '@/lib/utils';
 import SkipLink from '@/components/accessibility/skip-link';
+import GoogleAnalytics from '@/components/analytics/google-analytics';
 
 const sora = Sora({ subsets: ['latin'], display: 'swap' });
 const metaDescription =
@@ -96,6 +97,7 @@ export default function RootLayout({
     >
       <body className="min-h-full transition-colors duration-150 ease-in-out">
         <SkipLink />
+        <GoogleAnalytics />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
