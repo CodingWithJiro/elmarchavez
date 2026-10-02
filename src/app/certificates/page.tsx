@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ExperiencePage() {
+export default function CertificatesPage() {
   return (
     <main
       id="main"
