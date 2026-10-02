@@ -1,4 +1,4 @@
-import { certificates } from '@/data/experiences';
+import { certificates } from '@/data/certificates';
 import { FiExternalLink } from 'react-icons/fi';
 import ViewAllLink from '../ui/view-all-link';
 import Link from 'next/link';

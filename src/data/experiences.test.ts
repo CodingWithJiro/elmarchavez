@@ -1,25 +1,13 @@
-import { workExperiences, CERTIFICATES } from './experiences';
-import { isNotEmpty, isValidUrl } from '@/tests/utils';
+import { WORK_EXPERIENCES } from './experiences';
+import { isNotEmpty } from '@/tests/utils';
 
-describe('Work Experiences and Certificates data', () => {
+describe('Work Experiences data', () => {
   test('every work experience has a non-empty position', () => {
-    const positions = workExperiences.map(({ position }) => position);
+    const positions = WORK_EXPERIENCES.map(({ position }) => position);
     expect(isNotEmpty(positions)).toBe(true);
   });
   test('every work experience has a non-empty company name', () => {
-    const companyNames = workExperiences.map(({ companyName }) => companyName);
+    const companyNames = WORK_EXPERIENCES.map(({ companyName }) => companyName);
     expect(isNotEmpty(companyNames)).toBe(true);
-  });
-  test('every certificate has a non-empty title', () => {
-    const titles = CERTIFICATES.map(({ title }) => title);
-    expect(isNotEmpty(titles)).toBe(true);
-  });
-  test('every certificate has a non-empty institution', () => {
-    const institutions = CERTIFICATES.map(({ institution }) => institution);
-    expect(isNotEmpty(institutions)).toBe(true);
-  });
-  test('every certificate uses a valid HTTPS URL', () => {
-    const urls = CERTIFICATES.map(({ urlLink }) => urlLink);
-    expect(isValidUrl(urls)).toBe(true);
   });
 });
