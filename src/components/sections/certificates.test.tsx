@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { certificates } from '@/data/experiences';
+import { certificates } from '@/data/certificates';
 import Certificates from './certificates';
 
 describe('Certificates section', () => {

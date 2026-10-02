@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { certificates, CERTIFICATES } from '@/data/experiences';
+import { certificates, CERTIFICATES } from '@/data/certificates';
 
 test.describe('Certificates', () => {
   test('visitor can see the Certificates section', async ({ page }) => {

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { tabUntilFocused } from './utils/keyboard';
 import { projectList } from '@/data/project-list';
 import { blogList } from '@/data/blog-list';
-import { certificates } from '@/data/experiences';
+import { certificates } from '@/data/certificates';
 
 test.describe('Keyboard Accessibility', () => {
   test.beforeEach(async ({ page }) => {

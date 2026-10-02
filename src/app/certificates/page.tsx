@@ -2,7 +2,7 @@ import Breadcrumb from '@/components/sections/breadcrumb';
 import ThemeToggle from '@/components/theme/theme-toggle';
 import Footer from '@/components/sections/footer';
 import CertificateImage from '@/components/ui/certificate-image';
-import { CERTIFICATES } from '@/data/experiences';
+import { CERTIFICATES } from '@/data/certificates';
 import { FiExternalLink } from 'react-icons/fi';
 import type { Metadata } from 'next';
 import Link from 'next/link';
