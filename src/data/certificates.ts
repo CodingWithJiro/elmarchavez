@@ -52,7 +52,7 @@ export const CERTIFICATES: Certificate[] = [
     dateReceived: 'October 2026',
     urlLink:
       'https://www.freecodecamp.org/certification/codingwithjiro/back-end-development-and-apis-v9',
-    imgUrl: '/certificates/frontend-developement-libraries-certificate.webp',
+    imgUrl: '/certificates/backend-development-and-apis.webp',
     description:
       'Covers Node.js, npm, HTTP, Express, middleware, REST APIs, WebSockets, JWT, security, and authentication.',
   },
