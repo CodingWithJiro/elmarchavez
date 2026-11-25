@@ -67,6 +67,19 @@ export const BLOGS: BlogType[] = [
     imgAlt:
       'A painting of six blind men stumbling, depicting of a tragedy when following without thinking.',
   },
+  {
+    id: 6,
+    title: "I Know It's You, But I Can't Prove It",
+    description:
+      "A beginner-friendly breakdown of JWT, how it works, and why web apps don't need to ask you to log in every time you do something.",
+    publishDate: 'November 2026',
+    readTime: '5 min read',
+    tags: ['#backend', '#jwt', '#security'],
+    blogUrl: `/blog/${getSlug("I Know It's You, But I Can't Prove It")}`,
+    imgUrl: '/img/blog-6.webp',
+    imgAlt:
+      'A suspicious man behind the steering wheel, seemingly convinced he knows who is behind something but unable to prove it.',
+  },
 ];
 
 export const blogList: BlogType[] = BLOGS.slice(-3).reverse();
